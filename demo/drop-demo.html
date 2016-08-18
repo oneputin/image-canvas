@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+    <title>image-drop-resize</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+<!--     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+ -->
+    <link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
+    <link rel="import" href="../../iron-flex-layout/iron-flex-layout-classes.html">
+
+    <link rel="import" href="../../iron-image/iron-image.html">
+    <link rel="import" href="../../paper-input/paper-input.html">
+
+    <link rel="import" href="../file-drop.html">
+    <link rel="import" href="../image-resize.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+</head>
+
+<body>
+
+<h3><span style="font-family: courier;">image-resize</span> of dropped image</h3>
+
+  <dom-module id="image-drop-demo"> 
+    <template>
+      <style>
+        .flex-horizontal {
+            @apply(--layout-horizontal);
+        }
+        .flex {
+            @apply(--layout-flex);
+        }   
+
+        #previewrow {
+          position: relative;
+          width: auto;
+          padding: 12px;
+          border: 1px solid #ccc;
+        }
+        #dropzone {
+          vertical-align: top;
+        }
+        #preview {
+          vertical-align: top;
+          width: auto;
+          margin-left: 148px;
+          height: 100px;
+          background-color: #eee;
+          padding: 12px;
+          border: 1px solid #ccc;
+        }
+      </style>
+    
+      <p>Drag an image into the box below to see it automagically resized with canvas and JavaScript.</p>
+      <div class="container horizontal">
+        <paper-input label="outputHeight" value="{{height}}"></paper-input>
+        <paper-input label="outputQuality" value="{{quality}}" min="0" max="1"></paper-input>
+      </div>        
+      <div id="previewrow" class="container horizontal">
+         
+          <file-drop id="dropzone" type="image" dropfile="{{rawsrc}}" dropname="{{imgname}}"> </file-drop>
+         
+          <image-resize id="preview" src="[[rawsrc]]" out="{{outimg}}" height="[[height]]" quality="{{quality}}"></image-resize>
+         
+          <iron-image 
+            sizing="cover" preload fade
+            placeholder="{{outimg}}"
+            src={{imgsrc}}
+            style="width:400px; height:400px;"
+            ></iron-image>
+      </div>
+      
+      <h5>imgName:</h5>
+      <p>[[imgname]]</p>
+      
+      <h5>reduced Data: [[outsize]]</h5>
+      <p>[[outimg]]</p>
+    
+    </template>
+    
+    <script>
+      window.addEventListener('WebComponentsReady', function() {
+        Polymer({
+          is: 'image-drop-demo',
+          properties: {
+            imgname: {
+
+            },
+            rawsrc:{
+              type: String,
+              value: "",
+              observer: '_getsrc'
+            },
+            imgsrc:{
+              type: String,
+              value: "",
+            },
+            outimg:{
+              type: String,
+              value: "",
+              observer: '_getsize'
+            },
+            outsize:{
+              type: Number,
+              value: 0
+            },            
+            height:{
+              type: Number,
+              value: 50
+            },
+            quality:{
+              type: Number,
+              value: 0.5
+            }
+          },
+          observers: [
+          ],
+          ready: function() {
+
+          },
+          _getsize: function(n,o) {
+            this.outsize = n.length;
+          },
+          _getsrc: function(n,o) {
+            var self = this;
+            setTimeout(function(){ 
+              self.imgsrc = n; }, 1000);
+            setTimeout(function(){ 
+              self.imgsrc = ""; }, 5000);
+          }
+        });  
+      });      
+    </script>      
+  </dom-module>
+
+  <image-drop-demo></image-drop-demo>
+
+</body>
+</html>

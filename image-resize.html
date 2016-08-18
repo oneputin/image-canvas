@@ -1,0 +1,126 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`image-resize`
+resizes an img-src (url, dataUrl) to another dataUrl. Based on `canvas`-resizing 
+see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas] 
+
+@demo demo/resize-demo.html 
+-->
+<dom-module id="image-resize">
+
+	<template>
+
+	    <style>
+		    :host {
+		        display: inline-block;
+		        overflow: hidden;
+		        position: relative;
+		        left: -1000px;
+		    }
+		    #canvas {
+		    	height: 10px;
+		    }
+	  	</style>  
+
+        <canvas id="canvas"></canvas>
+
+	</template>    
+
+	<script>
+
+	    Polymer({
+
+		    is: 'image-resize',
+
+		    properties: {
+		        /**
+		         * The primary SRC of an image (url or dataUrl)
+		         */
+		        src: {
+		          observer: 'render',
+		          type: String
+		        },
+
+		        // the "rendered(reduced)" img (as dataUrl)
+		        out: {
+		          observer: '_logger',
+		          type: String,
+		          value: '',
+		          notify: true
+		        },
+
+		        /**
+		         * The target height of resized image.
+		        */
+		        height: {
+		          type: Number,
+		          value: 100
+		        },
+		        /**
+		         * quality of target image (0..1)
+		         * @type {Object}
+		         */
+		        quality: {
+		          type: Number
+		      	},
+		      	/**
+		      	 * format target img 
+		      	 * @type {Object}
+		      	 */
+		        format: {
+		          type: String,
+		          value: 'jpeg'
+		      }
+			},        
+
+			observers: [
+				'render(src, height, format, quality)'	
+			],
+
+			_logger: function(out) { // console.log("out", out);
+			},
+
+	    	ready : function() {
+		    },  
+
+	        /**
+	         * render `src`-image into canvas according to parameters `height, format,quality` 
+	         * @return          [sets host-property `out`]
+	         */
+	        render : function(src, height, format, quality) {	
+	        	if (!height || !format || !quality )  return;
+
+		        var self    = this,
+	            	format  = "image/" + format;
+
+		        var canvas  = this.$.canvas, 
+	            	img     = new Image();   // console.log("canvas, height, format, quality", canvas, height, format, typeof quality, quality);
+
+	            // Setup action of "onload"-event 
+	            img.onload = function() {
+	                
+	                var ctx; 
+	                if (!canvas.hidden) {    // console.log("NOT HIDDEN"); 
+		                ctx= canvas.getContext("2d");
+		                ctx.clearRect(0, 0, canvas.width, canvas.height);
+	            	}
+
+	                if (img.height > height) {
+	                    img.width *= height / img.height;
+	                    img.height = height;
+	                }
+	                canvas.width  = img.width;
+	                canvas.height = img.height;
+
+	                if (ctx) ctx.drawImage(img, 0, 0, img.width, img.height);
+	            	self.out = canvas.toDataURL(format, quality); // console.log("height, format, quality, src", height, format, quality, src);
+	            };
+
+	            img.src = src;
+	        }
+
+	    });
+
+    </script>
+</dom-module>

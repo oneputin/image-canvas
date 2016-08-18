@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+    <title>image-remote-resize</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../../paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="../../paper-listbox/paper-listbox.html">
+    <link rel="import" href="../../paper-item/paper-item.html">
+    <link rel="import" href="../../paper-input/paper-input.html">
+    <link rel="import" href="../../iron-image/iron-image.html">
+
+    <link rel="import" href="../../fire-base/fire-query.html">
+    <link rel="import" href="../image-resize.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+</head>
+
+<body>
+
+  <h3>Demo <span style="font-family: courier;">image-resize</span></h3>
+
+  <dom-module id="image-resize-demo"> 
+    <template>
+      <style>
+        paper-dropdown-menu {  width: 400px;   }
+        paper-listbox       {  width: 400px;   }
+      </style>
+
+      <paper-dropdown-menu label="cloudtypes">
+        <paper-listbox 
+          class="dropdown-content" 
+          attr-for-selected="value" 
+          selected="{{itemvalue}}">
+          <paper-item value="heap">heap</paper-item>
+          <paper-item value="fleecy">fleecy</paper-item>
+          <paper-item value="sheet">sheet</paper-item>
+        </paper-listbox>
+      </paper-dropdown-menu>      
+      
+      <h4>1. Query Images from cloud-db, transform and save back.</h4>
+      
+      <fire-query app="wolke7" path="cplocal" item="[[itemname]]" itemvalue="[[itemvalue]]" data="{{dbdata}}"></fire-query>
+     
+      <paper-dropdown-menu label="images">
+        <paper-listbox 
+          class="dropdown-content" 
+          attr-for-selected="fbkey" 
+          selected="{{fbkey}}">
+          
+          <template is="dom-repeat" items="[[menuitems]]">
+              
+            <image-resize src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></image-resize>
+            
+            <template is="dom-if" if="{{item.placeholder}}"> 
+              
+              <div fbkey="[[item.fbkey]]">  
+
+                [[item.url]]
+
+                <iron-image 
+                  sizing="cover" 
+                  src = {{item.placeholder}}
+                  style="width:20px; height:20px;">
+                </iron-image>
+
+                <span>:s:</span> [[_getsize(item.placeholder)]], [[item.key]]
+
+              </div>
+           
+              <fire-query
+                  app="wolke7" 
+                  path="cplocal"
+                  key="[[item.key]]"
+                  setdata="[[item]]">
+              </fire-query>      
+
+            </template>
+          </template>        
+        </paper-listbox>
+      </paper-dropdown-menu>
+
+      
+      <template is="dom-if" if="{{viewkey}}"> 
+        <h4>2. View image of item selected in dropdown-menu.</h4>
+  
+        <fire-query app="wolke7" path="cplocal/[[viewkey]]" item="_path_" data="{{viewitem}}"></fire-query>
+
+        <p>[[viewtitle]]</p>
+        <iron-image 
+          sizing="cover" preload fade
+          placeholder="{{viewitem.placeholder}}"        
+          src = {{viewitem.url}}
+          style="width:400px; height:400px;">
+        </iron-image>
+      </template>
+
+    </template>
+    
+    <script>
+      window.addEventListener('WebComponentsReady', function() {
+        Polymer({
+          is: 'image-resize-demo',
+
+          properties: {
+
+            viewkey: "",
+
+            viewitem: {
+              type: Object,
+              observer: '_logViewItem'
+            },  
+            // Transform dbCollection into Array  
+            menuitems: {
+              type: Object,
+              computed: 'createArray(dbdata)'
+            },
+
+            fbkey: {
+              type: Object,
+              observer: '_getViewItem'
+            },
+
+            itemname: {
+              type: String
+            },
+
+            itemvalue: {
+              type: String
+            },
+
+            rawsrc:{
+              type: String,
+              value: "",
+            },
+
+            imgsrc:{
+              type: String,
+              value: "",
+            },
+            outimg:{
+              type: String,
+              value: "",
+              observer: '_getsize'
+            },
+            outsize:{
+              type: Number,
+              value: 0
+            },            
+            height:{
+              type: Number,
+              value: 50
+            },
+            quality:{
+              type: Number,
+              value: 0.5
+            }
+          },
+          observers: [
+
+          ],
+          
+          ready: function() {
+            this.itemname  = "type-character";
+            this.itemvalue = "heap";
+          },
+
+          // 
+          _getViewItem: function(key) { // console.log("processing item: " + key, this.menuitems);  
+            this.viewkey = key;// var 
+          },
+
+          _logViewItem(n,o) { // console.log(n);
+            this.viewtitle = n["title-main-pict"];
+          },
+
+          // Transform "keyed"object into array and integrate key
+          createArray: function(data) { 
+            if (!data) return;
+            // obj -> array with prop 'key' 
+            if (!Array.isArray(data)) {
+              data =  Object.keys(data).map(function(k){
+                var doc = data[k];
+                doc.fbkey = k;
+                return doc
+              });
+            }  
+            return data; 
+          },
+
+          _getsize: function(n) { 
+            if (!n) return; 
+            this.outsize = n.length;
+            return n.length;
+          },
+          
+        });  
+      });      
+    </script>      
+  </dom-module>
+
+  <image-resize-demo></image-resize-demo>
+
+</body>
+</html>

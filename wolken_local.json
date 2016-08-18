@@ -1,0 +1,3207 @@
+{
+  "0" : {
+    "attr-file" : "wb0001",
+    "title-main-pict" : "Sc",
+    "url" : "../wolken/wb0001.jpg"
+  },
+  "1" : {
+    "attr-file" : "wb0002",
+    "title-main-pict" : "Ac",
+    "url" : "../wolken/wb0002.jpg"
+  },
+  "2" : {
+    "title-main-pict" : "Ac aufloesung",
+    "title-sub-pict" : "edited on mac, later on minipad",
+    "url" : "../wolken/wb0003.jpg"
+  },
+  "3" : {
+    "edited" : "wgpagenkopf@googlemail.com",
+    "fbkey" : "3",
+    "title-main-pict" : "Ac cas",
+    "title-sub-pict" : "edited as logged user",
+    "type-character" : "heap",
+    "type-genus" : "ac",
+    "type-height" : "middle",
+    "uid" : "41HxrQIBViT3ATiuYlu43KEsiDt1",
+    "url" : "../wolken/wb0004.jpg"
+  },
+  "4" : {
+    "attr-file" : "wb0005",
+    "title-main-pict" : "Ac flo",
+    "url" : "../wolken/wb0005.jpg"
+  },
+  "5" : {
+    "attr-file" : "wb0006",
+    "title-main-pict" : "Ac la",
+    "url" : "../wolken/wb0006.jpg"
+  },
+  "6" : {
+    "attr-file" : "wb0007",
+    "title-main-pict" : "Ac op",
+    "url" : "../wolken/wb0007.jpg"
+  },
+  "7" : {
+    "title-main-pict" : "Ac pe",
+    "title-sub-pict" : "Fully attributed in WaterOnAir",
+    "type-character" : "heap",
+    "type-genus" : "ac",
+    "type-height" : "middle",
+    "type-year" : 2005,
+    "url" : "../wolken/wb0008.jpg"
+  },
+  "8" : {
+    "attr-file" : "wb0009",
+    "title-main-pict" : "actinae",
+    "url" : "../wolken/wb0009.jpg"
+  },
+  "9" : {
+    "attr-file" : "wb0010",
+    "title-main-pict" : "Ac tr",
+    "type-genus" : "ac",
+    "url" : "../wolken/wb0010.jpg"
+  },
+  "10" : {
+    "attr-file" : "wb0011",
+    "title-main-pict" : "Ac un",
+    "type-genus" : "ac",
+    "url" : "../wolken/wb0011.jpg"
+  },
+  "11" : {
+    "attr-file" : "wb0012",
+    "title-main-pict" : "Albedoeffekt",
+    "url" : "../wolken/wb0012.jpg"
+  },
+  "12" : {
+    "attr-file" : "wb0013",
+    "title-main-pict" : "Alpengluehen",
+    "type-photometeor" : "sun",
+    "url" : "../wolken/wb0013.jpg"
+  },
+  "13" : {
+    "title-main-pict" : "angetaute Schneeschicht",
+    "title-sub-pict" : "cloud items removed",
+    "url" : "../wolken/wb0014.jpg"
+  },
+  "14" : {
+    "attr-file" : "wb0015",
+    "title-main-pict" : "Albedoeffekt beim tauen einer Reifschicht",
+    "url" : "../wolken/wb0015.jpg"
+  },
+  "15" : {
+    "attr-file" : "wb0016",
+    "title-main-pict" : "Gehwegplatten trocknen nach Schauer",
+    "url" : "../wolken/wb0016.jpg"
+  },
+  "16" : {
+    "attr-file" : "wb0017",
+    "title-main-pict" : "At op",
+    "type-genus" : "as",
+    "url" : "../wolken/wb0017.jpg"
+  },
+  "17" : {
+    "attr-file" : "wb0018",
+    "title-main-pict" : "As tr",
+    "type-genus" : "as",
+    "url" : "../wolken/wb0018.jpg"
+  },
+  "18" : {
+    "attr-file" : "wb0019",
+    "title-main-pict" : "Aufwindabriss",
+    "type-process" : "dissolving",
+    "url" : "../wolken/wb0019.jpg"
+  },
+  "19" : {
+    "attr-file" : "wb0020",
+    "title-main-pict" : "Sc du",
+    "url" : "../wolken/wb0020.jpg"
+  },
+  "20" : {
+    "attr-file" : "wb0021",
+    "title-main-pict" : "Blaustreuung",
+    "type-photometeor" : "scattering",
+    "url" : "../wolken/wb0021.jpg"
+  },
+  "21" : {
+    "attr-file" : "wb0022",
+    "title-main-pict" : "rol cloud",
+    "type-genus" : "cb",
+    "url" : "../wolken/wb0022.jpg"
+  },
+  "22" : {
+    "attr-file" : "wb0023",
+    "title-main-pict" : "Cb mam",
+    "type-genus" : "cb",
+    "url" : "../wolken/wb0023.jpg"
+  },
+  "23" : {
+    "attr-file" : "wb0024",
+    "title-main-pict" : "Cb pra",
+    "url" : "../wolken/wb0024.jpg"
+  },
+  "24" : {
+    "attr-file" : "wb0025",
+    "type-genus" : "cb",
+    "url" : "../wolken/wb0025.jpg"
+  },
+  "25" : {
+    "attr-file" : "wb0026",
+    "title-main-pict" : "Cb arc",
+    "type-genus" : "cb",
+    "url" : "../wolken/wb0026.jpg"
+  },
+  "26" : {
+    "attr-file" : "wb0027",
+    "title-main-pict" : "cb cal",
+    "type-genus" : "cb",
+    "url" : "../wolken/wb0027.jpg"
+  },
+  "27" : {
+    "attr-file" : "wb0028",
+    "title-main-pict" : "Cb cap",
+    "type-genus" : "cb",
+    "url" : "../wolken/wb0028.jpg"
+  },
+  "28" : {
+    "attr-file" : "wb0029",
+    "title-main-pict" : "Cb inc",
+    "url" : "../wolken/wb0029.jpg"
+  },
+  "29" : {
+    "attr-file" : "wb0030",
+    "title-main-pict" : "Cb mam",
+    "url" : "../wolken/wb0030.jpg"
+  },
+  "30" : {
+    "attr-file" : "wb0031",
+    "title-main-pict" : "Cb pan",
+    "url" : "../wolken/wb0031.jpg"
+  },
+  "31" : {
+    "attr-file" : "wb0032",
+    "title-main-pict" : "Cb pra",
+    "url" : "../wolken/wb0032.jpg"
+  },
+  "32" : {
+    "attr-file" : "wb0033",
+    "title-main-pict" : "Cc flo",
+    "type-genus" : "cc",
+    "url" : "../wolken/wb0033.jpg"
+  },
+  "33" : {
+    "attr-file" : "wb0034",
+    "title-main-pict" : "Cc la",
+    "type-genus" : "cc",
+    "url" : "../wolken/wb0034.jpg"
+  },
+  "34" : {
+    "attr-file" : "wb0035",
+    "title-main-pict" : "Ci un",
+    "type-genus" : "cc",
+    "url" : "../wolken/wb0035.jpg"
+  },
+  "35" : {
+    "attr-file" : "wb0036",
+    "title-main-pict" : "Ci fib",
+    "url" : "../wolken/wb0036.jpg"
+  },
+  "36" : {
+    "title-main-pict" : "Ci unc",
+    "title-sub-pict" : "Uncinus",
+    "type-genus" : "ci",
+    "url" : "../wolken/wb0037.jpg"
+  },
+  "37" : {
+    "attr-file" : "wb0038",
+    "title-main-pict" : "Ci unc",
+    "url" : "../wolken/wb0038.jpg"
+  },
+  "38" : {
+    "attr-file" : "wb0039",
+    "title-main-pict" : "Ci fib",
+    "type-genus" : "ci",
+    "url" : "../wolken/wb0039.jpg"
+  },
+  "39" : {
+    "attr-file" : "wb0040",
+    "title-main-pict" : "Ci ra",
+    "type-genus" : "ci",
+    "url" : "../wolken/wb0040.jpg"
+  },
+  "40" : {
+    "attr-file" : "wb0041",
+    "title-main-pict" : "Ci spi",
+    "type-genus" : "ci",
+    "url" : "../wolken/wb0041.jpg"
+  },
+  "41" : {
+    "attr-file" : "wb0042",
+    "title-main-pict" : "Ci unc",
+    "url" : "../wolken/wb0042.jpg"
+  },
+  "42" : {
+    "attr-file" : "wb0043",
+    "title-main-pict" : "Ci ve",
+    "type-genus" : "ci",
+    "url" : "../wolken/wb0043.jpg"
+  },
+  "43" : {
+    "attr-file" : "wb0044",
+    "title-main-pict" : "Sc la",
+    "url" : "../wolken/wb0044.jpg"
+  },
+  "44" : {
+    "attr-file" : "wb0045",
+    "title-main-pict" : "Crepescular Strahlen",
+    "type-photometeor" : "scattering",
+    "url" : "../wolken/wb0045.jpg"
+  },
+  "45" : {
+    "attr-file" : "wb0046",
+    "title-main-pict" : "Crepescular Strahlen",
+    "type-photometeor" : "scattering",
+    "url" : "../wolken/wb0046.jpg"
+  },
+  "46" : {
+    "attr-file" : "wb0047",
+    "title-main-pict" : "Cs fib",
+    "type-genus" : "cs",
+    "url" : "../wolken/wb0047.jpg"
+  },
+  "47" : {
+    "attr-file" : "wb0048",
+    "title-main-pict" : "Cs neb",
+    "type-genus" : "cs",
+    "url" : "../wolken/wb0048.jpg"
+  },
+  "48" : {
+    "attr-file" : "wb0049",
+    "title-main-pict" : "Cs un",
+    "type-genus" : "cs",
+    "url" : "../wolken/wb0049.jpg"
+  },
+  "49" : {
+    "attr-file" : "wb0050",
+    "title-main-pict" : "Cu aufloesend",
+    "type-process" : "dissovling",
+    "url" : "../wolken/wb0050.jpg"
+  },
+  "50" : {
+    "attr-file" : "wb0051",
+    "title-main-pict" : "Cu aufloesend",
+    "type-process" : "disovling",
+    "url" : "../wolken/wb0051.jpg"
+  },
+  "51" : {
+    "attr-file" : "wb0052",
+    "title-main-pict" : "Cu con",
+    "url" : "../wolken/wb0052.jpg"
+  },
+  "52" : {
+    "attr-file" : "wb0053",
+    "title-main-pict" : "Cu fra",
+    "type-genus" : "cu",
+    "url" : "../wolken/wb0053.jpg"
+  },
+  "53" : {
+    "attr-file" : "wb0054",
+    "title-main-pict" : "Cu hum",
+    "type-genus" : "cu",
+    "url" : "../wolken/wb0054.jpg"
+  },
+  "54" : {
+    "attr-file" : "wb0055",
+    "title-main-pict" : "Cu med",
+    "type-genus" : "cu",
+    "url" : "../wolken/wb0055.jpg"
+  },
+  "55" : {
+    "attr-file" : "wb0056",
+    "title-main-pict" : "Cu pil",
+    "type-genus" : "cu",
+    "url" : "../wolken/wb0056.jpg"
+  },
+  "56" : {
+    "attr-file" : "wb0057",
+    "title-main-pict" : "Cu im Schatten",
+    "type-photometeor" : "shadow",
+    "url" : "../wolken/wb0057.jpg"
+  },
+  "57" : {
+    "attr-file" : "wb0058",
+    "title-main-pict" : "Cu im Schatten",
+    "type-photometeor" : "shadow",
+    "url" : "../wolken/wb0058.jpg"
+  },
+  "58" : {
+    "attr-file" : "wb0059",
+    "title-main-pict" : "Cu vir",
+    "url" : "../wolken/wb0059.jpg"
+  },
+  "59" : {
+    "attr-file" : "wb0060",
+    "title-main-pict" : "Cs fib",
+    "url" : "../wolken/wb0060.jpg"
+  },
+  "60" : {
+    "attr-file" : "wb0061",
+    "title-main-pict" : "wilde wolken",
+    "type-painting" : "artist",
+    "url" : "../wolken/wb0061.jpg"
+  },
+  "61" : {
+    "attr-file" : "wb0062",
+    "title-main-pict" : "doppelter Regenbogen",
+    "type-photometeor" : "rainbow",
+    "url" : "../wolken/wb0062.jpg"
+  },
+  "62" : {
+    "attr-file" : "wb0063",
+    "title-main-pict" : "Dunst",
+    "type-photometeor" : "haze",
+    "url" : "../wolken/wb0063.jpg"
+  },
+  "63" : {
+    "attr-file" : "wb0064",
+    "title-main-pict" : "Eisaufall",
+    "type-process" : "wbf",
+    "url" : "../wolken/wb0064.jpg"
+  },
+  "64" : {
+    "attr-file" : "wb0065",
+    "title-main-pict" : "Eisaufall",
+    "type-process" : "wbf",
+    "url" : "../wolken/wb0065.jpg"
+  },
+  "65" : {
+    "attr-file" : "wb0066",
+    "title-main-pict" : "Eisschollen auf der Oder",
+    "type-ice" : "ice floe",
+    "url" : "../wolken/wb0066.jpg"
+  },
+  "66" : {
+    "attr-file" : "wb0067",
+    "title-main-pict" : "Eisschollen auf der Oder",
+    "type-ice" : "ice floe",
+    "url" : "../wolken/wb0067.jpg"
+  },
+  "67" : {
+    "attr-file" : "wb0068",
+    "title-main-pict" : "Eistropfen",
+    "type-hydrometeor" : "rain",
+    "url" : "../wolken/wb0068.jpg"
+  },
+  "68" : {
+    "attr-file" : "wb0069",
+    "title-main-pict" : "Eiszapfen abgerutscht",
+    "type-ice" : "icicle",
+    "url" : "../wolken/wb0069.jpg"
+  },
+  "69" : {
+    "attr-file" : "wb0070",
+    "title-main-pict" : "Eiszapfen",
+    "type-ice" : "icicle",
+    "url" : "../wolken/wb0070.jpg"
+  },
+  "70" : {
+    "attr-file" : "wb0071",
+    "title-main-pict" : "gefrohrene Spree",
+    "type-ice" : "ice cover",
+    "url" : "../wolken/wb0071.jpg"
+  },
+  "71" : {
+    "attr-file" : "wb0072",
+    "edited" : "wgpagenkopf@googlemail.com",
+    "fbkey" : "71",
+    "title-main-pict" : "Kondensstreifen",
+    "title-sub-pict" : "Periodische Zerfaserung. Ursache?",
+    "type-special" : "anthropogenic",
+    "uid" : "41HxrQIBViT3ATiuYlu43KEsiDt1",
+    "url" : "../wolken/wb0072.jpg"
+  },
+  "72" : {
+    "attr-file" : "wb0073",
+    "title-main-pict" : "Fussspuren im Schnee",
+    "type-ice" : "snow cover",
+    "url" : "../wolken/wb0073.jpg"
+  },
+  "73" : {
+    "attr-file" : "wb0074",
+    "title-main-pict" : "Glorie",
+    "type-photometeor" : "glorie",
+    "url" : "../wolken/wb0074.jpg"
+  },
+  "74" : {
+    "attr-file" : "wb0075",
+    "title-main-pict" : "Graupel",
+    "type-hydrometeor" : "graupel",
+    "url" : "../wolken/wb0075.jpg"
+  },
+  "75" : {
+    "attr-file" : "wb0076",
+    "title-main-pict" : "Wolkengrenze",
+    "url" : "../wolken/wb0076.jpg"
+  },
+  "76" : {
+    "attr-file" : "wb0077",
+    "title-main-pict" : "Wolkengrenze",
+    "url" : "../wolken/wb0077.jpg"
+  },
+  "77" : {
+    "attr-file" : "wb0078",
+    "title-main-pict" : "Wolkengrenze",
+    "url" : "../wolken/wb0078.jpg"
+  },
+  "78" : {
+    "attr-file" : "wb0079",
+    "title-main-pict" : "Hagel",
+    "type-hydrometeor" : "hail",
+    "url" : "../wolken/wb0079.jpg"
+  },
+  "79" : {
+    "attr-file" : "wb0080",
+    "title-main-pict" : "Hagel",
+    "type-hydrometeor" : "hail",
+    "url" : "../wolken/wb0080.jpg"
+  },
+  "80" : {
+    "attr-file" : "wb0081",
+    "title-main-pict" : "Halo",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0081.jpg"
+  },
+  "81" : {
+    "attr-file" : "wb0082",
+    "title-main-pict" : "Helmholz Wellen",
+    "type-process" : "turbulence",
+    "url" : "../wolken/wb0082.jpg"
+  },
+  "82" : {
+    "attr-file" : "wb0083",
+    "title-main-pict" : "Helmholz Wellen",
+    "type-process" : "turbulence",
+    "url" : "../wolken/wb0083.jpg"
+  },
+  "83" : {
+    "attr-file" : "wb0084",
+    "title-main-pict" : "Herz",
+    "type-painting" : "looklike",
+    "url" : "../wolken/wb0084.jpg"
+  },
+  "84" : {
+    "attr-file" : "wb0085",
+    "title-main-pict" : "Horizontalkreis",
+    "type-photometeor" : "irisation",
+    "url" : "../wolken/wb0085.jpg"
+  },
+  "85" : {
+    "attr-file" : "wb0086",
+    "url" : "../wolken/wb0086.jpg"
+  },
+  "86" : {
+    "attr-file" : "wb0087",
+    "url" : "../wolken/wb0087.jpg"
+  },
+  "87" : {
+    "attr-file" : "wb0088",
+    "url" : "../wolken/wb0088.jpg"
+  },
+  "88" : {
+    "attr-file" : "wb0089",
+    "url" : "../wolken/wb0089.jpg"
+  },
+  "89" : {
+    "attr-file" : "wb0090",
+    "title-main-pict" : "irisierende Wolken",
+    "type-photometeor" : "irisation",
+    "url" : "../wolken/wb0090.jpg"
+  },
+  "90" : {
+    "attr-file" : "wb0091",
+    "title-main-pict" : "irisierende Wolken",
+    "type-photometeor" : "irisation",
+    "url" : "../wolken/wb0091.jpg"
+  },
+  "91" : {
+    "attr-file" : "wb0092",
+    "title-main-pict" : "irisierende Wolken",
+    "type-photometeor" : "irisation",
+    "url" : "../wolken/wb0092.jpg"
+  },
+  "92" : {
+    "attr-file" : "wb0093",
+    "title-main-pict" : "Kaltlufteinstroemen",
+    "url" : "../wolken/wb0093.jpg"
+  },
+  "93" : {
+    "attr-file" : "wb0094",
+    "title-main-pict" : "Wolkengrenze",
+    "url" : "../wolken/wb0094.jpg"
+  },
+  "94" : {
+    "attr-file" : "wb0095",
+    "title-main-pict" : "Schatten eines Kondensstreifens auf der Wolke",
+    "type-photometeor" : "shadow",
+    "url" : "../wolken/wb0095.jpg"
+  },
+  "95" : {
+    "attr-file" : "wb0096",
+    "title-main-pict" : "gefrohrene Pfuetze",
+    "type-ice" : "ice cover",
+    "url" : "../wolken/wb0096.jpg"
+  },
+  "96" : {
+    "attr-file" : "wb0097",
+    "title-main-pict" : "gefrohrene Pfuetze",
+    "type-ice" : "ice cover",
+    "url" : "../wolken/wb0097.jpg"
+  },
+  "97" : {
+    "attr-file" : "wb0098",
+    "title-main-pict" : "leuchtender Rand",
+    "url" : "../wolken/wb0098.jpg"
+  },
+  "98" : {
+    "attr-file" : "wb0099",
+    "title-main-pict" : "leuchtender Rand",
+    "url" : "../wolken/wb0099.jpg"
+  },
+  "99" : {
+    "attr-file" : "wb0100",
+    "title-main-pict" : "Lichtsaeule",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0100.jpg"
+  },
+  "100" : {
+    "attr-file" : "wb0101",
+    "title-main-pict" : "Lichtsaeule",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0101.jpg"
+  },
+  "101" : {
+    "attr-file" : "wb0102",
+    "title-main-pict" : "Lichtsaeule",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0102.jpg"
+  },
+  "102" : {
+    "attr-file" : "wb0103",
+    "title-main-pict" : "Luftblasen im Seeeis",
+    "type-ice" : "ice cover",
+    "url" : "../wolken/wb0103.jpg"
+  },
+  "103" : {
+    "attr-file" : "wb0104",
+    "title-main-pict" : "Hof um den Mond",
+    "url" : "../wolken/wb0104.jpg"
+  },
+  "104" : {
+    "attr-file" : "wb0105",
+    "title-main-pict" : "Nebensonnen",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0105.jpg"
+  },
+  "105" : {
+    "attr-file" : "wb0106",
+    "title-main-pict" : "Nebensonnen im Ac vir",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0106.jpg"
+  },
+  "106" : {
+    "attr-file" : "wb0107",
+    "title-main-pict" : "Nebensonnen",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0107.jpg"
+  },
+  "107" : {
+    "attr-file" : "wb0108",
+    "title-main-pict" : "Nebensonnen",
+    "title-sub-pict" : "WaterOnAirt tested",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0108.jpg"
+  },
+  "108" : {
+    "attr-file" : "wb0109",
+    "title-main-pict" : "Niederschlag",
+    "type-hydrometeor" : "rain",
+    "url" : "../wolken/wb0109.jpg"
+  },
+  "109" : {
+    "attr-file" : "wb0110",
+    "title-main-pict" : "Schatten des Niederschlags auf der Wolke",
+    "type-photometeor" : "shadow",
+    "url" : "../wolken/wb0110.jpg"
+  },
+  "110" : {
+    "attr-file" : "wb0111",
+    "title-main-pict" : "Oberer Beruehrungsbogen",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0111.jpg"
+  },
+  "111" : {
+    "attr-file" : "wb0112",
+    "title-main-pict" : "Ufo",
+    "type-photometeor" : "sun",
+    "url" : "../wolken/wb0112.jpg"
+  },
+  "112" : {
+    "attr-file" : "wb0113",
+    "title-main-pict" : "Polarlicht",
+    "type-electrometeor" : "aurora borealis",
+    "url" : "../wolken/wb0113.jpg"
+  },
+  "113" : {
+    "attr-file" : "wb0114",
+    "title-main-pict" : "Raureif",
+    "type-hydrometeor" : "hoar",
+    "url" : "../wolken/wb0114.jpg"
+  },
+  "114" : {
+    "attr-file" : "wb0115",
+    "title-main-pict" : "Raureif",
+    "type-hydrometeor" : "hoar",
+    "url" : "../wolken/wb0115.jpg"
+  },
+  "115" : {
+    "attr-file" : "wb0116",
+    "title-main-pict" : "Raureif",
+    "type-hydrometeor" : "hoar",
+    "url" : "../wolken/wb0116.jpg"
+  },
+  "116" : {
+    "attr-file" : "wb0117",
+    "title-main-pict" : "Raureif",
+    "type-hydrometeor" : "hoar",
+    "url" : "../wolken/wb0117.jpg"
+  },
+  "117" : {
+    "attr-file" : "wb0118",
+    "title-main-pict" : "Raureif",
+    "type-hydrometeor" : "hoar",
+    "url" : "../wolken/wb0118.jpg"
+  },
+  "118" : {
+    "attr-file" : "wb0119",
+    "title-main-pict" : "Raureif",
+    "type-hydrometeor" : "hoar",
+    "url" : "../wolken/wb0119.jpg"
+  },
+  "119" : {
+    "attr-file" : "wb0120",
+    "title-main-pict" : "Reflexion",
+    "type-ice" : "water reflection",
+    "url" : "../wolken/wb0120.jpg"
+  },
+  "120" : {
+    "attr-file" : "wb0121",
+    "title-main-pict" : "Reflexion",
+    "type-ice" : "water reflection",
+    "url" : "../wolken/wb0121.jpg"
+  },
+  "121" : {
+    "attr-file" : "wb0122",
+    "title-main-pict" : "Reflexion",
+    "type-ice" : "water reflection",
+    "url" : "../wolken/wb0122.jpg"
+  },
+  "122" : {
+    "attr-file" : "wb0123",
+    "title-main-pict" : "Reflexion",
+    "type-ice" : "water reflection",
+    "url" : "../wolken/wb0123.jpg"
+  },
+  "123" : {
+    "attr-file" : "wb0124",
+    "title-main-pict" : "Reflexion",
+    "type-ice" : "water reflection",
+    "url" : "../wolken/wb0124.jpg"
+  },
+  "124" : {
+    "attr-file" : "wb0125",
+    "title-main-pict" : "Regenbogen bei Sonnenaufgang",
+    "type-photometeor" : "rainbow",
+    "url" : "../wolken/wb0125.jpg"
+  },
+  "125" : {
+    "attr-file" : "wb0126",
+    "title-main-pict" : "Regenbogen im Springbrunnen",
+    "type-photometeor" : "rainbow",
+    "url" : "../wolken/wb0126.jpg"
+  },
+  "126" : {
+    "attr-file" : "wb0127",
+    "title-main-pict" : "Regenbogen",
+    "type-photometeor" : "rainbow",
+    "url" : "../wolken/wb0127.jpg"
+  },
+  "127" : {
+    "attr-file" : "wb0128",
+    "title-main-pict" : "Regenbogen in Wolke",
+    "type-photometeor" : "rainbow",
+    "url" : "../wolken/wb0128.jpg"
+  },
+  "128" : {
+    "attr-file" : "wb0129",
+    "title-main-pict" : "Regenschauer",
+    "type-hydrometeor" : "rain",
+    "url" : "../wolken/wb0129.jpg"
+  },
+  "129" : {
+    "attr-file" : "wb0130",
+    "title-main-pict" : "Regentropfen",
+    "type-hydrometeor" : "rain",
+    "url" : "../wolken/wb0130.jpg"
+  },
+  "130" : {
+    "attr-file" : "wb0131",
+    "title-main-pict" : "Reif",
+    "type-hydrometeor" : "rime",
+    "url" : "../wolken/wb0131.jpg"
+  },
+  "131" : {
+    "title-main-pict" : "Sc mam",
+    "type-character" : "heap",
+    "type-genus" : "sc",
+    "type-height" : "middle",
+    "url" : "../wolken/wb0132.jpg"
+  },
+  "132" : {
+    "attr-file" : "wb0133",
+    "title-main-pict" : "Sc asp",
+    "type-genus" : "sc",
+    "url" : "../wolken/wb0133.jpg"
+  },
+  "133" : {
+    "attr-file" : "wb0134",
+    "title-main-pict" : "Sc asp",
+    "url" : "../wolken/wb0134.jpg"
+  },
+  "134" : {
+    "attr-file" : "wb0135",
+    "title-main-pict" : "Sc cas",
+    "type-genus" : "sc",
+    "url" : "../wolken/wb0135.jpg"
+  },
+  "135" : {
+    "attr-file" : "wb0136",
+    "title-main-pict" : "Sc flo",
+    "type-genus" : "sc",
+    "url" : "../wolken/wb0136.jpg"
+  },
+  "136" : {
+    "attr-file" : "wb0137",
+    "title-main-pict" : "Schatten claudia",
+    "type-photometeor" : "shadow",
+    "url" : "../wolken/wb0137.jpg"
+  },
+  "137" : {
+    "title-main-pict" : "Schattenschutz ",
+    "title-sub-pict" : "WaterOnAir dev",
+    "url" : "../wolken/wb0138.jpg"
+  },
+  "138" : {
+    "attr-file" : "wb0139",
+    "title-main-pict" : "Schattenstrahlen ",
+    "type-photometeor" : "shadow",
+    "url" : "../wolken/wb0139.jpg"
+  },
+  "139" : {
+    "attr-file" : "wb0140",
+    "title-main-pict" : "Schattenstrahlen ",
+    "type-photometeor" : "scattering",
+    "url" : "../wolken/wb0140.jpg"
+  },
+  "140" : {
+    "attr-file" : "wb0141",
+    "title-main-pict" : "Schatten streuung",
+    "type-photometeor" : "scattering",
+    "url" : "../wolken/wb0141.jpg"
+  },
+  "141" : {
+    "attr-file" : "wb0142",
+    "title-main-pict" : "Schauer ",
+    "type-hydrometeor" : "rain",
+    "url" : "../wolken/wb0142.jpg"
+  },
+  "142" : {
+    "attr-file" : "wb0143",
+    "title-main-pict" : "Schauer ",
+    "type-hydrometeor" : "rain",
+    "url" : "../wolken/wb0143.jpg"
+  },
+  "143" : {
+    "attr-file" : "wb0144",
+    "title-main-pict" : "Schneeschauer",
+    "type-hydrometeor" : "snow",
+    "url" : "../wolken/wb0144.jpg"
+  },
+  "144" : {
+    "attr-file" : "wb0145",
+    "title-main-pict" : "Schneeanlagerung ",
+    "type-ice" : "snow cover",
+    "url" : "../wolken/wb0145.jpg"
+  },
+  "145" : {
+    "attr-file" : "wb0146",
+    "title-main-pict" : "Schneedecke ",
+    "type-ice" : "snow cover",
+    "url" : "../wolken/wb0146.jpg"
+  },
+  "146" : {
+    "attr-file" : "wb0147",
+    "title-main-pict" : "Schneedecke ",
+    "type-ice" : "snow cover",
+    "url" : "../wolken/wb0147.jpg"
+  },
+  "147" : {
+    "attr-file" : "wb0148",
+    "title-main-pict" : "Schneeflocken ",
+    "type-hydrometeor" : "snow",
+    "url" : "../wolken/wb0148.jpg"
+  },
+  "148" : {
+    "attr-file" : "wb0149",
+    "title-main-pict" : "Schneerutsche ",
+    "type-ice" : "snow cover",
+    "url" : "../wolken/wb0149.jpg"
+  },
+  "149" : {
+    "attr-file" : "wb0150",
+    "title-main-pict" : "Schnee turm",
+    "type-ice" : "snow cover",
+    "url" : "../wolken/wb0150.jpg"
+  },
+  "150" : {
+    "attr-file" : "wb0151",
+    "title-main-pict" : "Schneewehe ",
+    "type-ice" : "snow cover",
+    "url" : "../wolken/wb0151.jpg"
+  },
+  "151" : {
+    "attr-file" : "wb0152",
+    "title-main-pict" : "Sc la",
+    "type-genus" : "sc",
+    "url" : "../wolken/wb0152.jpg"
+  },
+  "152" : {
+    "attr-file" : "wb0153",
+    "title-main-pict" : "Sc op",
+    "type-genus" : "sc",
+    "url" : "../wolken/wb0153.jpg"
+  },
+  "153" : {
+    "attr-file" : "wb0154",
+    "title-main-pict" : "Sc pe",
+    "type-genus" : "sc",
+    "url" : "../wolken/wb0154.jpg"
+  },
+  "154" : {
+    "attr-file" : "wb0155",
+    "title-main-pict" : "Scpe",
+    "url" : "../wolken/wb0155.jpg"
+  },
+  "155" : {
+    "attr-file" : "wb0156",
+    "title-main-pict" : "Sc tr",
+    "type-genus" : "sc",
+    "url" : "../wolken/wb0156.jpg"
+  },
+  "156" : {
+    "attr-file" : "wb0157",
+    "title-main-pict" : "Sc un",
+    "type-genus" : "sc",
+    "url" : "../wolken/wb0157.jpg"
+  },
+  "157" : {
+    "attr-file" : "wb0158",
+    "title-main-pict" : "Sc un",
+    "url" : "../wolken/wb0158.jpg"
+  },
+  "158" : {
+    "attr-file" : "wb0159",
+    "title-main-pict" : "Shelfcloud",
+    "url" : "../wolken/wb0159.jpg"
+  },
+  "159" : {
+    "attr-file" : "wb0160",
+    "title-main-pict" : "Spiegel ",
+    "type-ice" : "water reflection",
+    "url" : "../wolken/wb0160.jpg"
+  },
+  "160" : {
+    "attr-file" : "wb0161",
+    "title-main-pict" : "Spiegel ",
+    "type-ice" : "water reflection",
+    "url" : "../wolken/wb0161.jpg"
+  },
+  "161" : {
+    "attr-file" : "wb0162",
+    "title-main-pict" : "St fra",
+    "type-genus" : "st",
+    "url" : "../wolken/wb0162.jpg"
+  },
+  "162" : {
+    "attr-file" : "wb0163",
+    "title-main-pict" : "St neb",
+    "type-genus" : "st",
+    "url" : "../wolken/wb0163.jpg"
+  },
+  "163" : {
+    "attr-file" : "wb0164",
+    "title-main-pict" : "St op",
+    "type-genus" : "st",
+    "url" : "../wolken/wb0164.jpg"
+  },
+  "164" : {
+    "attr-file" : "wb0165",
+    "title-main-pict" : "St pra",
+    "type-genus" : "st",
+    "url" : "../wolken/wb0165.jpg"
+  },
+  "165" : {
+    "attr-file" : "wb0166",
+    "title-main-pict" : "St tr",
+    "type-genus" : "st",
+    "url" : "../wolken/wb0166.jpg"
+  },
+  "166" : {
+    "attr-file" : "wb0167",
+    "title-main-pict" : "Sonnenuntergang",
+    "type-photometeor" : "sun",
+    "url" : "../wolken/wb0167.jpg"
+  },
+  "167" : {
+    "attr-file" : "wb0168",
+    "title-main-pict" : "sc tr",
+    "url" : "../wolken/wb0168.jpg"
+  },
+  "168" : {
+    "attr-file" : "wb0169",
+    "title-main-pict" : "Turbulenzwolke",
+    "url" : "../wolken/wb0169.jpg"
+  },
+  "169" : {
+    "attr-file" : "wb0170",
+    "title-main-pict" : "oben umschriebener Halo",
+    "type-photometeor" : "halo",
+    "type-process" : "turbulence",
+    "url" : "../wolken/wb0170.jpg"
+  },
+  "170" : {
+    "attr-file" : "wb0171",
+    "title-main-pict" : "unten umschriebener Halo ",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0171.jpg"
+  },
+  "171" : {
+    "attr-file" : "wb0172",
+    "title-main-pict" : "Wirbelschleppe",
+    "type-fromtop" : "plane",
+    "url" : "../wolken/wb0172.jpg"
+  },
+  "172" : {
+    "attr-file" : "wb0173",
+    "title-main-pict" : "Wolkenunterkannte",
+    "url" : "../wolken/wb0173.jpg"
+  },
+  "173" : {
+    "attr-file" : "wb0174",
+    "title-main-pict" : "Wolkenunterseite",
+    "url" : "../wolken/wb0174.jpg"
+  },
+  "174" : {
+    "attr-file" : "wb0175",
+    "title-main-pict" : "Sc op",
+    "url" : "../wolken/wb0175.jpg"
+  },
+  "175" : {
+    "attr-file" : "wb0176",
+    "title-main-pict" : "Wolkenunterseite",
+    "url" : "../wolken/wb0176.jpg"
+  },
+  "176" : {
+    "attr-file" : "wb0177",
+    "title-main-pict" : "Wolkenunterseite",
+    "url" : "../wolken/wb0177.jpg"
+  },
+  "177" : {
+    "attr-file" : "wb0178",
+    "title-main-pict" : "Wolkenunterseite",
+    "url" : "../wolken/wb0178.jpg"
+  },
+  "178" : {
+    "attr-file" : "wb0179",
+    "title-main-pict" : "Wolkenunterseite",
+    "url" : "../wolken/wb0179.jpg"
+  },
+  "179" : {
+    "attr-file" : "wb0180",
+    "title-main-pict" : "Vorderseite",
+    "url" : "../wolken/wb0180.jpg"
+  },
+  "180" : {
+    "attr-file" : "wb0181",
+    "title-main-pict" : "Ausfrieren",
+    "type-process" : "wbs",
+    "url" : "../wolken/wb0181.jpg"
+  },
+  "181" : {
+    "attr-file" : "wb0182",
+    "title-main-pict" : "Wellen in Kondensstreifen",
+    "url" : "../wolken/wb0182.jpg"
+  },
+  "182" : {
+    "attr-file" : "wb0183",
+    "title-main-pict" : "Wolkenwirbelchen",
+    "type-process" : "turbulence",
+    "url" : "../wolken/wb0183.jpg"
+  },
+  "183" : {
+    "attr-file" : "wb0184",
+    "title-main-pict" : "Wolkenstrasse",
+    "type-process" : "turbulence",
+    "url" : "../wolken/wb0184.jpg"
+  },
+  "184" : {
+    "attr-file" : "wb0185",
+    "title-main-pict" : "Zirkumzenitalbogen",
+    "type-photometeor" : "halo",
+    "url" : "../wolken/wb0185.jpg"
+  },
+  "185" : {
+    "title-main-pict" : "Aufwindabriss",
+    "type-character" : "heap",
+    "type-genus" : "ac",
+    "type-height" : "middle",
+    "type-year" : 2007,
+    "url" : "../wolken/wb0186.jpg"
+  },
+  "186" : {
+    "attr-file" : "wk12002-01",
+    "title-main-pict" : "Jan 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-01.jpg"
+  },
+  "187" : {
+    "attr-file" : "wk12002-02",
+    "title-main-pict" : "Feb 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-02.jpg"
+  },
+  "188" : {
+    "attr-file" : "wk12002-03",
+    "title-main-pict" : "Mrz 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-03.jpg"
+  },
+  "189" : {
+    "attr-file" : "wk12002-04",
+    "title-main-pict" : "Apr 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-04.jpg"
+  },
+  "190" : {
+    "attr-file" : "wk12002-05",
+    "title-main-pict" : "Mai 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-05.jpg"
+  },
+  "191" : {
+    "attr-file" : "wk12002-06",
+    "title-main-pict" : "Jun 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-06.jpg"
+  },
+  "192" : {
+    "attr-file" : "wk12002-07",
+    "title-main-pict" : "Jul 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-07.jpg"
+  },
+  "193" : {
+    "attr-file" : "wk12002-08",
+    "title-main-pict" : "Aug 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-08.jpg"
+  },
+  "194" : {
+    "attr-file" : "wk12002-09",
+    "title-main-pict" : "Sep 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-09.jpg"
+  },
+  "195" : {
+    "attr-file" : "wk12002-10",
+    "title-main-pict" : "Okt 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-10.jpg"
+  },
+  "196" : {
+    "attr-file" : "wk12002-11",
+    "title-main-pict" : "Nov 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-11.jpg"
+  },
+  "197" : {
+    "attr-file" : "wk12002-12",
+    "title-main-pict" : "Dez 02",
+    "type-year" : 2002,
+    "url" : "../wolken/wk12002-12.jpg"
+  },
+  "198" : {
+    "attr-file" : "wk12003-01",
+    "title-main-pict" : "Deckblatt 2003",
+    "title-sub-pict" : "Bodennebel",
+    "type-fog" : "radiation",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-01.jpg"
+  },
+  "199" : {
+    "attr-file" : "wk12003-02",
+    "title-main-pict" : "Jan 03",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-02.jpg"
+  },
+  "200" : {
+    "attr-file" : "wk12003-03",
+    "title-main-pict" : "Feb 03",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-03.jpg"
+  },
+  "201" : {
+    "attr-file" : "wk12003-04",
+    "title-main-pict" : "Mrz 03",
+    "title-sub-pict" : "Nebensonne",
+    "type-photometeor" : "halo",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-04.jpg"
+  },
+  "202" : {
+    "attr-file" : "wk12003-05",
+    "title-main-pict" : "Apr 03",
+    "type-height" : "low",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-05.jpg"
+  },
+  "203" : {
+    "attr-file" : "wk12003-06",
+    "title-main-pict" : "Mai 03",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-06.jpg"
+  },
+  "204" : {
+    "attr-file" : "wk12003-07",
+    "title-main-pict" : "Jun 03",
+    "title-sub-pict" : "Bodennebel",
+    "type-fog" : "radiation",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-07.jpg"
+  },
+  "205" : {
+    "attr-file" : "wk12003-08",
+    "title-main-pict" : "Jul 03",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-08.jpg"
+  },
+  "206" : {
+    "attr-file" : "wk12003-09",
+    "title-main-pict" : "Aug 03",
+    "type-painting" : "looklike",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-09.jpg"
+  },
+  "207" : {
+    "attr-file" : "wk12003-10",
+    "title-main-pict" : "Sep 03",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-10.jpg"
+  },
+  "208" : {
+    "attr-file" : "wk12003-11",
+    "title-main-pict" : "Okt 03",
+    "title-sub-pict" : "Sonnenuntergang",
+    "type-photometeor" : "sun",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-11.jpg"
+  },
+  "209" : {
+    "attr-file" : "wk12003-12",
+    "title-main-pict" : "Nov 03",
+    "title-sub-pict" : "silver lining",
+    "type-painting" : "looklike",
+    "type-photometeor" : "scattering",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-12.jpg"
+  },
+  "210" : {
+    "attr-file" : "wk12003-13",
+    "title-main-pict" : "Dez 03",
+    "title-sub-pict" : "Nebel",
+    "type-fog" : "fog",
+    "type-height" : "low",
+    "type-year" : 2003,
+    "url" : "../wolken/wk12003-13.jpg"
+  },
+  "211" : {
+    "attr-file" : "wk12004-01",
+    "title-main-pict" : "Deckblatt 2004",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-01.jpg"
+  },
+  "212" : {
+    "attr-file" : "wk12004-02",
+    "title-main-pict" : "Jan 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-02.jpg"
+  },
+  "213" : {
+    "attr-file" : "wk12004-03",
+    "title-main-pict" : "Feb 04",
+    "type-height" : "low",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-03.jpg"
+  },
+  "214" : {
+    "attr-file" : "wk12004-04",
+    "title-main-pict" : "Mrz 04",
+    "title-sub-pict" : "Halo, Schatten eines Kondesstreifen",
+    "type-photometeor" : "halo",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-04.jpg"
+  },
+  "215" : {
+    "attr-file" : "wk12004-05",
+    "title-main-pict" : "Apr 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-05.jpg"
+  },
+  "216" : {
+    "attr-file" : "wk12004-06",
+    "title-main-pict" : "Mai 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-06.jpg"
+  },
+  "217" : {
+    "attr-file" : "wk12004-07",
+    "title-main-pict" : "Jun 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-07.jpg"
+  },
+  "218" : {
+    "attr-file" : "wk12004-08",
+    "title-main-pict" : "Jul 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-08.jpg"
+  },
+  "219" : {
+    "attr-file" : "wk12004-09",
+    "title-main-pict" : "Aug 04",
+    "type-painting" : "looklike",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-09.jpg"
+  },
+  "220" : {
+    "attr-file" : "wk12004-10",
+    "title-main-pict" : "Sep 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-10.jpg"
+  },
+  "221" : {
+    "attr-file" : "wk12004-11",
+    "title-main-pict" : "Okt 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-11.jpg"
+  },
+  "222" : {
+    "attr-file" : "wk12004-12",
+    "title-main-pict" : "Nov 04",
+    "type-painting" : "looklike",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-12.jpg"
+  },
+  "223" : {
+    "attr-file" : "wk12004-13",
+    "title-main-pict" : "Dez 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk12004-13.jpg"
+  },
+  "224" : {
+    "attr-file" : "wk22004-01",
+    "title-main-pict" : "Deckblatt 2004",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-01.jpg"
+  },
+  "225" : {
+    "attr-file" : "wk22004-02",
+    "title-main-pict" : "Jan 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-02.jpg"
+  },
+  "226" : {
+    "attr-file" : "wk22004-03",
+    "title-main-pict" : "Feb 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-03.jpg"
+  },
+  "227" : {
+    "attr-file" : "wk22004-04",
+    "title-main-pict" : "Mrz 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-04.jpg"
+  },
+  "228" : {
+    "attr-file" : "wk22004-05",
+    "title-main-pict" : "Apr 04",
+    "title-sub-pict" : "Kondensstreifen",
+    "type-special" : "anthropogenic",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-05.jpg"
+  },
+  "229" : {
+    "attr-file" : "wk22004-06",
+    "title-main-pict" : "Mai 04",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-06.jpg"
+  },
+  "230" : {
+    "attr-file" : "wk22004-07",
+    "title-main-pict" : "Jun 04",
+    "title-sub-pict" : "Kondensstreifen",
+    "type-painting" : "background",
+    "type-special" : "anthropogenic",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-07.jpg"
+  },
+  "231" : {
+    "attr-file" : "wk22004-08",
+    "title-main-pict" : "Jul 04",
+    "title-sub-pict" : "Berg in Wolken",
+    "type-special" : "orographic",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-08.jpg"
+  },
+  "232" : {
+    "attr-file" : "wk22004-09",
+    "title-main-pict" : "Aug 04",
+    "type-painting" : "background",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-09.jpg"
+  },
+  "233" : {
+    "attr-file" : "wk22004-10",
+    "title-main-pict" : "Sep 04",
+    "title-sub-pict" : "Wolkenfall",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-10.jpg"
+  },
+  "234" : {
+    "attr-file" : "wk22004-11",
+    "title-main-pict" : "Okt 04",
+    "type-height" : "low",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-11.jpg"
+  },
+  "235" : {
+    "attr-file" : "wk22004-12",
+    "title-main-pict" : "Nov 04",
+    "type-painting" : "background",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-12.jpg"
+  },
+  "236" : {
+    "attr-file" : "wk22004-13",
+    "title-main-pict" : "Dez 04",
+    "type-painting" : "background",
+    "type-year" : 2004,
+    "url" : "../wolken/wk22004-13.jpg"
+  },
+  "237" : {
+    "attr-file" : "wk12005-01",
+    "title-main-pict" : "2005 KW1",
+    "type-painting" : "background",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-01.jpg"
+  },
+  "238" : {
+    "attr-file" : "wk12005-02",
+    "title-main-pict" : "2005 KW2",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-02.jpg"
+  },
+  "239" : {
+    "attr-file" : "wk12005-03",
+    "title-main-pict" : "2005 KW3",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-03.jpg"
+  },
+  "240" : {
+    "attr-file" : "wk12005-04",
+    "title-main-pict" : "2005 KW4",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-04.jpg"
+  },
+  "241" : {
+    "attr-file" : "wk12005-05",
+    "title-main-pict" : "2005 KW5",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-05.jpg"
+  },
+  "242" : {
+    "attr-file" : "wk12005-06",
+    "title-main-pict" : "2005 KW6",
+    "title-sub-pict" : "Sonnenuntergang",
+    "type-painting" : "artist",
+    "type-photometeor" : "sun",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-06.jpg"
+  },
+  "243" : {
+    "attr-file" : "wk12005-07",
+    "title-main-pict" : "2005 KW7",
+    "type-painting" : "artist",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-07.jpg"
+  },
+  "244" : {
+    "attr-file" : "wk12005-08",
+    "title-main-pict" : "2005 KW8",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-08.jpg"
+  },
+  "245" : {
+    "attr-file" : "wk12005-09",
+    "title-main-pict" : "2005 KW9",
+    "title-sub-pict" : "Sonnenuntergang, Kondensstreifen",
+    "type-photometeor" : "sun",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-09.jpg"
+  },
+  "246" : {
+    "attr-file" : "wk12005-10",
+    "title-main-pict" : "2005 KW10",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-10.jpg"
+  },
+  "247" : {
+    "attr-file" : "wk12005-11",
+    "title-main-pict" : "2005 KW11",
+    "title-sub-pict" : "Aufloesung",
+    "type-process" : "dissolving",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-11.jpg"
+  },
+  "248" : {
+    "attr-file" : "wk12005-12",
+    "title-main-pict" : "2005 KW12",
+    "type-height" : "middle",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-12.jpg"
+  },
+  "249" : {
+    "attr-file" : "wk12005-13",
+    "title-main-pict" : "2005 KW13",
+    "title-sub-pict" : "Sonnenuntergang, Aufloesung",
+    "type-photometeor" : "sun",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-13.jpg"
+  },
+  "250" : {
+    "attr-file" : "wk12005-14",
+    "title-main-pict" : "2005 KW14",
+    "title-sub-pict" : "Bergnebel",
+    "type-fog" : "evaporation",
+    "type-painting" : "artist",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-14.jpg"
+  },
+  "251" : {
+    "attr-file" : "wk12005-15",
+    "title-main-pict" : "2005 KW15",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-15.jpg"
+  },
+  "252" : {
+    "attr-file" : "wk12005-16",
+    "title-main-pict" : "2005 KW16",
+    "type-height" : "low",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-16.jpg"
+  },
+  "253" : {
+    "attr-file" : "wk12005-17",
+    "title-main-pict" : "2005 KW17",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-17.jpg"
+  },
+  "254" : {
+    "attr-file" : "wk12005-18",
+    "title-main-pict" : "2005 KW18",
+    "title-sub-pict" : "asperitas",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-18.jpg"
+  },
+  "255" : {
+    "attr-file" : "wk12005-19",
+    "title-main-pict" : "2005 KW19",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-19.jpg"
+  },
+  "256" : {
+    "attr-file" : "wk12005-20",
+    "title-main-pict" : "2005 KW20",
+    "title-sub-pict" : "Regenbogen",
+    "type-photometeor" : "rainbow",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-20.jpg"
+  },
+  "257" : {
+    "attr-file" : "wk12005-21",
+    "title-main-pict" : "2005 KW21",
+    "title-sub-pict" : "Halo",
+    "type-height" : "high",
+    "type-photometeor" : "halo",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-21.jpg"
+  },
+  "258" : {
+    "attr-file" : "wk12005-22",
+    "title-main-pict" : "2005 KW22",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-22.jpg"
+  },
+  "259" : {
+    "attr-file" : "wk12005-23",
+    "title-main-pict" : "2005 KW23",
+    "title-sub-pict" : "asperitas",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-23.jpg"
+  },
+  "260" : {
+    "attr-file" : "wk12005-24",
+    "title-main-pict" : "2005 KW24",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-24.jpg"
+  },
+  "261" : {
+    "attr-file" : "wk12005-25",
+    "title-main-pict" : "2005 KW25",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-25.jpg"
+  },
+  "262" : {
+    "attr-file" : "wk12005-26",
+    "title-main-pict" : "2005 KW26",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-26.jpg"
+  },
+  "263" : {
+    "attr-file" : "wk12005-27",
+    "title-main-pict" : "2005 KW27",
+    "title-sub-pict" : "Bergnebel",
+    "type-fog" : "evaporation",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-27.jpg"
+  },
+  "264" : {
+    "attr-file" : "wk12005-28",
+    "title-main-pict" : "2005 KW28",
+    "title-sub-pict" : "Sonnenuntergang",
+    "type-photometeor" : "sun",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-28.jpg"
+  },
+  "265" : {
+    "attr-file" : "wk12005-29",
+    "title-main-pict" : "2005 KW29",
+    "title-sub-pict" : "keine Wolken",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-29.jpg"
+  },
+  "266" : {
+    "attr-file" : "wk12005-30",
+    "title-main-pict" : "2005 KW30",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-30.jpg"
+  },
+  "267" : {
+    "attr-file" : "wk12005-31",
+    "title-main-pict" : "2005 KW31",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-31.jpg"
+  },
+  "268" : {
+    "attr-file" : "wk12005-32",
+    "title-main-pict" : "2005 KW32",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-32.jpg"
+  },
+  "269" : {
+    "attr-file" : "wk12005-33",
+    "title-main-pict" : "2005 KW33",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-33.jpg"
+  },
+  "270" : {
+    "attr-file" : "wk12005-34",
+    "title-main-pict" : "2005 KW34",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-34.jpg"
+  },
+  "271" : {
+    "attr-file" : "wk12005-35",
+    "title-main-pict" : "2005 KW35",
+    "title-sub-pict" : "roter Regenbogen, Sonnenuntergang",
+    "type-photometeor" : "rainbow",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-35.jpg"
+  },
+  "272" : {
+    "attr-file" : "wk12005-36",
+    "title-main-pict" : "2005 KW36",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-36.jpg"
+  },
+  "273" : {
+    "attr-file" : "wk12005-37",
+    "title-main-pict" : "2005 KW37",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-37.jpg"
+  },
+  "274" : {
+    "attr-file" : "wk12005-38",
+    "title-main-pict" : "2005 KW38",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-38.jpg"
+  },
+  "275" : {
+    "attr-file" : "wk12005-39",
+    "title-main-pict" : "2005 KW39",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-39.jpg"
+  },
+  "276" : {
+    "attr-file" : "wk12005-40",
+    "title-main-pict" : "2005 KW40",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-40.jpg"
+  },
+  "277" : {
+    "attr-file" : "wk12005-41",
+    "title-main-pict" : "2005 KW41",
+    "title-sub-pict" : "Regenbogen",
+    "type-photometeor" : "rainbow",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-41.jpg"
+  },
+  "278" : {
+    "attr-file" : "wk12005-42",
+    "title-main-pict" : "2005 KW42",
+    "title-sub-pict" : "Kontaktnebel",
+    "type-fog" : "advection",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-42.jpg"
+  },
+  "279" : {
+    "attr-file" : "wk12005-43",
+    "title-main-pict" : "2005 KW43",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-43.jpg"
+  },
+  "280" : {
+    "attr-file" : "wk12005-44",
+    "title-main-pict" : "2005 KW44",
+    "title-sub-pict" : "Glorie",
+    "type-fromtop" : "plane",
+    "type-photometeor" : "glorie",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-44.jpg"
+  },
+  "281" : {
+    "attr-file" : "wk12005-45",
+    "title-main-pict" : "2005 KW45",
+    "title-sub-pict" : "Wirbelschleppe",
+    "type-fromtop" : "plane",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-45.jpg"
+  },
+  "282" : {
+    "attr-file" : "wk12005-46",
+    "title-main-pict" : "2005 KW46",
+    "type-fromtop" : "plane",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-46.jpg"
+  },
+  "283" : {
+    "attr-file" : "wk12005-47",
+    "title-main-pict" : "2005 KW47",
+    "title-sub-pict" : "Wolkenuntergrenze",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-47.jpg"
+  },
+  "284" : {
+    "title-main-pict" : "2005 KW48",
+    "type-character" : "heap",
+    "type-genus" : "cu",
+    "type-height" : "low",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-48.jpg"
+  },
+  "285" : {
+    "attr-file" : "wk12005-49",
+    "title-main-pict" : "2005 KW49",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-49.jpg"
+  },
+  "286" : {
+    "attr-file" : "wk12005-50",
+    "title-main-pict" : "2005 KW50",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-50.jpg"
+  },
+  "287" : {
+    "attr-file" : "wk12005-51",
+    "title-main-pict" : "2005 KW51",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-51.jpg"
+  },
+  "288" : {
+    "attr-file" : "wk12005-52",
+    "title-main-pict" : "2005 KW52",
+    "title-sub-pict" : "irisieren",
+    "type-photometeor" : "irisation",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-52.jpg"
+  },
+  "289" : {
+    "attr-file" : "wk12005-53",
+    "title-main-pict" : "2005 KW53",
+    "title-sub-pict" : "Aufloesung",
+    "type-process" : "dissolving",
+    "type-year" : 2005,
+    "url" : "../wolken/wk12005-53.jpg"
+  },
+  "290" : {
+    "attr-file" : "wk12006-01",
+    "edited" : "wgpagenkopf@googlemail.com",
+    "fbkey" : "290",
+    "title-main-pict" : "Jan 06",
+    "type-character" : "fleecy",
+    "type-genus" : "ci",
+    "type-height" : "high",
+    "type-year" : 2006,
+    "uid" : "41HxrQIBViT3ATiuYlu43KEsiDt1",
+    "url" : "../wolken/wk12006-01.jpg"
+  },
+  "291" : {
+    "attr-file" : "wk12006-02",
+    "title-main-pict" : "Feb 06",
+    "type-character" : "sheet",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-02.jpg"
+  },
+  "292" : {
+    "attr-file" : "wk12006-03",
+    "title-main-pict" : "Mrz 06",
+    "title-sub-pict" : "Strahlen, Aufloesung",
+    "type-photometeor" : "scattering",
+    "type-process" : "dissolving",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-03.jpg"
+  },
+  "293" : {
+    "attr-file" : "wk12006-04",
+    "title-main-pict" : "Apr 06",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-04.jpg"
+  },
+  "294" : {
+    "attr-file" : "wk12006-05",
+    "title-main-pict" : "Mai 06",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-05.jpg"
+  },
+  "295" : {
+    "attr-file" : "wk12006-06",
+    "title-main-pict" : "Jun 06",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-06.jpg"
+  },
+  "296" : {
+    "attr-file" : "wk12006-07",
+    "title-main-pict" : "Jul 06",
+    "title-sub-pict" : "Nebensonne, Kondensstreifen",
+    "type-height" : "high",
+    "type-photometeor" : "halo",
+    "type-special" : "anthropogenic",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-07.jpg"
+  },
+  "297" : {
+    "attr-file" : "wk12006-08",
+    "title-main-pict" : "Aug 06",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-08.jpg"
+  },
+  "298" : {
+    "attr-file" : "wk12006-09",
+    "title-main-pict" : "Sep 06",
+    "type-character" : "sheet",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-09.jpg"
+  },
+  "299" : {
+    "attr-file" : "wk12006-10",
+    "title-main-pict" : "Okt 06",
+    "type-height" : "high",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-10.jpg"
+  },
+  "300" : {
+    "attr-file" : "wk12006-11",
+    "title-main-pict" : "Nov 06",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-11.jpg"
+  },
+  "301" : {
+    "attr-file" : "wk12006-12",
+    "title-main-pict" : "Dez 06",
+    "type-year" : 2006,
+    "url" : "../wolken/wk12006-12.jpg"
+  },
+  "302" : {
+    "attr-file" : "wk12007-01",
+    "title-main-pict" : "Deckblatt 2007",
+    "title-sub-pict" : "oberer Berührungsbogen",
+    "type-photometeor" : "halo",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-01.jpg"
+  },
+  "303" : {
+    "attr-file" : "wk12007-02",
+    "title-main-pict" : "Jan 07",
+    "title-sub-pict" : "Rauhreif",
+    "type-hydrometeor" : "hoar",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-02.jpg"
+  },
+  "304" : {
+    "attr-file" : "wk12007-03",
+    "title-main-pict" : "Feb 07",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-03.jpg"
+  },
+  "305" : {
+    "attr-file" : "wk12007-04",
+    "title-main-pict" : "Mrz 07",
+    "title-sub-pict" : "Kondensstreifen",
+    "type-special" : "anthropogenic",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-04.jpg"
+  },
+  "306" : {
+    "attr-file" : "wk12007-05",
+    "title-main-pict" : "Apr 07",
+    "type-height" : "middle",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-05.jpg"
+  },
+  "307" : {
+    "attr-file" : "wk12007-06",
+    "title-main-pict" : "Mai 07",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-06.jpg"
+  },
+  "308" : {
+    "attr-file" : "wk12007-07",
+    "title-main-pict" : "Jun 07",
+    "title-sub-pict" : "Sonnenuntergang",
+    "type-photometeor" : "sun",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-07.jpg"
+  },
+  "309" : {
+    "attr-file" : "wk12007-08",
+    "title-main-pict" : "Jul 07",
+    "type-height" : "low",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-08.jpg"
+  },
+  "310" : {
+    "attr-file" : "wk12007-09",
+    "title-main-pict" : "Aug 07",
+    "type-height" : "low",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-09.jpg"
+  },
+  "311" : {
+    "attr-file" : "wk12007-10",
+    "title-main-pict" : "Sep 07",
+    "title-sub-pict" : "Aufloesung",
+    "type-process" : "dissolving",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-10.jpg"
+  },
+  "312" : {
+    "attr-file" : "wk12007-11",
+    "title-main-pict" : "Okt 07",
+    "title-sub-pict" : "Strahlungsnebel, Sonnenaufgang",
+    "type-fog" : "radiation",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-11.jpg"
+  },
+  "313" : {
+    "attr-file" : "wk12007-12",
+    "title-main-pict" : "Nov 07",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-12.jpg"
+  },
+  "314" : {
+    "attr-file" : "wk12007-13",
+    "title-main-pict" : "Dez 07",
+    "type-year" : 2007,
+    "url" : "../wolken/wk12007-13.jpg"
+  },
+  "315" : {
+    "attr-file" : "wk12008-01",
+    "title-main-pict" : "Deckblatt 2008",
+    "title-sub-pict" : "Aufloesung",
+    "type-process" : "dissolving",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-01.jpg"
+  },
+  "316" : {
+    "attr-file" : "wk12008-02",
+    "title-main-pict" : "Jan 08",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-02.jpg"
+  },
+  "317" : {
+    "attr-file" : "wk12008-03",
+    "title-main-pict" : "Feb 08",
+    "type-height" : "high",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-03.jpg"
+  },
+  "318" : {
+    "attr-file" : "wk12008-04",
+    "title-main-pict" : "Mrz 08",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-04.jpg"
+  },
+  "319" : {
+    "attr-file" : "wk12008-05",
+    "title-main-pict" : "Apr 08",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-05.jpg"
+  },
+  "320" : {
+    "attr-file" : "wk12008-06",
+    "title-main-pict" : "Mai 08",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-06.jpg"
+  },
+  "321" : {
+    "attr-file" : "wk12008-07",
+    "title-main-pict" : "Jun 08",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-07.jpg"
+  },
+  "322" : {
+    "attr-file" : "wk12008-08",
+    "title-main-pict" : "Jul 08",
+    "type-height" : "middle",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-08.jpg"
+  },
+  "323" : {
+    "attr-file" : "wk12008-09",
+    "edited" : "wgp@iimaps.de",
+    "fbkey" : "323",
+    "title-main-pict" : "Aug 08",
+    "title-sub-pict" : "Edited with omasmart",
+    "type-character" : "fleecy",
+    "type-genus" : "ci",
+    "type-height" : "low",
+    "type-year" : 2008,
+    "uid" : "5FGRwsAc5sUhN6UkdIOx2uCbgzx2",
+    "url" : "../wolken/wk12008-09.jpg"
+  },
+  "324" : {
+    "attr-file" : "wk12008-10",
+    "edited" : "fb@iimaps.de",
+    "fbkey" : "324",
+    "title-main-pict" : "Sep 08",
+    "title-sub-pict" : "Spreeufer Osthafen",
+    "type-character" : "fleecy",
+    "type-year" : 2008,
+    "uid" : "O1ic7WvfLfTdtqqqgGD9imnIuPa2",
+    "url" : "../wolken/wk12008-10.jpg"
+  },
+  "325" : {
+    "attr-file" : "wk12008-11",
+    "title-main-pict" : "Okt 08",
+    "type-height" : "low",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-11.jpg"
+  },
+  "326" : {
+    "attr-file" : "wk12008-12",
+    "title-main-pict" : "Nov 08",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-12.jpg"
+  },
+  "327" : {
+    "attr-file" : "wk12008-13",
+    "title-main-pict" : "Dez 08",
+    "type-year" : 2008,
+    "url" : "../wolken/wk12008-13.jpg"
+  },
+  "328" : {
+    "attr-file" : "wk12009-01",
+    "title-main-pict" : "Jan 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-01.jpg"
+  },
+  "329" : {
+    "attr-file" : "wk12009-02",
+    "title-main-pict" : "Feb 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-02.jpg"
+  },
+  "330" : {
+    "attr-file" : "wk12009-03",
+    "title-main-pict" : "Mrz 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-03.jpg"
+  },
+  "331" : {
+    "attr-file" : "wk12009-04",
+    "title-main-pict" : "Apr 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-04.jpg"
+  },
+  "332" : {
+    "attr-file" : "wk12009-05",
+    "title-main-pict" : "Mai 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-05.jpg"
+  },
+  "333" : {
+    "attr-file" : "wk12009-06",
+    "title-main-pict" : "Jun 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-06.jpg"
+  },
+  "334" : {
+    "attr-file" : "wk12009-07",
+    "title-main-pict" : "Jul 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-07.jpg"
+  },
+  "335" : {
+    "attr-file" : "wk12009-08",
+    "title-main-pict" : "Aug 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-08.jpg"
+  },
+  "336" : {
+    "attr-file" : "wk12009-09",
+    "title-main-pict" : "Sep 09",
+    "title-sub-pict" : "gefrohrene Pfuetze",
+    "type-ice" : "ice  cover",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-09.jpg"
+  },
+  "337" : {
+    "attr-file" : "wk12009-10",
+    "title-main-pict" : "Okt 09",
+    "title-sub-pict" : "Kondensstreifen",
+    "type-character" : "fleecy",
+    "type-special" : "anthropogenic",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-10.jpg"
+  },
+  "338" : {
+    "attr-file" : "wk12009-11",
+    "title-main-pict" : "Nov 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-11.jpg"
+  },
+  "339" : {
+    "attr-file" : "wk12009-12",
+    "title-main-pict" : "Dez 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk12009-12.jpg"
+  },
+  "340" : {
+    "attr-file" : "wk22009-01",
+    "title-main-pict" : "Jan 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-01.jpg"
+  },
+  "341" : {
+    "attr-file" : "wk22009-02",
+    "title-main-pict" : "Feb 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-02.jpg"
+  },
+  "342" : {
+    "attr-file" : "wk22009-03",
+    "title-main-pict" : "Mrz 09",
+    "title-sub-pict" : "Kondensstreifen",
+    "type-special" : "anthropogenic",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-03.jpg"
+  },
+  "343" : {
+    "attr-file" : "wk22009-04",
+    "title-main-pict" : "Apr 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-04.jpg"
+  },
+  "344" : {
+    "attr-file" : "wk22009-05",
+    "title-main-pict" : "Mai 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-05.jpg"
+  },
+  "345" : {
+    "attr-file" : "wk22009-06",
+    "title-main-pict" : "Jun 09",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-06.jpg"
+  },
+  "346" : {
+    "attr-file" : "wk22009-07",
+    "title-main-pict" : "Jul 09",
+    "title-sub-pict" : "Schornsteinwolke",
+    "type-special" : "anthropogenic",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-07.jpg"
+  },
+  "347" : {
+    "attr-file" : "wk22009-08",
+    "title-main-pict" : "Aug 09",
+    "type-character" : "heap",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-08.jpg"
+  },
+  "348" : {
+    "attr-file" : "wk22009-09",
+    "title-main-pict" : "Sep 09",
+    "type-character" : "fleecy",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-09.jpg"
+  },
+  "349" : {
+    "attr-file" : "wk22009-10",
+    "title-main-pict" : "Okt 09",
+    "title-sub-pict" : "Halo, Kondensstreifen",
+    "type-character" : "sheet",
+    "type-photometeor" : "halo",
+    "type-special" : "anthropogenic",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-10.jpg"
+  },
+  "350" : {
+    "attr-file" : "wk22009-11",
+    "title-main-pict" : "Nov 09",
+    "type-character" : "sheet",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-11.jpg"
+  },
+  "351" : {
+    "attr-file" : "wk22009-12",
+    "title-main-pict" : "Dez 09",
+    "title-sub-pict" : "asperitas",
+    "type-character" : "sheet",
+    "type-year" : 2009,
+    "url" : "../wolken/wk22009-12.jpg"
+  },
+  "352" : {
+    "attr-file" : "wk12010-01",
+    "title-main-pict" : "Deckblatt 2010",
+    "title-sub-pict" : "Schnee",
+    "type-ice" : "snow cover",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-01.jpg"
+  },
+  "353" : {
+    "attr-file" : "wk12010-02",
+    "title-main-pict" : "Jan 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-02.jpg"
+  },
+  "354" : {
+    "attr-file" : "wk12010-03",
+    "title-main-pict" : "Feb 10",
+    "type-hydrometeor" : "rain",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-03.jpg"
+  },
+  "355" : {
+    "attr-file" : "wk12010-04",
+    "title-main-pict" : "Mrz 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-04.jpg"
+  },
+  "356" : {
+    "attr-file" : "wk12010-05",
+    "title-main-pict" : "Apr 10",
+    "title-sub-pict" : "Nebensonne",
+    "type-photometeor" : "halo",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-05.jpg"
+  },
+  "357" : {
+    "attr-file" : "wk12010-06",
+    "title-main-pict" : "Mai 10",
+    "title-sub-pict" : "Aufloesung",
+    "type-process" : "dissolving",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-06.jpg"
+  },
+  "358" : {
+    "attr-file" : "wk12010-07",
+    "title-main-pict" : "Jun 10",
+    "title-sub-pict" : "Regentropfen",
+    "type-hydrometeor" : "rain",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-07.jpg"
+  },
+  "359" : {
+    "attr-file" : "wk12010-08",
+    "title-main-pict" : "Jul 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-08.jpg"
+  },
+  "360" : {
+    "attr-file" : "wk12010-09",
+    "title-main-pict" : "Aug 10",
+    "title-sub-pict" : "Seerauch",
+    "type-fog" : "evaporation",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-09.jpg"
+  },
+  "361" : {
+    "attr-file" : "wk12010-10",
+    "title-main-pict" : "Sep 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-10.jpg"
+  },
+  "362" : {
+    "attr-file" : "wk12010-11",
+    "title-main-pict" : "Okt 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-11.jpg"
+  },
+  "363" : {
+    "attr-file" : "wk12010-12",
+    "title-main-pict" : "Nov 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-12.jpg"
+  },
+  "364" : {
+    "attr-file" : "wk12010-13",
+    "title-main-pict" : "Dez 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk12010-13.jpg"
+  },
+  "365" : {
+    "attr-file" : "wk22010-01",
+    "title-main-pict" : "Deckblatt 2010",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-01.jpg"
+  },
+  "366" : {
+    "attr-file" : "wk22010-02",
+    "title-main-pict" : "Jan 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-02.jpg"
+  },
+  "367" : {
+    "attr-file" : "wk22010-03",
+    "title-main-pict" : "Feb 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-03.jpg"
+  },
+  "368" : {
+    "attr-file" : "wk22010-04",
+    "title-main-pict" : "Mrz 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-04.jpg"
+  },
+  "369" : {
+    "attr-file" : "wk22010-05",
+    "title-main-pict" : "Apr 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-05.jpg"
+  },
+  "370" : {
+    "attr-file" : "wk22010-06",
+    "title-main-pict" : "Mai 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-06.jpg"
+  },
+  "371" : {
+    "attr-file" : "wk22010-07",
+    "title-main-pict" : "Jun 10",
+    "title-sub-pict" : "Schornsteinwolke",
+    "type-special" : "anthropgenic",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-07.jpg"
+  },
+  "372" : {
+    "attr-file" : "wk22010-08",
+    "title-main-pict" : "Jul 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-08.jpg"
+  },
+  "373" : {
+    "attr-file" : "wk22010-09",
+    "title-main-pict" : "Aug 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-09.jpg"
+  },
+  "374" : {
+    "attr-file" : "wk22010-10",
+    "title-main-pict" : "Sep 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-10.jpg"
+  },
+  "375" : {
+    "attr-file" : "wk22010-11",
+    "title-main-pict" : "Okt 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-11.jpg"
+  },
+  "376" : {
+    "attr-file" : "wk22010-12",
+    "title-main-pict" : "Nov 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-12.jpg"
+  },
+  "377" : {
+    "attr-file" : "wk22010-13",
+    "title-main-pict" : "Dez 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk22010-13.jpg"
+  },
+  "378" : {
+    "attr-file" : "wk32010-01",
+    "title-main-pict" : "Deckblatt 2010",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-01.jpg"
+  },
+  "379" : {
+    "attr-file" : "wk32010-02",
+    "title-main-pict" : "Jan 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-02.jpg"
+  },
+  "380" : {
+    "attr-file" : "wk32010-03",
+    "title-main-pict" : "Feb 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-03.jpg"
+  },
+  "381" : {
+    "attr-file" : "wk32010-04",
+    "title-main-pict" : "Mrz 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-04.jpg"
+  },
+  "382" : {
+    "attr-file" : "wk32010-05",
+    "title-main-pict" : "Apr 10",
+    "title-sub-pict" : "Sonnenstrahlen",
+    "type-photometeor" : "scattering",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-05.jpg"
+  },
+  "383" : {
+    "attr-file" : "wk32010-06",
+    "title-main-pict" : "Mai 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-06.jpg"
+  },
+  "384" : {
+    "attr-file" : "wk32010-07",
+    "title-main-pict" : "Jun 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-07.jpg"
+  },
+  "385" : {
+    "attr-file" : "wk32010-08",
+    "title-main-pict" : "Jul 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-08.jpg"
+  },
+  "386" : {
+    "attr-file" : "wk32010-09",
+    "title-main-pict" : "Aug 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-09.jpg"
+  },
+  "387" : {
+    "attr-file" : "wk32010-10",
+    "title-main-pict" : "Sep 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-10.jpg"
+  },
+  "388" : {
+    "attr-file" : "wk32010-11",
+    "title-main-pict" : "Okt 10",
+    "title-sub-pict" : "Sonnenstrahlen, Wolkenschatten, leuchtender Wolkenrand",
+    "type-photometeor" : "scattering",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-11.jpg"
+  },
+  "389" : {
+    "attr-file" : "wk32010-12",
+    "title-main-pict" : "Nov 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-12.jpg"
+  },
+  "390" : {
+    "attr-file" : "wk32010-13",
+    "title-main-pict" : "Dez 10",
+    "type-year" : 2010,
+    "url" : "../wolken/wk32010-13.jpg"
+  },
+  "391" : {
+    "attr-file" : "wk42010-01",
+    "title-main-pict" : "Deckblatt 2010",
+    "type-fromtop" : "plane",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-01.jpg"
+  },
+  "392" : {
+    "attr-file" : "wk42010-02",
+    "title-main-pict" : "Jan 10",
+    "type-fromtop" : "plane",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-02.jpg"
+  },
+  "393" : {
+    "attr-file" : "wk42010-03",
+    "title-main-pict" : "Feb 10",
+    "type-fromtop" : "plane",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-03.jpg"
+  },
+  "394" : {
+    "attr-file" : "wk42010-04",
+    "title-main-pict" : "Mrz 10",
+    "title-sub-pict" : "Schatten von Kondensstreifen auf Wolke",
+    "type-fromtop" : "plane",
+    "type-photometeor" : "shadow",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-04.jpg"
+  },
+  "395" : {
+    "attr-file" : "wk42010-05",
+    "title-main-pict" : "Apr 10",
+    "type-fromtop" : "plane",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-05.jpg"
+  },
+  "396" : {
+    "attr-file" : "wk42010-06",
+    "title-main-pict" : "Mai 10",
+    "type-fromtop" : "plane",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-06.jpg"
+  },
+  "397" : {
+    "attr-file" : "wk42010-07",
+    "title-main-pict" : "Jun 10",
+    "type-fromtop" : "plane",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-07.jpg"
+  },
+  "398" : {
+    "attr-file" : "wk42010-08",
+    "title-main-pict" : "Jul 10",
+    "title-sub-pict" : "Seewind",
+    "type-fromtop" : "plane",
+    "type-process" : "turbulence",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-08.jpg"
+  },
+  "399" : {
+    "attr-file" : "wk42010-09",
+    "title-main-pict" : "Aug 10",
+    "type-fromtop" : "plane",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-09.jpg"
+  },
+  "400" : {
+    "attr-file" : "wk42010-10",
+    "title-main-pict" : "Sep 10",
+    "title-sub-pict" : "im Tal",
+    "type-character" : "heap",
+    "type-fog" : "rad",
+    "type-fromtop" : "plane",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-10.jpg"
+  },
+  "401" : {
+    "attr-file" : "wk42010-11",
+    "title-main-pict" : "Okt 10",
+    "title-sub-pict" : "Dunst",
+    "type-character" : "heap",
+    "type-fromtop" : "plane",
+    "type-hydrometeor" : "haze",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-11.jpg"
+  },
+  "402" : {
+    "attr-file" : "wk42010-12",
+    "title-main-pict" : "Nov 10",
+    "title-sub-pict" : "Wirbelschleppe an der Fluegelspitze",
+    "type-fromtop" : "plane",
+    "type-height" : "low",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-12.jpg"
+  },
+  "403" : {
+    "attr-file" : "wk42010-13",
+    "title-main-pict" : "Dez 10",
+    "type-fromtop" : "plane",
+    "type-height" : "high",
+    "type-year" : 2010,
+    "url" : "../wolken/wk42010-13.jpg"
+  },
+  "404" : {
+    "attr-file" : "wk12011-01",
+    "title-main-pict" : "Deckblatt 2011",
+    "title-sub-pict" : "Strand",
+    "type-ice" : "ice",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-01.jpg"
+  },
+  "405" : {
+    "attr-file" : "wk12011-02",
+    "title-main-pict" : "Jan 11",
+    "title-sub-pict" : "Eisdecke auf See",
+    "type-ice" : "ice cover",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-02.jpg"
+  },
+  "406" : {
+    "attr-file" : "wk12011-03",
+    "title-main-pict" : "Feb 11",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-03.jpg"
+  },
+  "407" : {
+    "attr-file" : "wk12011-04",
+    "title-main-pict" : "Mrz 11",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-04.jpg"
+  },
+  "408" : {
+    "attr-file" : "wk12011-05",
+    "title-main-pict" : "Apr 11",
+    "title-sub-pict" : "Lichtsaeule",
+    "type-photometeor" : "halo",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-05.jpg"
+  },
+  "409" : {
+    "attr-file" : "wk12011-06",
+    "title-main-pict" : "Mai 11",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-06.jpg"
+  },
+  "410" : {
+    "attr-file" : "wk12011-07",
+    "title-main-pict" : "Jun 11",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-07.jpg"
+  },
+  "411" : {
+    "attr-file" : "wk12011-08",
+    "title-main-pict" : "Jul 11",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-08.jpg"
+  },
+  "412" : {
+    "attr-file" : "wk12011-09",
+    "title-main-pict" : "Aug 11",
+    "title-sub-pict" : "Sonnenuntergang",
+    "type-photometeor" : "sun",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-09.jpg"
+  },
+  "413" : {
+    "attr-file" : "wk12011-10",
+    "title-main-pict" : "Sep 11",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-10.jpg"
+  },
+  "414" : {
+    "attr-file" : "wk12011-11",
+    "title-main-pict" : "Okt 11",
+    "type-character" : "sheet",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-11.jpg"
+  },
+  "415" : {
+    "attr-file" : "wk12011-12",
+    "title-main-pict" : "Nov 11",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-12.jpg"
+  },
+  "416" : {
+    "attr-file" : "wk12011-13",
+    "title-main-pict" : "Dez 11",
+    "type-year" : 2011,
+    "url" : "../wolken/wk12011-13.jpg"
+  },
+  "417" : {
+    "title-main-pict" : "Deckblatt 2012",
+    "title-sub-pict" : "Test of web based edit",
+    "type-character" : "fleecy",
+    "type-genus" : "cs",
+    "type-height" : "high",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-01.jpg"
+  },
+  "418" : {
+    "attr-file" : "wk12012-02",
+    "title-main-pict" : "Jan 12",
+    "title-sub-pict" : "Eis auf Meeresstrand",
+    "type-ice" : "ice",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-02.jpg"
+  },
+  "419" : {
+    "attr-file" : "wk12012-03",
+    "title-main-pict" : "Feb 12",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-03.jpg"
+  },
+  "420" : {
+    "attr-file" : "wk12012-04",
+    "title-main-pict" : "Mrz 12",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-04.jpg"
+  },
+  "421" : {
+    "attr-file" : "wk12012-05",
+    "title-main-pict" : "Apr 12",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-05.jpg"
+  },
+  "422" : {
+    "attr-file" : "wk12012-06",
+    "title-main-pict" : "Mai 12",
+    "type-character" : "heap",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-06.jpg"
+  },
+  "423" : {
+    "attr-file" : "wk12012-07",
+    "title-main-pict" : "Jun 12",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-07.jpg"
+  },
+  "424" : {
+    "attr-file" : "wk12012-08",
+    "title-main-pict" : "Jul 12",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-08.jpg"
+  },
+  "425" : {
+    "attr-file" : "wk12012-09",
+    "title-main-pict" : "Aug 12",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-09.jpg"
+  },
+  "426" : {
+    "attr-file" : "wk12012-10",
+    "title-main-pict" : "Sep 12",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-10.jpg"
+  },
+  "427" : {
+    "attr-file" : "wk12012-11",
+    "title-main-pict" : "Okt 12",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-11.jpg"
+  },
+  "428" : {
+    "attr-file" : "wk12012-12",
+    "title-main-pict" : "Nov 12",
+    "title-sub-pict" : "Nebel",
+    "type-fog" : "fog",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-12.jpg"
+  },
+  "429" : {
+    "attr-file" : "wk12012-13",
+    "title-main-pict" : "Dez 12",
+    "title-sub-pict" : "Eis auf Meeresstrand",
+    "type-ice" : "ice",
+    "type-year" : 2012,
+    "url" : "../wolken/wk12012-13.jpg"
+  },
+  "430" : {
+    "attr-file" : "wk12013-01",
+    "title-main-pict" : "Deckblatt 2013",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-01.jpg"
+  },
+  "431" : {
+    "attr-file" : "wk12013-02",
+    "title-main-pict" : "Jan 13",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-02.jpg"
+  },
+  "432" : {
+    "attr-file" : "wk12013-03",
+    "title-main-pict" : "Feb 13",
+    "type-height" : "low",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-03.jpg"
+  },
+  "433" : {
+    "attr-file" : "wk12013-04",
+    "title-main-pict" : "Mrz 13",
+    "type-character" : "heap",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-04.jpg"
+  },
+  "434" : {
+    "attr-file" : "wk12013-05",
+    "title-main-pict" : "Apr 13",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-05.jpg"
+  },
+  "435" : {
+    "attr-file" : "wk12013-06",
+    "title-main-pict" : "Mai 13",
+    "type-height" : "middle",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-06.jpg"
+  },
+  "436" : {
+    "attr-file" : "wk12013-07",
+    "title-main-pict" : "Jun 13",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-07.jpg"
+  },
+  "437" : {
+    "attr-file" : "wk12013-08",
+    "title-main-pict" : "Jul 13",
+    "title-sub-pict" : "Sonnenenergie, Reflexion",
+    "type-hydrometeor" : "rime",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-08.jpg"
+  },
+  "438" : {
+    "attr-file" : "wk12013-09",
+    "title-main-pict" : "Aug 13",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-09.jpg"
+  },
+  "439" : {
+    "attr-file" : "wk12013-10",
+    "title-main-pict" : "Sep 13",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-10.jpg"
+  },
+  "440" : {
+    "attr-file" : "wk12013-11",
+    "title-main-pict" : "Okt 13",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-11.jpg"
+  },
+  "441" : {
+    "attr-file" : "wk12013-12",
+    "title-main-pict" : "Nov 13",
+    "title-sub-pict" : "rauchender Berg",
+    "type-fog" : "evaporation",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-12.jpg"
+  },
+  "442" : {
+    "attr-file" : "wk12013-13",
+    "title-main-pict" : "Dez 13",
+    "title-sub-pict" : "Seerauch",
+    "type-fog" : "evaporation",
+    "type-year" : 2013,
+    "url" : "../wolken/wk12013-13.jpg"
+  },
+  "443" : {
+    "attr-file" : "wk12014-01",
+    "title-main-pict" : "Deckblatt 2014",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-01.jpg"
+  },
+  "444" : {
+    "attr-file" : "wk12014-02",
+    "title-main-pict" : "Jan 14",
+    "type-character" : "fleecy",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-02.jpg"
+  },
+  "445" : {
+    "attr-file" : "wk12014-03",
+    "title-main-pict" : "Feb 14",
+    "title-sub-pict" : "Sonnenuntergang",
+    "type-photometeor" : "sun",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-03.jpg"
+  },
+  "446" : {
+    "attr-file" : "wk12014-04",
+    "title-main-pict" : "Mrz 14",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-04.jpg"
+  },
+  "447" : {
+    "attr-file" : "wk12014-05",
+    "title-main-pict" : "Apr 14",
+    "title-sub-pict" : "Sonnenstrahlen",
+    "type-photometeor" : "scattering",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-05.jpg"
+  },
+  "448" : {
+    "attr-file" : "wk12014-06",
+    "title-main-pict" : "Mai 14",
+    "type-character" : "fleecy",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-06.jpg"
+  },
+  "449" : {
+    "attr-file" : "wk12014-07",
+    "title-main-pict" : "Jun 14",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-07.jpg"
+  },
+  "450" : {
+    "attr-file" : "wk12014-08",
+    "title-main-pict" : "Jul 14",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-08.jpg"
+  },
+  "451" : {
+    "attr-file" : "wk12014-09",
+    "title-main-pict" : "Aug 14",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-09.jpg"
+  },
+  "452" : {
+    "attr-file" : "wk12014-10",
+    "title-main-pict" : "Sep 14",
+    "type-height" : "high",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-10.jpg"
+  },
+  "453" : {
+    "attr-file" : "wk12014-11",
+    "title-main-pict" : "Okt 14",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-11.jpg"
+  },
+  "454" : {
+    "attr-file" : "wk12014-12",
+    "title-main-pict" : "Nov 14",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-12.jpg"
+  },
+  "455" : {
+    "attr-file" : "wk12014-13",
+    "title-main-pict" : "Dez 14",
+    "title-sub-pict" : "asperitas",
+    "type-year" : 2014,
+    "url" : "../wolken/wk12014-13.jpg"
+  },
+  "456" : {
+    "attr-file" : "wk12015-01",
+    "title-main-pict" : "Deckblatt 2015",
+    "title-sub-pict" : "Nebensonnen, oberer Beruehrungsbogen",
+    "type-photometeor" : "halo",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-01.jpg"
+  },
+  "457" : {
+    "attr-file" : "wk12015-02",
+    "title-main-pict" : "Jan 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-02.jpg"
+  },
+  "458" : {
+    "attr-file" : "wk12015-03",
+    "title-main-pict" : "Feb 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-03.jpg"
+  },
+  "459" : {
+    "attr-file" : "wk12015-04",
+    "title-main-pict" : "Mrz 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-04.jpg"
+  },
+  "460" : {
+    "attr-file" : "wk12015-05",
+    "title-main-pict" : "Apr 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-05.jpg"
+  },
+  "461" : {
+    "attr-file" : "wk12015-06",
+    "title-main-pict" : "Mai 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-06.jpg"
+  },
+  "462" : {
+    "attr-file" : "wk12015-07",
+    "title-main-pict" : "Jun 15",
+    "title-sub-pict" : "asperitas",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-07.jpg"
+  },
+  "463" : {
+    "attr-file" : "wk12015-08",
+    "title-main-pict" : "Jul 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-08.jpg"
+  },
+  "464" : {
+    "attr-file" : "wk12015-09",
+    "title-main-pict" : "Aug 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-09.jpg"
+  },
+  "465" : {
+    "attr-file" : "wk12015-10",
+    "title-main-pict" : "Sep 15",
+    "title-sub-pict" : "Wellen",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-10.jpg"
+  },
+  "466" : {
+    "attr-file" : "wk12015-11",
+    "title-main-pict" : "Okt 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-11.jpg"
+  },
+  "467" : {
+    "attr-file" : "wk12015-12",
+    "title-main-pict" : "Nov 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-12.jpg"
+  },
+  "468" : {
+    "attr-file" : "wk12015-13",
+    "title-main-pict" : "Dez 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk12015-13.jpg"
+  },
+  "469" : {
+    "attr-file" : "wk22015-01",
+    "title-main-pict" : "Deckblatt 2015",
+    "type-height" : "high",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-01.jpg"
+  },
+  "470" : {
+    "attr-file" : "wk22015-02",
+    "title-main-pict" : "Jan 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-02.jpg"
+  },
+  "471" : {
+    "attr-file" : "wk22015-03",
+    "title-main-pict" : "Feb 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-03.jpg"
+  },
+  "472" : {
+    "attr-file" : "wk22015-04",
+    "title-main-pict" : "Mrz 15",
+    "type-character" : "heap",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-04.jpg"
+  },
+  "473" : {
+    "attr-file" : "wk22015-05",
+    "title-main-pict" : "Apr 15",
+    "type-character" : "heap",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-05.jpg"
+  },
+  "474" : {
+    "attr-file" : "wk22015-06",
+    "title-main-pict" : "Mai 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-06.jpg"
+  },
+  "475" : {
+    "attr-file" : "wk22015-07",
+    "title-main-pict" : "Jun 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-07.jpg"
+  },
+  "476" : {
+    "attr-file" : "wk22015-08",
+    "title-main-pict" : "Jul 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-08.jpg"
+  },
+  "477" : {
+    "attr-file" : "wk22015-09",
+    "title-main-pict" : "Aug 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-09.jpg"
+  },
+  "478" : {
+    "attr-file" : "wk22015-10",
+    "title-main-pict" : "Sep 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-10.jpg"
+  },
+  "479" : {
+    "attr-file" : "wk22015-11",
+    "title-main-pict" : "Okt 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-11.jpg"
+  },
+  "480" : {
+    "attr-file" : "wk22015-12",
+    "title-main-pict" : "Nov 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-12.jpg"
+  },
+  "481" : {
+    "attr-file" : "wk22015-13",
+    "title-main-pict" : "Dez 15",
+    "type-year" : 2015,
+    "url" : "../wolken/wk22015-13.jpg"
+  },
+  "482" : {
+    "attr-file" : "wk12016-01",
+    "title-main-pict" : "Deckblatt 2016",
+    "type-character" : "sheet",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-01.jpg"
+  },
+  "483" : {
+    "attr-file" : "wk12016-02",
+    "title-main-pict" : "Jan 16",
+    "type-height" : "high",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-02.jpg"
+  },
+  "484" : {
+    "attr-file" : "wk12016-03",
+    "title-main-pict" : "Feb 16",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-03.jpg"
+  },
+  "485" : {
+    "attr-file" : "wk12016-04",
+    "title-main-pict" : "Mrz 16",
+    "type-height" : "middle",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-04.jpg"
+  },
+  "486" : {
+    "attr-file" : "wk12016-05",
+    "title-main-pict" : "Apr 16",
+    "type-character" : "sheet",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-05.jpg"
+  },
+  "487" : {
+    "attr-file" : "wk12016-06",
+    "title-main-pict" : "Mai 16",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-06.jpg"
+  },
+  "488" : {
+    "attr-file" : "wk12016-07",
+    "title-main-pict" : "Jun 16",
+    "type-character" : "heap",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-07.jpg"
+  },
+  "489" : {
+    "attr-file" : "wk12016-08",
+    "title-main-pict" : "Jul 16",
+    "type-character" : "fleecy",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-08.jpg"
+  },
+  "490" : {
+    "attr-file" : "wk12016-09",
+    "title-main-pict" : "Aug 16",
+    "type-character" : "heap",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-09.jpg"
+  },
+  "491" : {
+    "attr-file" : "wk12016-10",
+    "title-main-pict" : "Sep 16",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-10.jpg"
+  },
+  "492" : {
+    "attr-file" : "wk12016-11",
+    "title-main-pict" : "Okt 16",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-11.jpg"
+  },
+  "493" : {
+    "attr-file" : "wk12016-12",
+    "title-main-pict" : "Nov 16",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-12.jpg"
+  },
+  "494" : {
+    "attr-file" : "wk12016-13",
+    "title-main-pict" : "Dez 16",
+    "title-sub-pict" : "asperitas",
+    "type-character" : "sheet",
+    "type-year" : 2016,
+    "url" : "../wolken/wk12016-13.jpg"
+  },
+  "-KNG1fdMV8ER5gyCc_iG" : {
+    "title-main-pict" : "Ci unc",
+    "type-character" : "fleecy",
+    "type-genus" : "ci",
+    "type-height" : "high",
+    "url" : "../wolken/wb0037.jpg"
+  },
+  "-KNH7FXZpKWKhWrWtLAu" : {
+    "title-main-pict" : "Ac aufloesung",
+    "title-sub-pict" : "Repeated edit",
+    "type-character" : "heap",
+    "type-genus" : "ac",
+    "type-height" : "middle",
+    "type-year" : 2006,
+    "url" : "../wolken/wb0003.jpg"
+  },
+  "-KNHhkaAVhufSaS-eBtO" : {
+    "title-main-pict" : "angetaute Schneeschicht",
+    "title-sub-pict" : "cloud items removed",
+    "type-year" : 2006,
+    "url" : "../wolken/wb0014.jpg"
+  },
+  "-KNJbePV0kCadK1KczJX" : {
+    "title-main-pict" : "Ac un",
+    "title-sub-pict" : "Beautiful",
+    "type-genus" : "ac",
+    "url" : "../wolken/wb0011.jpg"
+  },
+  "-KNKpQgbES1kIPHzMz2q" : {
+    "title-main-pict" : "Snapshot  of pad-screen",
+    "title-sub-pict" : "Online mode",
+    "type-year" : 2002,
+    "url" : "https://firebasestorage.googleapis.com/v0/b/wolke7-fd941.appspot.com/o/cp%2Fmarinetraffic_capture.jpg?alt=media&token=64ece839-ebfa-49aa-805c-fabcb3916beb"
+  }
+}
