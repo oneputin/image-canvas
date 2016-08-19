@@ -7,15 +7,15 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
     <link rel="import" href="../../fire-base/fire-query.html">
-    <link rel="import" href="../image-resize.html">
+    <link rel="import" href="../resize-image.html">
 
 </head>
 
 <body>
 
-  <h3>Demo <span style="font-family: courier;">image-resize-batch</span></h3>
+  <h3>Demo <span style="font-family: courier;">resize-image-batch</span></h3>
 
-  <dom-module id="image-resize-all"> 
+  <dom-module id="resize-image-all"> 
     
     <template>
       <style>
@@ -29,7 +29,7 @@
       <template id="repeat1" is="dom-repeat" items="[[clientitems]]">
         
         <!-- B. Try to RESIZE -->  
-        <image-resize src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></image-resize>
+        <resize-image src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></resize-image>
         
         <!-- C. BACK-SAVE item, if placeholder-property was created -->
         <template is="dom-if" if="{{item.placeholder}}"> 
@@ -61,7 +61,7 @@
       window.addEventListener('WebComponentsReady', function() {
         Polymer({
 
-          is: 'image-resize-all',
+          is: 'resize-image-all',
 
           properties: {
 
@@ -111,7 +111,7 @@
     </script>      
   </dom-module>
 
-  <image-resize-all></image-resize-all>
+  <resize-image-all></resize-image-all>
 
 </body>
 </html>

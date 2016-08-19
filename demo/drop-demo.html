@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
-<!--     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
- -->
+    <!--  -->
     <link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
     <link rel="import" href="../../iron-flex-layout/iron-flex-layout-classes.html">
-
     <link rel="import" href="../../iron-image/iron-image.html">
     <link rel="import" href="../../paper-input/paper-input.html">
 
-    <link rel="import" href="../file-drop.html">
-    <link rel="import" href="../image-resize.html">
+    <!--  -->
+    <link rel="import" href="../../drop-box/drop-box.html">
+    <!--  -->
+    <link rel="import" href="../resize-image.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
@@ -24,7 +23,7 @@
 
 <body>
 
-<h3><span style="font-family: courier;">image-resize</span> of dropped image</h3>
+<h3><span style="font-family: courier;">resize-image</span> of dropped image</h3>
 
   <dom-module id="image-drop-demo"> 
     <template>
@@ -63,15 +62,15 @@
       </div>        
       <div id="previewrow" class="container horizontal">
          
-          <file-drop id="dropzone" type="image" dropfile="{{rawsrc}}" dropname="{{imgname}}"> </file-drop>
+          <drop-box id="dropzone" filetype="image" boxsize="100" boxmsg="Drop an image here!" dropfile="{{rawsrc}}" dropname="{{imgname}}"> </drop-box>
          
-          <image-resize id="preview" src="[[rawsrc]]" out="{{outimg}}" height="[[height]]" quality="{{quality}}"></image-resize>
+          <resize-image id="preview" src="[[rawsrc]]" out="{{outimg}}" height="[[height]]" quality="{{quality}}"></resize-image>
          
           <iron-image 
             sizing="cover" preload fade
-            placeholder="{{outimg}}"
-            src={{imgsrc}}
-            style="width:400px; height:400px;"
+            placeholder ="{{outimg}}"
+            src  = {{imgsrc}}
+            style= "width:400px; height:400px;"
             ></iron-image>
       </div>
       
@@ -98,7 +97,7 @@
             },
             imgsrc:{
               type: String,
-              value: "",
+              value: ""
             },
             outimg:{
               type: String,

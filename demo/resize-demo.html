@@ -16,7 +16,7 @@
     <link rel="import" href="../../iron-image/iron-image.html">
 
     <link rel="import" href="../../fire-base/fire-query.html">
-    <link rel="import" href="../image-resize.html">
+    <link rel="import" href="../resize-image.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
@@ -24,9 +24,9 @@
 
 <body>
 
-  <h3>Demo <span style="font-family: courier;">image-resize</span></h3>
+  <h3>Demo <span style="font-family: courier;">resize-image</span></h3>
 
-  <dom-module id="image-resize-demo"> 
+  <dom-module id="resize-image-demo"> 
     <template>
       <style>
         paper-dropdown-menu {  width: 400px;   }
@@ -49,6 +49,7 @@
       <fire-query app="wolke7" path="cplocal" item="[[itemname]]" itemvalue="[[itemvalue]]" data="{{dbdata}}"></fire-query>
      
       <paper-dropdown-menu label="images">
+
         <paper-listbox 
           class="dropdown-content" 
           attr-for-selected="fbkey" 
@@ -56,7 +57,7 @@
           
           <template is="dom-repeat" items="[[menuitems]]">
               
-            <image-resize src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></image-resize>
+            <resize-image src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></resize-image>
             
             <template is="dom-if" if="{{item.placeholder}}"> 
               
@@ -88,6 +89,7 @@
 
       
       <template is="dom-if" if="{{viewkey}}"> 
+
         <h4>2. View image of item selected in dropdown-menu.</h4>
   
         <fire-query app="wolke7" path="cplocal/[[viewkey]]" item="_path_" data="{{viewitem}}"></fire-query>
@@ -106,7 +108,7 @@
     <script>
       window.addEventListener('WebComponentsReady', function() {
         Polymer({
-          is: 'image-resize-demo',
+          is: 'resize-image-demo',
 
           properties: {
 
@@ -176,7 +178,7 @@
             this.viewkey = key;// var 
           },
 
-          _logViewItem(n,o) { // console.log(n);
+          _logViewItem(n,o) { console.log("viewitem", n);
             this.viewtitle = n["title-main-pict"];
           },
 
@@ -205,7 +207,7 @@
     </script>      
   </dom-module>
 
-  <image-resize-demo></image-resize-demo>
+  <resize-image-demo></resize-image-demo>
 
 </body>
 </html>
