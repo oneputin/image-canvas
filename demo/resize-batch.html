@@ -24,6 +24,7 @@
       <h4>1. Query ALL album-entries from cloud-db and create placeholder for "available" images.</h4>
       
       <!-- A. Query all objects (img-meta-documents) from path [cplocal] -->
+      
       <fire-query app="wolke7" path="cplocal" item="_all_" data="{{dbdata}}"></fire-query>
      
       <template id="repeat1" is="dom-repeat" items="[[clientitems]]">
@@ -47,6 +48,7 @@
       </template>        
 
       <!-- D. ??? CHECK number of album-records with placeholder -->
+      
       <template is="dom-if" if="{{clientitemsdone}}"> 
         
         <h4> 2. Query album-entries with placeholder calculated.</h4>

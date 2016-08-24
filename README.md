@@ -30,5 +30,9 @@ Because the `canvas.toDataURL()` does not work with CORS-"tainted" canvas
 - the images must be transfered into the same domain (fi. into localhost as here)  or
 - the images folder at its server must be CORS-enabled for the requesting site !!
 
-## 
+## SaveAs reduced image
+
+
+## Reduce to percent-fraction x
+Use an approximation-algorithm comparing reduced site to original for different sizes. Start at height = 50 and reduce until size < x % first 
 

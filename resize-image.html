@@ -41,7 +41,6 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas]
 		          observer: 'render',
 		          type: String
 		        },
-
 		        // the "rendered(reduced)" img (as dataUrl)
 		        out: {
 		          observer: '_logger',
@@ -49,7 +48,6 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas]
 		          value: '',
 		          notify: true
 		        },
-
 		        /**
 		         * The target height of resized image.
 		        */
@@ -114,7 +112,8 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas]
 	                canvas.height = img.height;
 
 	                if (ctx) ctx.drawImage(img, 0, 0, img.width, img.height);
-	            	self.out = canvas.toDataURL(format, quality); // console.log("height, format, quality, src", height, format, quality, src);
+	            	
+	            	self.out = canvas.toDataURL(format, quality); 
 	            };
 
 	            img.src = src;
