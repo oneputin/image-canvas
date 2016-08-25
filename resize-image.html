@@ -38,14 +38,12 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas]
 		         * The primary SRC of an image (url or dataUrl)
 		         */
 		        src: {
-		          observer: 'render',
 		          type: String
+		          // observer: 'render',
 		        },
 		        // the "rendered(reduced)" img (as dataUrl)
 		        out: {
-		          observer: '_logger',
 		          type: String,
-		          value: '',
 		          notify: true
 		        },
 		        /**
@@ -73,24 +71,20 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas]
 			},        
 
 			observers: [
-				'render(src, height, format, quality)'	
+				'render(src, height, quality, format)'	
 			],
-
-			_logger: function(out) { // console.log("out", out);
-			},
-
-	    	ready : function() {
-		    },  
 
 	        /**
 	         * render `src`-image into canvas according to parameters `height, format,quality` 
 	         * @return          [sets host-property `out`]
 	         */
-	        render : function(src, height, format, quality) {	
-	        	if (!height || !format || !quality )  return;
+	        render : function(src, height, quality, format) {	
+	        	if (!height || !quality )  return;
 
-		        var self    = this,
-	            	format  = "image/" + format;
+		        var self    = this;
+
+		        if (!format)  format='jpeg'; 
+            	format  = "image/" + format;
 
 		        var canvas  = this.$.canvas, 
 	            	img     = new Image();   // console.log("canvas, height, format, quality", canvas, height, format, typeof quality, quality);

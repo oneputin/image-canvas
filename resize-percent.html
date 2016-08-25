@@ -1,0 +1,153 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="resize-image.html">
+
+<!--
+`resize-percent`
+resizes an img-src (url, dataUrl) to another dataUrl. Based on `canvas`-resizing 
+see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-percent-canvas] 
+
+@demo demo/percent-demo.html 
+-->
+<dom-module id="resize-percent">
+
+	<template>
+
+	    <style>
+		    :host {
+		        display: inline-block;
+		        overflow: hidden;
+		        position: relative;
+		        left: -1000px;
+		    }
+		    #canvas {
+		    	_height: 10px;
+		    }
+	  	</style>  
+
+        <resize-image 
+        	src="[[src]]" 
+        	out="{{prev}}" 
+        	height="[[_height]]" 
+        	quality="[[_quality]]"
+        	format="[[format]]">
+        </resize-image>
+
+	</template>    
+
+	<script>
+
+	    Polymer({
+
+		    is: 'resize-percent',
+
+		    properties: {
+		        /**
+		         * The primary SRC of an image (url or dataUrl)
+		         */
+		        src: {
+		          type: String
+		        },
+
+		        /**
+		         * The preview generated from resize-percent
+		         */
+		        prev: {
+		          type: String
+		          // observer: 'verify'
+		        },
+
+		        // the "rendered(reduced)" img (as dataUrl)
+		        out: {
+		          type: String,
+		          notify: true
+		        },
+
+		        reduce: {
+		        	type: Number,
+		        	value: 1
+		        },
+
+		        maxsize: {
+		        	type: Number,
+		        	value: 2
+		        },
+
+		        /**
+		         * The target _height of resized image.
+		        */
+		        _height: {
+		          type: Number,
+		          value: 25
+		        },
+		        /**
+		         * _quality of target image (0..1)
+		         * @type {Object}
+		         */
+		        _quality: {
+		          type: Number,
+		          value: 0.9
+		      	},
+		      	/**
+		      	 * format target img 
+		      	 * @type {Object}
+		      	 */
+		        format: {
+		          type: String,
+		          value: 'jpeg'
+		    	},
+		        counter: {
+		          type: Number,
+		          value: 0
+		    	}
+			},        
+
+			observers: [
+				'verify(prev, reduce, maxsize)'
+			],
+
+	        /**
+	         * check if `src`-image rendered into `prev` fits size requirements
+	         * @return   resized image (as host-property `out`)
+	         */
+	        verify : function(prev, reduce, maxsize) { // src, _height, _quality, format) {	
+	        	if (!prev || !prev.length) return; 
+
+	        	var size    = prev.length, 
+	        		percent = 100 * size / this.src.length,
+	        		frac    = percent / reduce,
+	        		maxfrac = size / (maxsize * 1024),
+	        		newHeight ;	
+
+	        		console.log("height,size,percent,frac,maxfrac", this._height, size, percent.toFixed(2), frac.toFixed(2), maxfrac.toFixed(2), this.counter);
+
+	        	if (this.counter > 10) { console.log("counter=", this.counter);
+		        	this.out = prev;
+		        	this.counter=0;
+		        	return;
+	        	}
+
+        		if (maxfrac > 1) {	// Terminating iteration
+        			// this._height = Math.round( this._height / maxfrac);
+        			newHeight = Math.ceil( this._height / maxfrac);
+        			this.counter = 11; // BREAK after next iteration
+
+        		} else {			// 
+
+	    			newHeight = Math.ceil( this._height / frac);
+	    			this.counter = this.counter + 1;        			
+        		}
+
+    			if (newHeight == this._height){
+		        	this.out = prev;
+		        	this.counter=0;
+		        	return;
+    			}  
+
+    			this._height = newHeight;	// Trigger next image
+
+        	}
+
+	    });
+
+    </script>
+</dom-module>
