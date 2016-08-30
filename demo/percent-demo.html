@@ -23,6 +23,7 @@
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
+
 </head>
 
 <body>
@@ -62,6 +63,13 @@
           font-color: grey;
           font-size: 12px;          
         }  
+        .numinput {
+          width: 200px;
+        }
+        #dataurl {
+          display: none;
+          width: 100%;
+        }
       </style>
     
       <p>Drag an image into the box below to resize it with canvas and JavaScript.</p>
@@ -69,10 +77,10 @@
       <div class="container horizontal">
         <!-- processing element -->
         <resize-percent id="preview" 
-          src    ="[[rawsrc]]" 
-          out    ="{{outimg}}" 
-          reduce ="[[reduce]]" 
-          maxsize="[[maxsize]]">
+          src       ="[[rawsrc]]" 
+          out       ="{{outimg}}" 
+          percent   ="[[percent]]" 
+          guidesize ="[[guidesize]]">
         </resize-percent>
 
         <files-box id="dropzone" 
@@ -84,10 +92,10 @@
         </files-box>
         <!-- <span class="flex"></span> -->
         <div>
-          <div class="xs">reduction [%]</div>
-          <paper-slider value="{{reduce}}" min="0" max="100" editable></paper-slider>
-          <div class="xs">maxSize [kb]</div>
-          <paper-slider value="{{maxsize}}" min="1" max="100" editable ></paper-slider>
+
+          <paper-input class="numinput" value="{{percent}}" min="1" max="10" type="number" auto-validate label="target-size [%]" always-float-label></paper-input>
+          <paper-input class="numinput" value="{{guidesize}}" min="1" max="10" type="number" auto-validate label="guide-size [kb]" always-float-label></paper-input>
+
         </div>
 
       </div>        
@@ -112,15 +120,18 @@
           <h5>RESIZED IMAGE : <img id="resized" src="[[outimg]]"  contentEditable="true"></h5>
           <p> <textarea class="imgname" contentEditable="true">[[imgname]]</textarea> </p>
           
-          <p>Reduction: [[percent]]% ([[outsize]]/[[rawsize]])</p>
+          <p>Reduction: [[percentis]] % ([[outsize]]/[[rawsize]])</p>
 
-          <paper-checkbox id="checkori" on-change="_checkOriginal">Compare with original</paper-checkbox>
+          <p><paper-checkbox id="checkori" on-change="_checkOriginal">Compare with original</paper-checkbox></p>
+          <p><paper-checkbox id="checkurl" on-change="_checkDataurl">View Resized Dataurl</paper-checkbox></p>
 
         </div>
       </div>   
-
-      <p>[[outimg]]</p>
-    
+      
+      <!-- <div id="dataurl"></div> -->
+      <!-- <p id="dataurl"></p> -->
+      <textarea id="dataurl" rows="5">[[outimg]]</textarea>
+        
     </template>
     
     <script>
@@ -128,14 +139,15 @@
         Polymer({
           is: 'percent-demo',
           properties: {
-            reduce: {
+            percent: {
               type: Number,
-              value: 1
+              value: 3
             },
-            maxsize:{
+            guidesize:{
               type: Number,
               value: 2
-            },            
+            },
+
             rawsrc: {
               type: String,
               value: "",
@@ -143,7 +155,7 @@
             },
             rawsize:{
               type: Number,
-              value: 0
+              value: 1
             },            
             imgname: {
               type: String,
@@ -161,19 +173,12 @@
               type: Number,
               value: 0
             },            
-            // height:{
-            //   type: Number,
-            //   value: 25
-            // },
-            // quality:{
-            //   type: Number,
-            //   computed: '_getQuality(quality100)'
-            // },
-            // quality100:{
-            //   type: Number,
-            //   value: 90
-            // },
-            percent: {
+
+            /**
+             * [percentis description]
+             * @type {Object}
+             */
+            percentis: {
               type: Number,
               computed: '_getpercent(outsize,rawsize)'
             }
@@ -194,9 +199,9 @@
           copyElemText: function(q) {    
 
             if (!document.queryCommandEnabled("copy")){
-            // if (!document.queryCommandSupported("copy")){
-              console.log("copy not enabled");
-              return;      
+              // if (!document.queryCommandSupported("copy")){
+              console.log("exec-copy not enabled");
+              // return;      
             }
             
             var winsel = window.getSelection();
@@ -219,7 +224,7 @@
               var msg = successful ? 'successful' : 'unsuccessful';  
               console.log('Copy of elemText ' + msg);  
             } catch(err) {  
-              console.log('Oops, unable to copy');  
+              console.log('Oops, unable to copy ???');  
             }  
 
             // winsel.removeRange(range) // when it is supported  
@@ -234,10 +239,18 @@
             this.outsize = n.length;
           },
 
+          /**
+           * [_getpercent description]
+           * @param  {Number} outsize last iterated size 
+           * @param  {Number} rawsize size of original
+           * @return {Number} percent size of last iteration
+           */
           _getpercent: function(outsize, rawsize) {
-            var x = -1; 
+            var x, prec = 0 ;
             if (rawsize) x = 100 * outsize / rawsize;
-            x = x.toFixed(1); 
+            if (!x) x = 1;  
+            else prec = (x + "").split(".")[1].length;
+            if (prec) x = x.toFixed(1); 
             return x;
           }, 
           
@@ -246,6 +259,15 @@
             if (flag) this.imgsrc = this.rawsrc;
             else      this.imgsrc = "";
           },
+
+          _checkDataurl: function(e) { 
+            var flag = e.target.checked; // console.log("checkflag", flag, e)
+            // if (flag) this.$.dataurl.innerHTML = this.outimg;
+            // else      this.$.dataurl.innerHTML = "";  post.style.display = 'none';
+            if (flag) this.$.dataurl.style.display = "block";
+            else      this.$.dataurl.style.display = "none";
+          },
+
           _getsrc: function(n) { // console.log("_getsrc", n)
             this.rawsize = n.length;
             this.imgsrc  = "";

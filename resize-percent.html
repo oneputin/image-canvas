@@ -3,15 +3,15 @@
 
 <!--
 `resize-percent`
-resizes an img-src (url, dataUrl) to another dataUrl. Based on `canvas`-resizing 
-see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-percent-canvas] 
+iterates a new _height for <resize-image>  s an img-src (url, dataUrl) to another dataUrl. 
+Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-percent-canvas] 
 
-@demo demo/percent-demo.html 
+@demo demo/batch-demo.html 
 -->
+
 <dom-module id="resize-percent">
 
 	<template>
-
 	    <style>
 		    :host {
 		        display: inline-block;
@@ -19,17 +19,17 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-percent-canvas
 		        position: relative;
 		        left: -1000px;
 		    }
-		    #canvas {
+		    /*#canvas {
 		    	_height: 10px;
-		    }
+		    }*/
 	  	</style>  
 
         <resize-image 
-        	src="[[src]]" 
-        	out="{{prev}}" 
-        	height="[[_height]]" 
-        	quality="[[_quality]]"
-        	format="[[format]]">
+        	src 	="[[src]]" 
+        	out 	="{{prev}}" 
+        	height 	="[[_height]]" 
+        	quality ="[[_quality]]"
+        	format 	="[[format]]">
         </resize-image>
 
 	</template>    
@@ -53,21 +53,31 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-percent-canvas
 		         */
 		        prev: {
 		          type: String
-		          // observer: 'verify'
+		          // observer: 'iterate'
 		        },
 
-		        // the "rendered(reduced)" img (as dataUrl)
+		        // the img "rendered(resized) in canvas" (as dataUrl)
 		        out: {
 		          type: String,
 		          notify: true
 		        },
 
-		        reduce: {
+		        /**
+		         * Target file-size in %
+		         * @type {number}
+		         */
+		        percent: {
 		        	type: Number,
 		        	value: 1
 		        },
 
-		        maxsize: {
+		        /**
+		         * guiding size [kByte] of target image
+		         * = min, if percent-iterated size much smaller
+		         * = max, if percent-iterated size much larger    
+		         * @type {Number}
+		         */
+		        guidesize: {
 		        	type: Number,
 		        	value: 2
 		        },
@@ -95,51 +105,70 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-percent-canvas
 		          type: String,
 		          value: 'jpeg'
 		    	},
-		        counter: {
+
+		    	/**
+		    	 * iteration counter
+		    	 * @type {Number}
+		    	 */
+		        _counter: {
 		          type: Number,
 		          value: 0
 		    	}
 			},        
 
 			observers: [
-				'verify(prev, reduce, maxsize)'
+				'iterateHeight(prev, percent, guidesize)'
 			],
 
 	        /**
-	         * check if `src`-image rendered into `prev` fits size requirements
-	         * @return   resized image (as host-property `out`)
+	         * check if `src`-image rendered into `preview` fits size requirements
+	         * @return   resized image (as this elements host-property `out`)
 	         */
-	        verify : function(prev, reduce, maxsize) { // src, _height, _quality, format) {	
+	        iterateHeight : function(prev, percent, guidesize) { // _quality, format) {	
 	        	if (!prev || !prev.length) return; 
+	        	let countmax = 10,
+	        		guidemin = 0.75,
+	        		guidemax = 1.5;
 
-	        	var size    = prev.length, 
-	        		percent = 100 * size / this.src.length,
-	        		frac    = percent / reduce,
-	        		maxfrac = size / (maxsize * 1024),
+	        	var psize      = prev.length, 
+	        		guideState = psize / (guidesize * 1024),		//   
 	        		newHeight ;	
+	        		console.log(this.src+"-" + this._counter+":",  this._height, psize, guideState.toFixed(2));
 
-	        		console.log("height,size,percent,frac,maxfrac", this._height, size, percent.toFixed(2), frac.toFixed(2), maxfrac.toFixed(2), this.counter);
+	        	var	pcent = 100 * psize / this.src.length,	// actual size in percent 
+	        		percentState = pcent / percent;			// relation actual sizechange / target sizechange	
 
-	        	if (this.counter > 10) { console.log("counter=", this.counter);
+	        		// console.log("height,size,pcent,frac,guideState " + this._counter+":",  this._height, psize, pcent.toFixed(2), percentState.toFixed(2), guideState.toFixed(2));
+
+	        	if (this._counter > countmax) { // console.log("counter=", this._counter);
+		        	this._counter = 0;
 		        	this.out = prev;
-		        	this.counter=0;
+		        	//**************
 		        	return;
 	        	}
+	        	
+	        	// debugger; 
 
-        		if (maxfrac > 1) {	// Terminating iteration
+        		if ((guideState > guidemax)||(guideState < guidemin)) {	// "Forced Termination" of iteration
         			// this._height = Math.round( this._height / maxfrac);
-        			newHeight = Math.ceil( this._height / maxfrac);
-        			this.counter = 11; // BREAK after next iteration
+        			newHeight = Math.ceil( this._height / guideState);
+        			this._counter = countmax + 1; // BREAK after next iteration
 
-        		} else {			// 
+        		} else if (false) {			// 
 
-	    			newHeight = Math.ceil( this._height / frac);
-	    			this.counter = this.counter + 1;        			
+	    			newHeight = Math.ceil( this._height / percentState);
+	    			this._counter = this._counter + 1;        			
+        		} else {
+
+	    			this._counter = this._counter + 1;        			
+        			newHeight     = Math.ceil( this._height / 2);
         		}
 
-    			if (newHeight == this._height){
+        		// No change during last iteration 
+    			if (newHeight == this._height){ 
+		        	this._counter = 0; // 
 		        	this.out = prev;
-		        	this.counter=0;
+		        	//*************
 		        	return;
     			}  
 

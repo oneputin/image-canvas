@@ -1,0 +1,62 @@
+
+<link rel="import" href="resize-percent.html">
+
+<dom-module id="resize-batch"> 
+  
+  <template>
+
+    <template id="repeat1" is="dom-repeat" items="[[clientitems]]">
+      
+      <resize-percent 
+        src="[[item.url]]" 
+        out="{{item.placeholder}}" 
+        percent="1" 
+        guidesize="2" 
+        format="jpeg">
+      </resize-percent>
+    
+    </template>
+
+  </template>
+  
+  <script>
+    window.addEventListener('WebComponentsReady', function() {
+      Polymer({
+
+        is: 'resize-batch',
+
+        properties: {
+
+          clientitems: {
+            type: Object,
+            computed: 'createArray(dbdata)'
+          },
+
+          clientitemsdone : 0,
+
+
+        },
+        
+        ready: function() {
+
+        },
+
+        // Processes results of "ALL"-Query 
+        // Transform "keyed"object into array and integrate 'fbkey'
+        createArray: function(data) { 
+          if (!data) return;
+          // obj -> array with prop 'fbkey' 
+          if (!Array.isArray(data)) {
+            data =  Object.keys(data).map(function(k){
+              var doc = data[k];
+              doc.fbkey = k;
+              return doc
+            });
+          }  console.log("length=", data.length); 
+          return data; 
+        }
+
+      });  
+    });      
+  </script>      
+</dom-module>
