@@ -9,7 +9,8 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
     <link rel="import" href="../../fire-base/fire-query.html">
-    <link rel="import" href="../resize-percent.html">
+    <link rel="import" href="../resize-percent.html"> <!--  applied in cycle-1  -->
+    <link rel="import" href="../resize-check.html"> <!-- applied in cycle-2 -->
 
 </head>
 
@@ -18,35 +19,39 @@
   <h3>Demo <span style="font-family: courier;">resize-image-batch-check</span></h3>
 
   <dom-module id="resize-batch"> 
-    <style>
-      .narrow {
-        height:0;
-        margin:0;
-      }
-      fire-query {
-        height: 0;
-      }
-    </style>
+
     <template>
 
+      <style>
+        .narrow {
+          height:0;
+          margin:0;
+        }
+        fire-query {
+          height: 0;
+        }
+      </style>
+      
       <h4>1. Query ALL album-entries from cloud-db and create placeholder for "available" images.</h4>
       
+
       <!-- A. Query all objects (img-meta-documents) from path [cplocal] -->
       
       <fire-query app="wolke7" path="cplocal" item="_all_" data="{{dbdata}}"></fire-query>
+      <!-- <fire-query app="wolke7" path="cplocal" item="placeholder" data="{{dbdata}}"></fire-query> -->
      
-
-      <!-- B/C RESIZE and save to -->  
+      <!-- B/C RESIZE all queried imgMetas and save dataUrl of reduced img 
+           as preoperty 'placeholder' into imgMeta -->  
 
       <template id="repeat1" is="dom-repeat" items="[[clientitems]]">
         
         <!-- <resize-image src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></resize-image> -->
         <!-- <resize-percent src="[[item.url]]" out="{{item.placeholder}}" percent="2" quality="0.9" format="jpeg"></resize-percent> -->
         <resize-percent class="narrow" 
-          src="[[item.url]]" 
-          out="{{item.placeholder}}" 
-          percent="2" 
-          guidesize="2"">
+          src   = "[[item.url]]" 
+          out   = "{{item.placeholder}}" 
+          percent   = "2" 
+          guidesize = "2">
         </resize-percent>
 
         <div>[[item.fbkey]]: <img src="[[item.placeholder]]">[[item.url]]</div>
@@ -55,26 +60,36 @@
         <template is="dom-if" if="{{item.placeholder}}"> 
           <!-- <div class="narrow">[[item.fbkey]]</div> -->
           <fire-query class="narrow"
-              app   ="wolke7" 
-              path  ="cplocal"
-              key   ="[[item.fbkey]]"
-              setdata="[[item]]">
+              app    ="wolke7" 
+              path   ="cplocal"
+              key    ="[[item.fbkey]]"
+              keydata="[[item]]">
           </fire-query>
         </template>
 
       </template>  <!-- END repeat -->      
 
 
-      <!-- D. ??? CHECK number of album-records with placeholder -->
+      <!-- D. ??? CHECK album-records with placeholders created -->
       
-      <template id="if2" is="dom-if" if="{{clientitemsdone}}"> 
+      <template id="if2" is="dom-if" if="{{placeholdersCreated}}"> 
         
-        <h4> 2. Query those album-entries which have item "placeholder" calculated".</h4>
+        <h4> 2. Verify those album-entries which have item "placeholder" calculated".</h4>
 
         <fire-query app="wolke7" path="cplocal" item="placeholder" data="{{okdata}}"></fire-query>
 
         <template id="repeat2" is="dom-repeat" items="[[okitems]]">
-          <div>is-ok: <img src="[[item.placeholder]]">[[item.url]]</div>
+
+          <resize-check item="[[item]]" size="{{item.checked}}"></resize-check>
+
+          <!-- Re-Save with  -->
+          <fire-query class="narrow"
+              app    ="wolke7" 
+              path   ="cplocal"
+              key    ="[[item.fbkey]]"
+              keydata="[[item]]">
+          </fire-query>
+
         </template>
 
       </template>
@@ -96,7 +111,12 @@
               computed: 'createClientItems(dbdata)'
             },
 
-            clientitemsdone : 0,
+            placeholdersCreated : 0,
+
+            dbdata: {
+              type: Object,
+              observer: 'checkPath'
+            },
 
             okdata: {
               type: Object,
@@ -113,8 +133,7 @@
           ready: function() {
             // CTRL - function 
             this.$.repeat1.addEventListener("dom-change", function(event){ console.log("dom-repeat completed !!!", event);
-              // if (this.) 
-              this.clientitemsdone = 1;
+              this.placeholdersCreated = 1;
             }.bind(this));
 
             this.$.if2.addEventListener("dom-change", function(event){ console.log("dom-if2 changed !!!", event);
@@ -126,33 +145,38 @@
           // Processes results of "ALL"-Query 
           // Transform db-response ("keyed object") into an array and integrate 'fbkey'
           createClientItems: function(data) { 
-            if (!data) return;
+            if (!data) return; 
 
-            var items; 
-            // obj -> array with prop 'fbkey' 
-            if (!Array.isArray(data)) {
-              
-              items = Object.keys(data)
-              .map(function(k){  // INSERT doc with key as additional property 
-                
-                var doc = data[k];
-                
-                // TO TEST  ONLY 
-                if (doc.url.indexOf("wolken/wb") < 0) return "";  
-                
-                doc.fbkey = k;  console.log(k, doc.url);
-                return doc
-              })
-              .filter(function(doc){  // 
-                return doc != "";
-              });
-            }  console.log("length=", items.length); 
+            if (Array.isArray(data)) return data; 
+
+            // Transform Object to Array inserting the keys as additional property  
+            // and filter out 'unusable' records 
+            var itemkeys = Object.keys(data); console.log("number of keys of primary query-result:", itemkeys.length); 
+
+            var items = itemkeys.map(function(k){   
+              var doc = data[k];
+              // Filter-condition (during DEV ONLY) 
+              if (doc.url.indexOf("wolken/wb") < 0) return "";  
+              // Insert key as property              
+              doc.fbkey = k;  // console.log(k, doc.url);
+              return doc
+            })
+            .filter(function(doc){  // 
+              return doc != "";
+            });
+
+            console.log("number of 'usable' client-items=", items.length); 
+
             return items; 
           },
 
           // Process results of "hasPlaceholder"-Query
+          checkPath: function(data) {
+            console.log("all data at root-path: ", data);
+          },
+
           checkResults: function(data) {
-            console.log("fb-data queried with placeholder: ", data);
+            console.log("all data with property 'placeholder': ", data);
           }
           
         });  

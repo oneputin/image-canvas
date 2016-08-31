@@ -3,9 +3,11 @@
 
 <!--
 `resize-percent`
-iterates a new _height for <resize-image>  s an img-src (url, dataUrl) to another dataUrl. 
+iterates a new _height for an img-src (url, dataUrl) to another get a dataUrl with size 
+best fitting 'percent' and/or 'guidesize'. 
 Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-percent-canvas] 
-
+!!! NOT working for 'CORS' srces !!!
+ 
 @demo demo/batch-demo.html 
 -->
 
@@ -19,9 +21,6 @@ Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwals
 		        position: relative;
 		        left: -1000px;
 		    }
-		    /*#canvas {
-		    	_height: 10px;
-		    }*/
 	  	</style>  
 
         <resize-image 
@@ -42,6 +41,26 @@ Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwals
 
 		    properties: {
 		        /**
+		         * Target file-size in %
+		         * @type {number}
+		         */
+		        percent: {
+		        	type: Number,
+		        	value: 1
+		        },
+
+		        /**
+		         * guiding size [kByte] of target image
+		         * = min, if percent-iterated size much smaller
+		         * = max, if percent-iterated size much larger    
+		         * @type {Number}
+		         */
+		        guidesize: {
+		        	type: Number,
+		        	value: 2
+		        },
+
+		        /**
 		         * The primary SRC of an image (url or dataUrl)
 		         */
 		        src: {
@@ -60,26 +79,6 @@ Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwals
 		        out: {
 		          type: String,
 		          notify: true
-		        },
-
-		        /**
-		         * Target file-size in %
-		         * @type {number}
-		         */
-		        percent: {
-		        	type: Number,
-		        	value: 1
-		        },
-
-		        /**
-		         * guiding size [kByte] of target image
-		         * = min, if percent-iterated size much smaller
-		         * = max, if percent-iterated size much larger    
-		         * @type {Number}
-		         */
-		        guidesize: {
-		        	type: Number,
-		        	value: 2
 		        },
 
 		        /**
@@ -148,7 +147,6 @@ Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwals
 	        	}
 	        	
 	        	// debugger; 
-
         		if ((guideState > guidemax)||(guideState < guidemin)) {	// "Forced Termination" of iteration
         			// this._height = Math.round( this._height / maxfrac);
         			newHeight = Math.ceil( this._height / guideState);
@@ -157,8 +155,9 @@ Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwals
         		} else if (false) {			// 
 
 	    			newHeight = Math.ceil( this._height / percentState);
-	    			this._counter = this._counter + 1;        			
-        		} else {
+	    			this._counter = this._counter + 1; 
+
+        		} else { 
 
 	    			this._counter = this._counter + 1;        			
         			newHeight     = Math.ceil( this._height / 2);

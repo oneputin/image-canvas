@@ -1,0 +1,51 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`resize-check`
+ 
+@demo demo/batch-demo.html 
+-->
+
+<dom-module id="resize-check">
+
+	<template>
+	    <style>
+		    :host {
+		        display: inline-block;
+		    }
+	  	</style>  
+
+        <div>[[item.size]]: <img src="[[item.placeholder]]">[[item.url]]</div>
+
+	</template>    
+
+	<script>
+
+	    Polymer({
+
+		    is: 'resize-check',
+
+		    properties: {
+		        item: {
+		          type: Object
+		        },
+		        size: {
+		          type: Number,
+		          computed: 'getSize(item)',
+		          notify: true
+		        }
+			},        
+
+	        /**
+	         * check size placeholder-property 
+	         * @return   size of placeholders dataUrl 
+	         */
+	        getSize : function(item) { // _quality, format) {	
+	        	var placeholder = item.placeholder; console.log(item.url, placeholder.length); 
+    			return placeholder.length; 
+        	}
+
+	    });
+
+    </script>
+</dom-module>
