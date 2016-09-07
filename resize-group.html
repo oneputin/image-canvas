@@ -1,0 +1,177 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!-- <link rel="import" href="resize-image.html"> -->
+<!-- <link rel="import" href="resize-percent.html"> -->
+
+<!--
+`resize-group`
+apply <resize-image> to a collection of images presented as metadata-records 
+
+@demo demo/demo-group.html 
+-->
+<dom-module id="resize-group">
+
+	<template>
+
+	    <style>
+		    :host {
+		        display: inline-block;
+		        overflow: hidden;
+		        position: relative;
+		        left: -1000px;
+		    }
+		    #canvas {
+		    	height: 10px;
+		    }
+	  	</style>  
+
+	  	<!-- <resize-percent src="[[src]]" out="{{out}}" percent="2" guidesize="2"></resize-percent> -->
+
+      <canvas id="canvas"></canvas>
+
+	</template>    
+
+	<script>
+
+    Polymer({
+
+	    is: 'resize-group',
+
+	    properties: {
+
+	    	/**
+	    	 * IN: Collection of imagemetas 
+	    	 * @type {Array}
+	    	 */
+	    	incoll: {
+	    		type: Object,
+	    		observer: 'processing'
+	    	},
+
+	    	/**
+	    	 * IN: Name of property to take the resized data 
+	    	 * @type {Object}
+	    	 */
+	    	propname: {
+	    		type: String,
+	    		value: "placeholder"
+	    	},
+
+	    	/**
+	    	 * OUT: Collection of imagemeta after resizing
+	    	 * @type {Object}
+	    	 */
+	    	outcoll: {
+	    		type: Object,
+	    		notify: true
+	    	},
+
+      	/**
+      	 * format target img 
+      	 * @type {String}
+      	 */
+        format: {
+          type: String,
+          value: 'jpeg'
+	      },
+        height: {
+          type: Number,
+          value: 15
+	      },
+        quality: {
+          type: Number,
+          value: 0.9
+	      }
+			},        
+
+			// process all items of incoll (as promises) 
+			
+			/**
+			 * process all items of incoll (as promises)
+			 * @param  {[Array]} items Collection of img-metas
+			 * @return {[Array]}       Collection with additional prop
+			 */
+			processing: function(items) { // console.log("group-items:", items);
+				
+				var self = this; 
+
+				// Map metarecord to process-promise 
+				// to create a resized image as dataUrl
+				var resizer = function(item) { 
+					// return Promise.resolve(item.url); // Test 
+					var height   = self.height,
+							format   = self.format,
+							quality  = self.quality,
+							propname = self.propname,
+							imgsrc   = item.url; 		 // console.log(height,format,quality,imgsrc);
+
+	        var canvas  = self.$.canvas;
+
+					return new Promise(function(resolve, reject){
+
+		        var	img = new Image();   
+
+		        // Setup action of "onload"-event 
+		        img.onload = function() {
+
+	            var ctx; 
+
+	            if (!canvas.hidden) {    // console.log("NOT HIDDEN"); 
+	              ctx= canvas.getContext("2d");
+	              ctx.clearRect(0, 0, canvas.width, canvas.height);
+	        		}
+
+	        		// Sizing-algorythm
+	            if (img.height > height) {
+	                img.width *= height / img.height;
+	                img.height = height;
+	            }
+
+	            canvas.width  = img.width;
+	            canvas.height = img.height;
+
+	            if (ctx) {
+	            	ctx.drawImage(img, 0, 0, img.width, img.height);
+	            }	
+
+	            var dataUrl = canvas.toDataURL(format, quality);
+	          
+	            if (dataUrl)  {
+	            	item[propname]  = dataUrl;
+	            	item["resized"] = dataUrl.length;
+	            	resolve(item);   // resized image as dataUrl
+	            } else {
+	            	reject(Error("img.onload.error:" + imgsrc)); 
+	          	}
+						
+						};
+
+						img.onerror = function() {
+							reject(Error("img.onerror:" + imgsrc));  
+						};
+
+						img.src = imgsrc;
+					}) 
+
+				};
+
+				// Join process-promises 
+				var connector =  function(total, pr) { console.log(pr);
+					return total.then(pr);
+				};
+
+				var prs = items.map(resizer); //.reduce(this.connector, Promise.resolve());
+
+				Promise.all(prs)
+				.then (function(all_done){ // console.log("done resizing:", all_done)
+					self.outcoll = all_done; 
+				})
+				.catch(function (error){
+					console.log("error:", error)
+				}) 
+			}
+
+    });
+
+  </script>
+</dom-module>

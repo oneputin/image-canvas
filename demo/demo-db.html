@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+    <title>image-remote-resize</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../../paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="../../paper-listbox/paper-listbox.html">
+    <link rel="import" href="../../paper-item/paper-item.html">
+    <link rel="import" href="../../paper-input/paper-input.html">
+    <link rel="import" href="../../iron-image/iron-image.html">
+
+    <link rel="import" href="../../fire-base/fire-query.html">
+
+    <link rel="import" href="../resize-image.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+</head>
+
+<body>
+
+  <h3>Playground: <span style="font-family: courier;">resize-image</span> from fb-db.</h3>
+
+  <dom-module id="resize-image-demo"> 
+    <template>
+      <style>
+        paper-dropdown-menu {  width: 400px;   }
+        paper-listbox       {  width: 400px;   }
+      </style>
+
+      <!-- <paper-dropdown-menu label="atlas-years">
+        <paper-listbox 
+          class="dropdown-content" 
+          attr-for-selected="value" 
+          selected="{{itemvalue}}">
+          <paper-item value="2005">2005</paper-item>
+          <paper-item value="2006">2006</paper-item>
+          <paper-item value="2007">2007</paper-item>
+          <paper-item value="2008">2008</paper-item>
+          <paper-item value="2009">2009</paper-item>
+          <paper-item value="2010">2010</paper-item>
+        </paper-listbox>
+      </paper-dropdown-menu> -->      
+
+      <paper-dropdown-menu label="cloud-characters">
+        <paper-listbox 
+          class="dropdown-content" 
+          attr-for-selected="value" 
+          selected="{{itemvalue}}">
+          <paper-item value="heap">Haufenwolken</paper-item>
+          <paper-item value="sheet">Schichtwolken</paper-item>
+          <paper-item value="fleecy">Federwolken</paper-item>
+          <paper-item value="_all_">alle</paper-item>
+        </paper-listbox>
+      </paper-dropdown-menu>      
+      
+      <h4>1. Query Images from cloud-db, transform and save back to firebase.</h4>
+      
+      <fire-query app="wolke7" path="cplocal" item="[[itemname]]" itemvalue="[[itemvalue]]" data="{{dbdata}}"></fire-query>
+     
+      <paper-dropdown-menu label="images">
+
+        <!-- ??? -->
+        <paper-listbox 
+          class="dropdown-content" 
+          attr-for-selected="fbkey" 
+          selected="{{fbkey}}">
+          
+          <template is="dom-repeat" items="[[menuitems]]">
+              
+            <resize-image src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></resize-image>
+            
+            <template is="dom-if" if="{{item.placeholder}}"> 
+              
+              <div fbkey="[[item.fbkey]]">  
+
+                [[item.url]]
+
+                <iron-image 
+                  sizing="cover" 
+                  src = {{item.placeholder}}
+                  style="width:20px; height:20px;">
+                </iron-image>
+
+                <span>:s:</span> [[_getsize(item.placeholder)]], [[item.key]]
+
+              </div>
+           
+              <!-- <fire-query
+                  app ="wolke7" 
+                  path="cplocal"
+                  key ="[[item.key]]"
+                  keydata="[[item]]">
+              </fire-query> -->      
+
+            </template>
+          </template>  
+
+        </paper-listbox>
+      </paper-dropdown-menu>
+
+      
+      <template is="dom-if" if="{{viewkey}}"> 
+
+      <h4>2. Selected image. dbkey=<span>[[viewkey]]</span></h4>
+        
+        <!--  -->        
+        <fire-query app="wolke7" path="cplocal/[[viewkey]]" item="_all_" itemvalue="_all_" data="{{viewitem}}"></fire-query>
+        <!-- <fire-query app="wolke7" path="cplocal/[[viewkey]]" data="{{viewitem}}"></fire-query> -->
+
+        <p>[[viewtitle]]</p>
+        <iron-image 
+          sizing="cover" preload fade
+          placeholder="{{viewitem.placeholder}}"        
+          src = {{viewitem.url}}
+          style="width:400px; height:400px;">
+        </iron-image>
+      </template>
+
+    </template>
+    
+    <script>
+      
+      window.addEventListener('WebComponentsReady', function() {
+        Polymer({
+          is: 'resize-image-demo',
+
+          properties: {
+
+            viewkey: "",
+
+            viewitem: {
+              type: Object,
+              observer: '_logViewItem'
+            },  
+            // Transform dbCollection into Array  
+            menuitems: {
+              type: Object,
+              computed: 'createArray(dbdata)'
+            },
+
+            fbkey: {
+              type: Object,
+              observer: '_getViewItem'
+            },
+
+            itemname: {
+              type: String
+            },
+
+            itemvalue: {
+              type: String
+            },
+
+            rawsrc:{
+              type: String,
+              value: "",
+            },
+
+            imgsrc:{
+              type: String,
+              value: "",
+            },
+            outimg:{
+              type: String,
+              value: "",
+              observer: '_getsize'
+            },
+            outsize:{
+              type: Number,
+              value: 0
+            },            
+            height:{
+              type: Number,
+              value: 50
+            },
+            quality:{
+              type: Number,
+              value: 0.5
+            }
+          },
+          observers: [
+
+          ],
+          
+          ready: function() {
+            // this.itemname  = "type-year";
+            // this.itemvalue = "2006";
+            this.itemname  = "type-character";
+            this.itemvalue = "heap";
+          },
+
+          // 
+          _getViewItem: function(key) { // console.log("processing item: " + key, this.menuitems);  
+            this.viewkey = key;// var 
+          },
+
+          _logViewItem(n,o) { console.log("viewitem", n);
+            this.viewtitle = n["title-main-pict"];
+          },
+
+          // Transform "keyed"object into array and integrate key
+          createArray: function(data) { 
+            if (!data) return;
+            // obj -> array with prop 'key' 
+            if (!Array.isArray(data)) {
+              data =  Object.keys(data).map(function(k){
+                var doc = data[k];
+                doc.fbkey = k;
+                return doc
+              });
+            }  console.log("queried data:", data); 
+            return data; 
+          },
+
+          _getsize: function(n) { 
+            if (!n) return; 
+            this.outsize = n.length;
+            return n.length;
+          },
+          
+        });  
+      });      
+    </script>      
+  </dom-module>
+
+  <resize-image-demo></resize-image-demo>
+
+</body>
+</html>

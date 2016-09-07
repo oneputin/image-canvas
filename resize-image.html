@@ -5,7 +5,7 @@
 resizes an img-src (url, dataUrl) to another dataUrl. Based on `canvas`-resizing 
 see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas] 
 
-@demo demo/drop-demo.html 
+@demo demo/demo-db.html 
 -->
 <dom-module id="resize-image">
 
@@ -23,97 +23,110 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas]
 		    }
 	  	</style>  
 
-        <canvas id="canvas"></canvas>
+    	<canvas id="canvas"></canvas>
 
 	</template>    
 
 	<script>
 
-	    Polymer({
+    Polymer({
 
-		    is: 'resize-image',
+	    is: 'resize-image',
 
-		    properties: {
-		        /**
-		         * The primary SRC of an image (url or dataUrl)
-		         */
-		        src: {
-		          type: String
-		          // observer: 'render',
-		        },
-		        // the "rendered(reduced)" img (as dataUrl)
-		        out: {
-		          type: String,
-		          notify: true
-		        },
-		        /**
-		         * The target height of resized image.
-		        */
-		        height: {
-		          type: Number,
-		          value: 100
-		        },
-		        /**
-		         * quality of target image (0..1)
-		         * @type {Object}
-		         */
-		        quality: {
-		          type: Number
-		      	},
-		      	/**
-		      	 * format target img 
-		      	 * @type {Object}
-		      	 */
-		        format: {
-		          type: String,
-		          value: 'jpeg'
-		      }
-			},        
-
-			observers: [
-				'render(src, height, quality, format)'	
-			],
-
+	    properties: {
 	        /**
-	         * render `src`-image into canvas according to parameters `height, format,quality` 
-	         * @return          [sets host-property `out`]
+	         * The primary SRC of an image (url or dataUrl)
 	         */
-	        render : function(src, height, quality, format) {	
-	        	if (!height || !quality )  return;
+	        src: {
+	          type: String
+	          // observer: 'render',
+	        },
+	        // the "rendered(reduced)" img (as dataUrl)
+	        out: {
+	          type: String,
+	          notify: true
+	        },
+	        /**
+	         * The target height [px] of resized image.
+	        */
+	        height: {
+	          type: Number,
+	          value: 100
+	        },
+	        /**
+	         * quality of target image (0..1)
+	         * @type {Object}
+	         */
+	        quality: {
+	          type: Number,
+	          value: 0.9
+	      	},
+	      	/**
+	      	 * format target img 
+	      	 * @type {Object}
+	      	 */
+	        format: {
+	          type: String,
+	          value: 'jpeg'
+		      }
+		},        
 
-		        var self    = this;
+		observers: [
+			'_render(src, height, quality, format)'	
+		],
 
-		        if (!format)  format='jpeg'; 
-            	format  = "image/" + format;
+		// debounce-shell
+	    _render: function(src, height, quality, format) { 
+	        this.debounce('render', function () { // console.log("DebouncedStart fbQuery:", path, item, value);
+	          this.render(src, height, quality, format); 
+	        }, 100);
+	    },
 
-		        var canvas  = this.$.canvas, 
-	            	img     = new Image();   // console.log("canvas, height, format, quality", canvas, height, format, typeof quality, quality);
+	    /**
+	     * render `src`-image into canvas according to parameters `height, format,quality` 
+	     * @return          [sets host-property `out`]
+	     */
+	    render : function(src, height, quality, format) {	
+	      	// if (!height || !quality )  return;
 
-	            // Setup action of "onload"-event 
-	            img.onload = function() {
-	                
-	                var ctx; 
-	                if (!canvas.hidden) {    // console.log("NOT HIDDEN"); 
-		                ctx= canvas.getContext("2d");
-		                ctx.clearRect(0, 0, canvas.width, canvas.height);
-	            	}
+	        var self  = this;
 
-	                if (img.height > height) {
-	                    img.width *= height / img.height;
-	                    img.height = height;
-	                }
-	                canvas.width  = img.width;
-	                canvas.height = img.height;
+	        if (!format)  format='jpeg'; 
+	        format  = "image/" + format;
 
-	                if (ctx) ctx.drawImage(img, 0, 0, img.width, img.height);
-	            	
-	            	self.out = canvas.toDataURL(format, quality); 
-	            };
+	        var canvas = this.$.canvas;
 
-	            img.src = src;
-	        }
+	        var	img = new Image();   // console.log("canvas, height, format, quality", canvas, height, format, typeof quality, quality);
 
-	    });
+	          // Setup action of "onload"-event 
+	        img.onload = function() {
+	            var ctx; 
 
-    </script>
+	            if (!canvas.hidden) {    // console.log("NOT HIDDEN"); 
+	              ctx= canvas.getContext("2d");
+	              ctx.clearRect(0, 0, canvas.width, canvas.height);
+	        		}
+
+	        		// Size-algorythm
+	            if (img.height > height) {
+	                img.width *= height / img.height;
+	                img.height = height;
+	            }
+	            canvas.width  = img.width;
+	            canvas.height = img.height;
+
+	            if (ctx) {
+	            	ctx.drawImage(img, 0, 0, img.width, img.height);
+	            }	
+	        	
+	        	self.out = canvas.toDataURL(format, quality); 
+
+	        };
+
+	        img.src = src;
+	    }
+
+    });
+
+  </script>
 </dom-module>

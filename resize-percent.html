@@ -8,7 +8,7 @@ best fitting 'percent' and/or 'guidesize'.
 Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-percent-canvas] 
 !!! NOT working for 'CORS' srces !!!
  
-@demo demo/batch-demo.html 
+@demo demo/demo-drop-percent.html 
 -->
 
 <dom-module id="resize-percent">
@@ -81,6 +81,15 @@ Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwals
 		          notify: true
 		        },
 
+		      	/**
+		      	 * format target img 
+		      	 * @type {Object}
+		      	 */
+		        format: {
+		          type: String,
+		          value: 'jpeg'
+		    	},
+
 		        /**
 		         * The target _height of resized image.
 		        */
@@ -96,14 +105,6 @@ Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwals
 		          type: Number,
 		          value: 0.9
 		      	},
-		      	/**
-		      	 * format target img 
-		      	 * @type {Object}
-		      	 */
-		        format: {
-		          type: String,
-		          value: 'jpeg'
-		    	},
 
 		    	/**
 		    	 * iteration counter
@@ -132,7 +133,7 @@ Based on `canvas`-resizing, see (Tom Trenka on August 6, 2013)[https://davidwals
 	        	var psize      = prev.length, 
 	        		guideState = psize / (guidesize * 1024),		//   
 	        		newHeight ;	
-	        		console.log(this.src+"-" + this._counter+":",  this._height, psize, guideState.toFixed(2));
+	        		console.log("iterateHeight at cnt=" + this._counter+":",  this._height, psize, guideState.toFixed(2));
 
 	        	var	pcent = 100 * psize / this.src.length,	// actual size in percent 
 	        		percentState = pcent / percent;			// relation actual sizechange / target sizechange	

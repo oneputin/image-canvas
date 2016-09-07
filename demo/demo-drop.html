@@ -27,7 +27,7 @@
 
 <body>
 
-  <h3>Test image resizing</h3>
+  <h3>Playground: Image resizing - interactive</h3>
 
   <dom-module id="image-drop-demo"> 
     <template>
@@ -110,14 +110,14 @@
         <div style="margin-left:10px">  
           <!-- <div>Preview period [s]</div> -->
           <!-- <paper-slider value="{{delay}}" min="0" max="5" pin ></paper-slider> -->
-          <p>Right click to save the</p> 
+          <p>rightClick to save the</p> 
 
           <h5>RESIZED IMAGE : <img src="[[outimg]]"></h5>
           <p>[[imgname]]</p>
           
-          <p>Reduction: [[percent]]% ([[outsize]]/[[rawsize]])</p>
+          <p>reduced to: [[percent]]% ([[outsize]]/[[rawsize]])</p>
 
-          <paper-checkbox id="checkori" on-change="_checkOriginal">View original in preview</paper-checkbox>
+          <paper-checkbox id="checkori" on-change="_checkOriginal">Compare original</paper-checkbox>
 
         </div>
       </div>   

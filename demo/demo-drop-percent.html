@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
-    <!--  -->
+    <!-- Polymer-Element-Catalog -->
     <link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
     <link rel="import" href="../../iron-flex-layout/iron-flex-layout-classes.html">
     <link rel="import" href="../../iron-image/iron-image.html">
@@ -28,7 +28,7 @@
 
 <body>
 
-  <h3>Test image resizing</h3>
+  <h3>Playground: Image resizing - interactive</h3>
 
   <dom-module id="percent-demo"> 
     <template>
@@ -72,7 +72,7 @@
         }
       </style>
     
-      <p>Drag an image into the box below to resize it with canvas and JavaScript.</p>
+      <p>Drag an image into the box below to resize it with <b>relative</b> and/or <b>absolute</b> size-parameter(s).</p>
       
       <div class="container horizontal">
         <!-- processing element -->
@@ -115,15 +115,15 @@
         <div style="margin-left:10px">  
           <!-- <div>Preview period [s]</div> -->
           <!-- <paper-slider value="{{delay}}" min="0" max="5" pin ></paper-slider> -->
-          <p>Right click to save the</p> 
+          <p>rightClick to save the</p> 
 
           <h5>RESIZED IMAGE : <img id="resized" src="[[outimg]]"  contentEditable="true"></h5>
           <p> <textarea class="imgname" contentEditable="true">[[imgname]]</textarea> </p>
           
-          <p>Reduction: [[percentis]] % ([[outsize]]/[[rawsize]])</p>
+          <p>reduced to: [[percentis]] % ([[outsize]]/[[rawsize]])</p>
 
           <p><paper-checkbox id="checkori" on-change="_checkOriginal">Compare with original</paper-checkbox></p>
-          <p><paper-checkbox id="checkurl" on-change="_checkDataurl">View Resized Dataurl</paper-checkbox></p>
+          <p><paper-checkbox id="checkurl" on-change="_checkDataurl">View dataurl (resized)</paper-checkbox></p>
 
         </div>
       </div>   
