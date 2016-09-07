@@ -135,10 +135,14 @@ apply <resize-image> to a collection of images presented as metadata-records
 	            }	
 
 	            var dataUrl = canvas.toDataURL(format, quality);
-	          
+
 	            if (dataUrl)  {
+		          	var d = new Date();
+
 	            	item[propname]  = dataUrl;
-	            	item["resized"] = dataUrl.length;
+	            	item["logsize"] = dataUrl.length;
+	            	item["logtime"]	= d.toString();
+
 	            	resolve(item);   // resized image as dataUrl
 	            } else {
 	            	reject(Error("img.onload.error:" + imgsrc)); 

@@ -54,18 +54,18 @@
       
       <fire-query app="wolke7" path="cplocal" item="[[itemname]]" itemvalue="[[itemvalue]]" data="{{dbdata}}"></fire-query>
      
-      <resize-group incoll="[[menuitems]]" propname="[[propname]]" outcoll="{{resized}}"></resize-group>
+      <resize-group incoll="[[menuitems]]" propname="[[propname]]" outcoll="{{_resized}}"></resize-group>
 
 
       <h4>2. Process resized data</h4>
-      
+      <!--  -->
       <template is="dom-if" if="{{resized}}"> 
 
         <fire-query
             app ="wolke7" 
             path="cplocal"
             updatedata = "[[resized]]"
-            updatectrl = "__update__">
+            updatectrl = "_update_">
         </fire-query>      
 
         <paper-dropdown-menu label="images">
@@ -76,7 +76,7 @@
             attr-for-selected="fbkey" 
             selected="{{fbkey}}">
             
-            <template is="dom-repeat" items="[[resized]]">
+            <template is="dom-repeat" items="[[_resized]]">
                 
               <template is="dom-if" if="{{_getprop(item)}}"> 
                 
@@ -103,7 +103,7 @@
         
         <template is="dom-if" if="{{viewkey}}"> 
 
-        <h4>3. Selected image. dbkey=<span>[[viewkey]]</span></h4>
+          <h4>3. Selected image. dbkey=<span>[[viewkey]]</span></h4>
           
           <!--  -->        
           <fire-query app="wolke7" path="cplocal/[[viewkey]]" item="_all_" itemvalue="_all_" data="{{viewitem}}"></fire-query>
@@ -148,9 +148,9 @@
               computed: 'createArray(dbdata)'
             },
 
-            resized: {
+            _resized: {
               type: Object,
-              observer: 'viewArray'
+              observer: 'createColl'
             },
 
             fbkey: {
@@ -227,8 +227,13 @@
             return data; 
           },
 
-          viewArray: function(data) {
-            console.log("resized data", data); 
+          createColl: function(dataArray) {
+            var mergeColl = function(total, dataset) {
+              total[dataset.fbkey] = dataset;
+              return total;
+            }
+            var dataColl = dataArray.reduce(mergeColl, {}); // console.log("resized data", dataColl);
+            this.resized = dataColl;
           },
 
           _getsize: function(item) {
