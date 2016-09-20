@@ -75,7 +75,7 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas]
 			'_render(src, height, quality, format)'	
 		],
 
-		// debounce-shell
+		// debounce-shell to avoid calls 
 	    _render: function(src, height, quality, format) { 
 	        this.debounce('render', function () { // console.log("DebouncedStart fbQuery:", path, item, value);
 	          this.render(src, height, quality, format); 

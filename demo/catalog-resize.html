@@ -17,7 +17,8 @@
 
     <link rel="import" href="../../fire-base/fire-query.html">
 
-    <link rel="import" href="../resize-group.html">
+    <link rel="import" href="../resize-catalog.html">
+    <link rel="import" href="../manage-catalog.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
@@ -36,6 +37,8 @@
         paper-listbox       {  width: 400px;   }
       </style>
 
+      <h4>1. Select catalog year to </h4>
+
       <paper-dropdown-menu label="atlas-years">
         <paper-listbox 
           class="dropdown-content" 
@@ -50,15 +53,17 @@
         </paper-listbox>
       </paper-dropdown-menu>      
 
-      <h4>1. Query Image-Meta from cloud-db, create resize-prop [<span>[[propname]]</span>] </h4>
+
+      <h4>2. Query catalog-data from cloud-db, process-1(resize) the referenced image</span>] </h4>
       
       <fire-query app="wolke7" path="cplocal" item="[[itemname]]" itemvalue="[[itemvalue]]" data="{{dbdata}}"></fire-query>
      
-      <resize-group incoll="[[menuitems]]" propname="[[propname]]" outcoll="{{_resized}}"></resize-group>
+      <manage-catalog incoll="[[dbdata]]" propname="[[propname]]" outcoll="{{resized}}"></manage-catalog>
+      <!-- <resize-catalog incoll="[[dbdata]]" propname="[[propname]]" outcoll="{{resized}}"></resize-catalog> -->
 
 
-      <h4>2. Process resized data</h4>
-      <!--  -->
+      <h4>3. Process-2 catalog (save do catalog-db) and View  </h4>
+      
       <template is="dom-if" if="{{resized}}"> 
 
         <fire-query
@@ -100,29 +105,29 @@
           </paper-listbox>
         </paper-dropdown-menu>
 
-        
-        <template is="dom-if" if="{{viewkey}}"> 
-
-          <h4>3. Selected image. dbkey=<span>[[viewkey]]</span></h4>
-          
-          <!--  -->        
-          <fire-query app="wolke7" path="cplocal/[[viewkey]]" item="_all_" itemvalue="_all_" data="{{viewitem}}"></fire-query>
-          <!-- <fire-query app="wolke7" path="cplocal/[[viewkey]]" data="{{viewitem}}"></fire-query> -->
-
-          <p>[[viewtitle]]</p>
-          <iron-image 
-            sizing="cover" preload fade
-            placeholder="{{viewitem.placeholder}}"        
-            src = {{viewitem.url}}
-            style="width:400px; height:400px;">
-          </iron-image>
-        </template>
-      
       </template>
 
+      <h4>4. Selected image. dbkey=<span>[[viewkey]]</span></h4>
+
+      <template is="dom-if" if="{{viewkey}}"> 
+        
+        <!--  -->        
+        <fire-query app="wolke7" path="cplocal/[[viewkey]]" item="_all_" itemvalue="_all_" data="{{viewitem}}"></fire-query>
+        <!-- <fire-query app="wolke7" path="cplocal/[[viewkey]]" data="{{viewitem}}"></fire-query> -->
+
+        <p>[[viewtitle]]</p>
+        <iron-image 
+          sizing="cover" preload fade
+          placeholder="{{viewitem.placeholder}}"        
+          src = {{viewitem.url}}
+          style="width:400px; height:400px;">
+        </iron-image>
+      </template>
+    
     </template>
     
     <script>
+
       window.addEventListener('WebComponentsReady', function() {
         Polymer({
 
@@ -143,14 +148,9 @@
             },  
 
             // Transform dbCollection into Array  
-            menuitems: {
-              type: Object,
-              computed: 'createArray(dbdata)'
-            },
-
             _resized: {
               type: Object,
-              observer: 'createColl'
+              computed: 'createArray(resized)'
             },
 
             fbkey: {
@@ -209,7 +209,7 @@
             this.viewkey = key;// var 
           },
 
-          _logViewItem(n,o) { console.log("viewitem", n);
+          _logViewItem(n,o) { // console.log("viewitem", n);
             this.viewtitle = n["title-main-pict"];
           },
 
@@ -220,20 +220,11 @@
             if (!Array.isArray(data)) {
               data =  Object.keys(data).map(function(k){
                 var doc = data[k];
-                doc.fbkey = k;
+                doc.fbkey = k; // ??? 
                 return doc
               });
             }  // console.log("queried data:", data); 
             return data; 
-          },
-
-          createColl: function(dataArray) {
-            var mergeColl = function(total, dataset) {
-              total[dataset.fbkey] = dataset;
-              return total;
-            }
-            var dataColl = dataArray.reduce(mergeColl, {}); // console.log("resized data", dataColl);
-            this.resized = dataColl;
           },
 
           _getsize: function(item) {

@@ -1,0 +1,202 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`process-catalog`
+resize images xxxed in catalog and add resized image-dataUrl as property to catalog-items
+
+@demo demo/catalog-process.html 
+-->
+<dom-module id="process-catalog">
+
+	<template>
+
+	    <style>
+		    :host {
+		        display: inline-block;
+		        overflow: hidden;
+		        position: relative;
+		        left: -1000px;
+		    }
+	  	</style>  
+
+	</template>    
+
+	<script>
+
+    Polymer({
+
+	    is: 'process-catalog',
+
+	    properties: {
+
+	    	/**
+	    	 * IN: collection of catalogitems 
+	    	 * @type {Array}
+	    	 */
+	    	incoll: {
+	    		type: Object,
+	    		observer: 'processing'
+	    	},
+
+	    	/**
+	    	 * IN: Name of catalog-property to take the resized image-dataUrl 
+	    	 * @type {Object}
+	    	 */
+	    	propname: {
+	    		type: String,
+	    		value: "placeholder"
+	    	},
+
+	    	/**
+	    	 * OUT: collection of catalogitems with resized image-dataUrl
+	    	 * @type {Object}
+	    	 */
+	    	outcoll: {
+	    		type: Object,
+	    		notify: true
+	    	},
+
+	      	/**
+	      	 * format target img 
+	      	 * @type {String}
+	      	 */
+	        format: {
+	          type: String,
+	          value: 'jpeg'
+		      },
+	        height: {
+	          type: Number,
+	          value: 15
+		      },
+	        quality: {
+	          type: Number,
+	          value: 0.9
+		      }
+		},        
+
+		/**
+		 * add dataUrl of resized src-image to catalogitems 
+		 * @param  {[Array]} items collection of catalogitems
+		 * @return {[Array]}       collection of processed catalogitems
+		 */
+		processing: function(iterable) { // console.log("group-items:", items);
+			
+			var self = this; 
+
+			// Map catalogitem into a processor(promise) 
+			// resizing the src-image as dataUrl
+			var process = function(key) { 
+				// process-objects 
+				var data_in  = iterable[key], // 
+        			data_out = {};
+
+        		// process-controls	
+				var	propname = self.propname,  // console.log(height,format,quality,datasrc);
+					datasrc  = data_in.url;		 
+
+				function Processor(processkey) {
+					// Generic processor-shell as proxy 
+					if (!processkey) processkey = "processing";
+
+				    var proxy = new Proxy(
+					    {
+					    	id: processkey
+					    }, 
+					    {
+					        get: function(target, name, receiver) {
+					          // console.log('GET: called for field: ', name);
+					          return Reflect.get(target, name, receiver);
+					        },
+
+					        set: function(target, name, value, receiver) {
+
+					        	var flag =  Reflect.set(target, name, value, receiver); // returns bool status 
+
+								if (name == "data") { // console.log(`Starting with ${value}`);
+									// START process-action 
+									target.action();  
+								} else {
+									// console.log("SETUP of "+ target.id+":", name, value);
+								}
+					        	
+					        	return flag;
+					        }
+					    }
+					);
+
+				    return proxy;
+				}	
+				
+				return new Promise(function(resolve, reject){
+
+			        var	process = new Processor();   
+
+			        // Run process after "onload"-event 
+			        process.action = function() {
+			            // var dataUrl = "http://" + this.src; 
+			            var dataUrl = "http://" + data_in.src; 
+
+			            if (dataUrl)  {
+
+			            	data_out[key] = formatter(data_in, dataUrl, propname);
+
+			            	resolve(out);   // resized image as dataUrl
+			            	//**********	
+			            } else {
+			            	reject(Error("img.onload.error for:" + datasrc)); 
+			            	//**********		
+			          	}
+					};
+
+					process.onerror = function() {
+						reject(Error("process.onerror:" + datasrc));  
+		            	//**********		
+					};
+					// start processor
+					process.data = data_in;
+				}); 
+			};
+
+			// Organize process-results as properties of catalogitems
+			var formatter = function(item, prop, propname) {
+				if (!propname) propname = "resized";
+            	item[propname]  		= prop;
+            	item[propname+"_size"]  = prop.length;
+
+	          	var d = new Date();
+            	item["last_logtime"]	= d.toString();
+
+            	return item;
+			};
+
+			// ??? wann sinnvoll ???
+			// Accumulate catalog-process-promises into sequence
+			// var sequencer =  function(total, processor) { 
+			// 	console.log(processor);
+			// 	return total.then(processor);
+			// };
+			// var sequence = items.map(process).reduce(sequencer, Promise.resolve());
+			// Promise.resolve(sequence)
+
+			var processes = Object.keys(catalog).map(process); 
+
+			Promise.all(processes)
+			.then (function(all_done){ // console.log("done resizing:", all_done)
+				// 
+				function join(out_coll, itemcoll) {
+					Object.keys(itemcoll).forEach((key) => out_coll[key] = itemcoll[key]);
+					return out_coll;
+				};
+				var outcoll = all_done.reduce(join, {}); // console.log(all_coll, all_done); 
+
+				self.outcoll = outcoll; 
+			})
+			.catch(function (error){
+				console.log("error:", error)
+			}) 
+		}
+
+    });
+
+  </script>
+</dom-module>

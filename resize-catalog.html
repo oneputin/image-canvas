@@ -1,0 +1,207 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`resize-catalog`
+resize images xxxed in catalog and add resized image-dataUrl as property to catalog-items
+
+@demo demo/demo-catalog.html 
+-->
+<dom-module id="resize-catalog">
+
+	<template>
+
+	    <style>
+		    :host {
+		        display: inline-block;
+		        overflow: hidden;
+		        position: relative;
+		        left: -1000px;
+		    }
+		    #canvas {
+		    	height: 10px;
+		    }
+	  	</style>  
+
+    	<canvas id="canvas" hiddenfunction Customer() {
+
+    var proxy = new Proxy({}, {
+      get: function(target, name, receiver) {
+        console.log('get called for field: ', name);
+        return Reflect.get(target, name, receiver);
+      },
+      set: function(target, name, value, receiver) {
+        console.log('set called for field: %s, and value: %s', name, value);
+        return Reflect.set(target, name, value, receiver);
+      }
+    });
+
+    return proxy;
+}
+
+var customer = new Customer();
+customer.name = 'hendrik';
+customer.surname = 'swanepoel';></canvas>
+
+	</template>    
+
+	<script>
+
+    Polymer({
+
+	    is: 'resize-catalog',
+
+	    properties: {
+
+	    	/**
+	    	 * IN: collection of catalogitems 
+	    	 * @type {Array}
+	    	 */
+	    	incoll: {
+	    		type: Object,
+	    		observer: 'processing'
+	    	},
+
+	    	/**
+	    	 * IN: Name of catalog-property to take the resized image-dataUrl 
+	    	 * @type {Object}
+	    	 */
+	    	propname: {
+	    		type: String,
+	    		value: "placeholder"
+	    	},
+
+	    	/**
+	    	 * OUT: collection of catalogitems with resized image-dataUrl
+	    	 * @type {Object}
+	    	 */
+	    	outcoll: {
+	    		type: Object,
+	    		notify: true
+	    	},
+
+	      	/**
+	      	 * format target img 
+	      	 * @type {String}
+	      	 */
+	        format: {
+	          type: String,
+	          value: 'jpeg'
+		      },
+	        height: {
+	          type: Number,
+	          value: 15
+		      },
+	        quality: {
+	          type: Number,
+	          value: 0.9
+		      }
+		},        
+
+		/**
+		 * add dataUrl of resized src-image to catalogitems 
+		 * @param  {[Array]} items collection of catalogitems
+		 * @return {[Array]}       collection of processed catalogitems
+		 */
+		processing: function(catalog) { // console.log("group-items:", items);
+			
+			var self = this; 
+
+			// Map catalogitem into a processor(promise) 
+			// resizing the src-image as dataUrl
+			var process = function(key) { 
+				// process-objects 
+				var item     = catalog[key],
+					imgsrc   = item.url, 		 // console.log(height,format,quality,imgsrc);
+        			canvas   = self.$.canvas,
+        			out      = {};
+        		// process-controls	
+				var height   = self.height,
+					format   = self.format,
+					quality  = self.quality,
+					propname = self.propname;
+				
+				return new Promise(function(resolve, reject){
+
+			        var	img = new Image();   
+
+			        // Run process after "onload"-event 
+			        img.onload = function() {
+
+			        	// Sizing-algorythm
+			            if (img.height > height) {
+			                img.width *= height / img.height;
+			                img.height = height;
+			            }
+
+			            canvas.width  = img.width;
+			            canvas.height = img.height;
+
+			            if (!canvas.hidden) {    // console.log("Canvas NOT HIDDEN"); 
+				            var ctx = canvas.getContext("2d");
+				            ctx.clearRect(0, 0, canvas.width, canvas.height);
+			            	ctx.drawImage(img, 0, 0, img.width, img.height);
+			            }	
+
+			            var dataUrl = canvas.toDataURL(format, quality);
+
+			            if (dataUrl)  {
+
+			            	out[key] = formatter(item, dataUrl, propname);
+
+			            	resolve(out);   // resized image as dataUrl
+			            	//**********	
+			            } else {
+			            	reject(Error("img.onload.error for:" + imgsrc)); 
+			            	//**********		
+			          	}
+					};
+
+					img.onerror = function() {
+						reject(Error("img.onerror:" + imgsrc));  
+		            	//**********		
+					};
+					// Load image 
+					img.src = imgsrc;
+				}); 
+			};
+
+			// Organize process-results as properties of catalogitems
+			var formatter = function(item, prop, propname) {
+				if (!propname) propname = "resized";
+            	item[propname]  		= prop;
+            	item[propname+"_size"]  = prop.length;
+
+	          	var d = new Date();
+            	item["logtime"]	= d.toString();
+
+            	return item;
+			};
+
+			// ??? wann sinnvoll ???
+			// Accumulate catalog-process-promises into sequence
+			// var sequencer =  function(total, processor) { 
+			// 	console.log(processor);
+			// 	return total.then(processor);
+			// };
+			// var sequence = items.map(process).reduce(sequencer, Promise.resolve());
+			// Promise.resolve(sequence)
+
+			var processes = Object.keys(catalog).map(process); 
+			Promise.all(processes)
+			.then (function(all_done){ // console.log("done resizing:", all_done)
+				function join(coll, itemcoll) {
+					Object.keys(itemcoll).forEach((key) => coll[key] = itemcoll[key]);
+					return coll;
+				};
+				var all_coll = all_done.reduce(join, {}); // console.log(all_coll, all_done); 
+				self.outcoll = all_coll; 
+			})
+			.catch(function (error){
+				console.log("error:", error)
+			}) 
+		}
+
+    });
+
+  </script>
+</dom-module>

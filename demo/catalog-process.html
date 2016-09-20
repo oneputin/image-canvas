@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+    <title>resize-group</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../../paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="../../paper-listbox/paper-listbox.html">
+    <link rel="import" href="../../paper-item/paper-item.html">
+    <link rel="import" href="../../paper-input/paper-input.html">
+    <link rel="import" href="../../iron-image/iron-image.html">
+
+    <link rel="import" href="../../fire-base/fire-query.html">
+
+    <!-- <link rel="import" href="../resize-catalog.html"> -->
+    <link rel="import" href="../process-catalog.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+</head>
+
+<body>
+
+  <h3>Playground: <span style="font-family: courier;">resize-group</span> from fb-db.</h3>
+
+  <dom-module id="demo-group"> 
+
+    <template>
+  
+      <style>
+        paper-dropdown-menu {  width: 400px;   }
+        paper-listbox       {  width: 400px;   }
+      </style>
+
+      <h4>1. Select catalog year to </h4>
+
+      <paper-dropdown-menu label="atlas-years">
+        <paper-listbox 
+          class="dropdown-content" 
+          attr-for-selected="value" 
+          selected="{{itemvalue}}">
+          <paper-item value="2005">2005</paper-item>
+          <paper-item value="2006">2006</paper-item>
+          <paper-item value="2007">2007</paper-item>
+          <paper-item value="2008">2008</paper-item>
+          <paper-item value="2009">2009</paper-item>
+          <paper-item value="2010">2010</paper-item>
+        </paper-listbox>
+      </paper-dropdown-menu>      
+
+
+      <h4>2. Query catalog-data from cloud-db, process-1(resize) the referenced image</span>] </h4>
+      
+      <fire-query app="wolke7" path="cplocal" item="[[itemname]]" itemvalue="[[itemvalue]]" data="{{dbdata}}"></fire-query>
+     
+      <process-catalog incoll="[[dbdata]]" propname="[[propname]]" outcoll="{{resized}}"></process-catalog>
+      <!-- <resize-catalog incoll="[[dbdata]]" propname="[[propname]]" outcoll="{{resized}}"></resize-catalog> -->
+
+
+      <h4>3. Process-2 catalog (save do catalog-db) and View  </h4>
+      
+      <template is="dom-if" if="{{resized}}"> 
+
+        <fire-query
+            app ="wolke7" 
+            path="cplocal"
+            updatedata = "[[resized]]"
+            updatectrl = "_update_">
+        </fire-query>      
+
+        <paper-dropdown-menu label="images">
+
+          <!-- ??? -->
+          <paper-listbox 
+            class="dropdown-content" 
+            attr-for-selected="fbkey" 
+            selected="{{fbkey}}">
+            
+            <template is="dom-repeat" items="[[_resized]]">
+                
+              <template is="dom-if" if="{{_getprop(item)}}"> 
+                
+                <div fbkey="[[item.fbkey]]">  
+
+                  [[item.fbkey]],[[item.url]]
+
+                </div>
+             
+              </template>
+            </template>  
+
+          </paper-listbox>
+        </paper-dropdown-menu>
+
+      </template>
+
+      <h4>4. Selected image. dbkey=<span>[[viewkey]]</span></h4>
+
+      <template is="dom-if" if="{{viewkey}}"> 
+        
+        <!--  -->        
+        <fire-query app="wolke7" path="cplocal/[[viewkey]]" item="_all_" itemvalue="_all_" data="{{viewitem}}"></fire-query>
+        <!-- <fire-query app="wolke7" path="cplocal/[[viewkey]]" data="{{viewitem}}"></fire-query> -->
+
+        <p>[[viewtitle]]</p>
+        <iron-image 
+          sizing="cover" preload fade
+          placeholder="{{viewitem.placeholder}}"        
+          src = {{viewitem.url}}
+          style="width:400px; height:400px;">
+        </iron-image>
+      </template>
+    
+    </template>
+    
+    <script>
+
+      window.addEventListener('WebComponentsReady', function() {
+        Polymer({
+
+          is: 'demo-group',
+
+          properties: {
+
+            propname: {
+              type: String,
+              value: "thumb"
+            },
+
+            viewkey: "",
+
+            viewitem: {
+              type: Object,
+              observer: '_logViewItem'
+            },  
+
+            // Transform dbCollection into Array  
+            _resized: {
+              type: Object,
+              computed: 'createArray(resized)'
+            },
+
+            fbkey: {
+              type: Object,
+              observer: '_getViewItem'
+            },
+
+            itemname: {
+              type: String
+            },
+
+            itemvalue: {
+              type: String
+            },
+
+            rawsrc:{
+              type: String,
+              value: "",
+            },
+
+            imgsrc:{
+              type: String,
+              value: "",
+            },
+            outimg:{
+              type: String,
+              value: "",
+              observer: '_getsize'
+            },
+            outsize:{
+              type: Number,
+              value: 0
+            },            
+            height:{
+              type: Number,
+              value: 50
+            },
+            quality:{
+              type: Number,
+              value: 0.5
+            }
+          },
+
+          observers: [
+          ],
+          
+          ready: function() {
+            this.itemname  = "type-year";
+            this.itemvalue = "2006";
+            // this.itemname  = "type-character";
+            // this.itemvalue = "heap";
+          },
+
+          // 
+          _getViewItem: function(key) { // console.log("processing item: " + key, this.menuitems);  
+            this.viewkey = key;// var 
+          },
+
+          _logViewItem(n,o) { // console.log("viewitem", n);
+            this.viewtitle = n["title-main-pict"];
+          },
+
+          // Transform "keyed"object into array and integrate key
+          createArray: function(data) { 
+            if (!data) return;
+            // obj -> array with prop 'key' 
+            if (!Array.isArray(data)) {
+              data =  Object.keys(data).map(function(k){
+                var doc = data[k];
+                doc.fbkey = k; // ??? 
+                return doc
+              });
+            }  // console.log("queried data:", data); 
+            return data; 
+          },
+
+          _getsize: function(item) {
+            var x = this._getprop(item) 
+            if (!x) return; 
+            this.outsize = x.length;
+            return x.length;
+          },
+
+          _getprop: function(item) {
+            return item[this.propname];
+          }
+          
+        });  
+      });      
+    </script>      
+  </dom-module>
+
+  <demo-group></demo-group>
+
+</body>
+</html>
