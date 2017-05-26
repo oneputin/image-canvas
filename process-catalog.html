@@ -28,7 +28,6 @@ resize images xxxed in catalog and add resized image-dataUrl as property to cata
 	    is: 'process-catalog',
 
 	    properties: {
-
 	    	/**
 	    	 * IN: collection of catalogitems 
 	    	 * @type {Array}
@@ -140,9 +139,10 @@ resize images xxxed in catalog and add resized image-dataUrl as property to cata
 
 			            	data_out[key] = formatter(data_in, dataUrl, propname);
 
-			            	resolve(out);   // resized image as dataUrl
-			            	//**********	
+			            	resolve(data_out);   // resized image as dataUrl
+			            	//***************	
 			            } else {
+
 			            	reject(Error("img.onload.error for:" + datasrc)); 
 			            	//**********		
 			          	}
@@ -178,7 +178,8 @@ resize images xxxed in catalog and add resized image-dataUrl as property to cata
 			// var sequence = items.map(process).reduce(sequencer, Promise.resolve());
 			// Promise.resolve(sequence)
 
-			var processes = Object.keys(catalog).map(process); 
+			// var processes = Object.keys(catalog).map(process); 
+			var processes = Object.keys(iterable).map(process); 
 
 			Promise.all(processes)
 			.then (function(all_done){ // console.log("done resizing:", all_done)

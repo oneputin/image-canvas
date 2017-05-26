@@ -69,11 +69,11 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas]
 	          type: String,
 	          value: 'jpeg'
 		      }
-		},        
+			},        
 
-		observers: [
-			'_render(src, height, quality, format)'	
-		],
+			observers: [
+				'_render(src, height, quality, format)'	
+			],
 
 		// debounce-shell to avoid calls 
 	    _render: function(src, height, quality, format) { 
