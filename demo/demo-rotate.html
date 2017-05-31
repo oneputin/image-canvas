@@ -19,7 +19,7 @@
     <link rel="import" href="../../drop-box/files-box.html">
     
     <!--  -->
-    <link rel="import" href="../rotate-image.html">
+    <link rel="import" href="../image-rotate.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
@@ -70,12 +70,12 @@
       
       <div class="container horizontal">
         <!-- processing element -->
-        <rotate-image id="preview" 
+        <image-rotate id="preview" 
           src    = "[[rawsrc]]" 
           out    = "{{outimg}}" 
           degrees = "[[degrees]]" 
           quality="[[quality]]">
-        </rotate-image>
+        </image-rotate>
 
         <files-box id="dropzone" 
             filetype  ="image" 

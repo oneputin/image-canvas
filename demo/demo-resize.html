@@ -19,7 +19,7 @@
     <link rel="import" href="../../drop-box/files-box.html">
     
     <!--  -->
-    <link rel="import" href="../resize-image.html">
+    <link rel="import" href="../image-resize.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
@@ -70,12 +70,12 @@
       
       <div class="container horizontal">
         <!-- processing element -->
-        <resize-image id="preview" 
+        <image-resize id="preview" 
           src    ="[[rawsrc]]" 
           out    ="{{outimg}}" 
           height ="[[height]]" 
           quality="[[quality]]">
-        </resize-image>
+        </image-resize>
 
         <files-box id="dropzone" 
             filetype  ="image" 

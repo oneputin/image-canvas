@@ -1,5 +1,5 @@
 {
-  "name": "resize-image",
+  "name": "image-resize",
   "description": "resize img ",
   "main": "all-elements.html",
   "dependencies": {

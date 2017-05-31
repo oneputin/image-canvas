@@ -10,14 +10,14 @@
 
     <link rel="import" href="../../fire-base/fire-query.html">
     
-    <link rel="import" href="../resize-percent.html"> <!--  applied in cycle-1  -->
+    <link rel="import" href="../image-percent.html"> <!--  applied in cycle-1  -->
     <link rel="import" href="../resize-check.html"> <!-- applied in cycle-2 -->
 
 </head>
 
 <body>
 
-  <h3>Demo <span style="font-family: courier;">resize-image-batch-check</span></h3>
+  <h3>Demo <span style="font-family: courier;">image-resize-batch-check</span></h3>
   <p>
     
   </p>
@@ -54,15 +54,15 @@
 
       <template id="repeat1" is="dom-repeat" items="[[clientitems]]">
         
-        <!-- <resize-image src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></resize-image> -->
-        <!-- <resize-percent src="[[item.url]]" out="{{item.placeholder}}" percent="2" quality="0.9" format="jpeg"></resize-percent> -->
+        <!-- <image-resize src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></image-resize> -->
+        <!-- <image-percent src="[[item.url]]" out="{{item.placeholder}}" percent="2" quality="0.9" format="jpeg"></image-percent> -->
         
-        <resize-percent class="narrow" 
+        <image-percent class="narrow" 
           src   = "[[item.url]]" 
           out   = "{{item.placeholder}}" 
           percent   = "2" 
           guidesize = "2">
-        </resize-percent>
+        </image-percent>
 
         <div>[[item.fbkey]]: <img src="[[item.placeholder]]">[[item.url]]</div>
       

@@ -1,15 +1,16 @@
 <link rel="import" href="../polymer/polymer.html">
 
-<!-- <link rel="import" href="resize-image.html"> -->
-<!-- <link rel="import" href="resize-percent.html"> -->
+<!-- <link rel="import" href="image-resize.html"> -->
+<!-- <link rel="import" href="image-percent.html"> -->
 
 <!--
-`resize-group`
-apply <resize-image> to a collection of images presented as metadata-records 
+`group-resize`
+apply canvas-based resize to a collection of images  
+presented as metadata-records 
 
 @demo demo/demo-group.html 
 -->
-<dom-module id="resize-group">
+<dom-module id="group-resize">
 
 	<template>
 
@@ -25,7 +26,7 @@ apply <resize-image> to a collection of images presented as metadata-records
 		    }
 	  	</style>  
 
-	  	<!-- <resize-percent src="[[src]]" out="{{out}}" percent="2" guidesize="2"></resize-percent> -->
+	  	<!-- <image-percent src="[[src]]" out="{{out}}" percent="2" guidesize="2"></image-percent> -->
 
       <canvas id="canvas"></canvas>
 
@@ -35,7 +36,7 @@ apply <resize-image> to a collection of images presented as metadata-records
 
     Polymer({
 
-	    is: 'resize-group',
+	    is: 'group-resize',
 
 	    properties: {
 

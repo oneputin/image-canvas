@@ -8,22 +8,22 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
-    <link rel="import" href="../resize-image.html">
+    <link rel="import" href="../image-resize.html">
   </head>
   <body>
 
     <test-fixture id="basic">
       <template>
-        <resize-image></resize-image>
+        <image-resize></image-resize>
       </template>
     </test-fixture>
 
     <script>
-      suite('resize-image', function() {
+      suite('image-resize', function() {
 
         test('instantiating the element works', function() {
           var element = fixture('basic');
-          assert.equal(element.is, 'resize-image');
+          assert.equal(element.is, 'image-resize');
         });
 
       });

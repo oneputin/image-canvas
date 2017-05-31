@@ -1,19 +1,19 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="resize-image.html">
+<link rel="import" href="image-resize.html">
 
 <!--
-`resize-percent`
+`image-percent`
 iterates a new _height for an img-src (url, **dataUrl**) to another **dataUrl**  
 with size best fitting 'percent' and/or 'guidesize'. 
-Based on `canvas`-resizing, see [Tom Trenka on August 6, 2013](https://davidwalsh.name/resize-percent-canvas) 
-!!! NOT working for 'CORS' srces !!!  
-Alternative demos: demo-resize-percent, demo-db-batch, 
+Based on `canvas`-resizing, see [Tom Trenka on August 6, 2013](https://davidwalsh.name/image-percent-canvas) 
+Alternative demos: demo-percent, demo-percent-batch, 
+**NOT working for 'NOT-CORS' srces**  
 
 
-@demo demo/demo-resize-percent.html 
+@demo demo/demo-percent.html 
 -->
 
-<dom-module id="resize-percent">
+<dom-module id="image-percent">
 
 	<template>
 
@@ -26,13 +26,13 @@ Alternative demos: demo-resize-percent, demo-db-batch,
 		    }
 	  	</style>  
 
-        <resize-image 
+        <image-resize 
         	src 	="[[src]]" 
         	out 	="{{prev}}" 
         	height 	="[[_height]]" 
         	quality ="[[_quality]]"
         	format 	="[[format]]">
-        </resize-image>
+        </image-resize>
 
 	</template>    
 
@@ -40,7 +40,7 @@ Alternative demos: demo-resize-percent, demo-db-batch,
 
 	    Polymer({
 
-		    is: 'resize-percent',
+		    is: 'image-percent',
 
 		    properties: {
 		        /**
@@ -71,7 +71,7 @@ Alternative demos: demo-resize-percent, demo-db-batch,
 		        },
 
 		        /**
-		         * The preview generated from resize-percent
+		         * The preview generated from image-percent
 		         */
 		        prev: {
 		          type: String

@@ -18,7 +18,7 @@
     <!---->
     <link rel="import" href="../../fire-base/fire-query.html">
 
-    <link rel="import" href="../resize-image.html">
+    <link rel="import" href="../image-resize.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
@@ -26,9 +26,9 @@
 
 <body>
 
-  <h3>Playground: <span style="font-family: courier;">resize-image</span> from fb-db.</h3>
+  <h3>Playground: <span style="font-family: courier;">image-resize</span> from fb-db.</h3>
 
-  <dom-module id="resize-image-demo"> 
+  <dom-module id="image-resize-demo"> 
     <template>
       <style>
         paper-dropdown-menu {  width: 400px;   }
@@ -75,7 +75,7 @@
           
           <template is="dom-repeat" items="[[menuitems]]">
               
-            <resize-image src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></resize-image>
+            <image-resize src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></image-resize>
             
             <template is="dom-if" if="{{item.placeholder}}"> 
               
@@ -130,7 +130,7 @@
       
       window.addEventListener('WebComponentsReady', function() {
         Polymer({
-          is: 'resize-image-demo',
+          is: 'image-resize-demo',
 
           properties: {
 
@@ -232,7 +232,7 @@
     </script>      
   </dom-module>
 
-  <resize-image-demo></resize-image-demo>
+  <image-resize-demo></image-resize-demo>
 
 </body>
 </html>
