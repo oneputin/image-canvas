@@ -28,7 +28,7 @@
 
 <body>
 
-  <h3>Playground: Image resizing - interactive</h3>
+  <h3>Playground: Interactive ImageResizing</h3>
 
   <dom-module id="percent-demo"> 
     <template>
@@ -72,7 +72,13 @@
         }
       </style>
     
-      <p>Drag an image into the box below to resize it with <b>relative</b> and/or <b>absolute</b> size-parameter(s).</p>
+      <p>
+        Drag an image into the box below
+        <br> to resize it alternatively 
+        <li>relative</li> and/or 
+        <li>absolute</li> 
+        size-parameter(s).
+      </p>
       
       <div class="container horizontal">
         <!-- processing element -->
@@ -115,15 +121,16 @@
         <div style="margin-left:10px">  
           <!-- <div>Preview period [s]</div> -->
           <!-- <paper-slider value="{{delay}}" min="0" max="5" pin ></paper-slider> -->
-          <p>rightClick to save the</p> 
+          <p><b>RightClick</b> to save the</p> 
 
           <h5>RESIZED IMAGE : <img id="resized" src="[[outimg]]"  contentEditable="true"></h5>
+
           <p> <textarea class="imgname" contentEditable="true">[[imgname]]</textarea> </p>
           
-          <p>reduced to: [[percentis]] % ([[outsize]]/[[rawsize]])</p>
+          <p>size reduced to: [[percentis]] % ([[outsize]]/[[rawsize]])</p>
 
-          <p><paper-checkbox id="checkori" on-change="_checkOriginal">Compare with original</paper-checkbox></p>
-          <p><paper-checkbox id="checkurl" on-change="_checkDataurl">View dataurl (resized)</paper-checkbox></p>
+          <p><paper-checkbox id="checkori" on-change="_checkOriginal">Toggle with original</paper-checkbox></p>
+          <p><paper-checkbox id="checkurl" on-change="_checkDataurl">View (resized) dataurl</paper-checkbox></p>
 
         </div>
       </div>   

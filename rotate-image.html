@@ -1,0 +1,137 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`rotate-image`   
+rotates an img-src (url or **dataUrl**) to another **dataUrl**.  
+`canvas`-based resizing: see [Steve Farthing on April 1, 2015](https://stackoverflow.com/questions/17411991/html5-canvas-rotate-image) 
+
+@demo demo/demo-rotate.html 
+-->
+<dom-module id="rotate-image">
+
+	<template>
+
+	    <style>
+		    :host {
+		        display: inline-block;
+		        overflow: hidden;
+		        position: relative;
+		        left: -1000px;
+		    }
+		    #canvas {
+		    	height: 10px;
+		    }
+	  	</style>  
+
+    	<canvas id="canvas"></canvas>
+
+	</template>    
+
+	<script>
+
+    Polymer({
+
+	    is: 'rotate-image',
+
+	    properties: {
+	        /**
+	         * The primary SRC of an image (url or dataUrl)
+	         */
+	        src: {
+	          type: String
+	        },
+	        // the "rendered(reduced)" img (as dataUrl)
+	        out: {
+	          type: String,
+	          notify: true
+	        },
+	        /**
+	         * The angle [degrees] to rotate
+	        */
+	        degrees: {
+	          type: Number,
+	          value: 100
+	        },
+	        /**
+	         * quality of target image (0..1)
+	         * @type {Object}
+	         */
+	        quality: {
+	          type: Number,
+	          value: 0.9
+	      	},
+	      	/**
+	      	 * format target img 
+	      	 * @type {Object}
+	      	 */
+	        format: {
+	          type: String,
+	          value: 'jpeg'
+		      }
+			},        
+
+			observers: [
+				'_rotate(src, degrees, quality, format)'	
+			],
+
+		// debounce-shell to avoid calls 
+	    _rotate: function(src, degrees, quality, format) { 
+            if (!src) return;
+	        this.debounce('rotate', function () { console.log("DebouncedStart of rotate:", degrees);
+	          this.rotate(src, degrees, quality, format); 
+	        }, 100);
+	    },
+
+        /**
+         *
+         */
+        rotate: function (src, degrees, quality, format){
+
+	        var self  = this;
+
+	        if (!format)  format='jpeg'; 
+	        format  = "image/" + format;
+
+	        var canvas = this.$.canvas;
+            if (canvas.hidden) {    
+                console.log("NOT working if canvas HIDDEN"); 
+                return; 
+            }
+
+	        var	img = new Image();   // console.log("canvas, height, format, quality", canvas, height, format, typeof quality, quality);
+
+	        // "onload"-event after  
+	        img.onload = function() {
+	            var ctx; 
+
+                ctx = canvas.getContext("2d");
+	            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    
+                if(degrees == 90 || degrees == 270) {
+                    canvas.width = img.height;
+                    canvas.height = img.width;
+                } else {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                }
+
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                if(degrees == 90 || degrees == 270) {
+                    ctx.translate(img.height/2,img.width/2);
+                } else {
+                    ctx.translate(img.width/2,img.height/2);
+                }
+                ctx.rotate(degrees*Math.PI/180);
+                ctx.drawImage(img,-img.width/2,-img.height/2);
+
+    	        self.out = canvas.toDataURL(format, quality);                
+            }
+
+            img.src = src;    
+
+        }
+
+    });
+
+  </script>
+</dom-module>

@@ -37,7 +37,7 @@
         paper-listbox       {  width: 400px;   }
       </style>
 
-      <h4>1. Select catalog year to </h4>
+      <h4>1. Select catalog year </h4>
 
       <paper-dropdown-menu label="atlas-years">
         <paper-listbox 
@@ -56,9 +56,20 @@
 
       <h4>2. Query catalog-data from cloud-db, process-1(resize) the referenced image</span>] </h4>
       
-      <fire-query app="wolke7" path="cplocal" item="[[itemname]]" itemvalue="[[itemvalue]]" data="{{dbdata}}"></fire-query>
+      <fire-query 
+        app="wolke7" 
+        path="cplocal" 
+        item="[[itemname]]" 
+        itemvalue="[[itemvalue]]" 
+        data="{{dbdata}}">
+      </fire-query>
      
-      <process-catalog incoll="[[dbdata]]" propname="[[propname]]" outcoll="{{resized}}"></process-catalog>
+      <process-catalog 
+        incoll="[[dbdata]]" 
+        propname="[[propname]]" 
+        outcoll="{{resized}}">
+      </process-catalog>
+      
       <!-- <resize-catalog incoll="[[dbdata]]" propname="[[propname]]" outcoll="{{resized}}"></resize-catalog> -->
 
 
@@ -73,9 +84,9 @@
             updatectrl = "_update_">
         </fire-query>      
 
+         <!-- ??? -->
         <paper-dropdown-menu label="images">
 
-          <!-- ??? -->
           <paper-listbox 
             class="dropdown-content" 
             attr-for-selected="fbkey" 
@@ -95,9 +106,11 @@
             </template>  
 
           </paper-listbox>
+
         </paper-dropdown-menu>
 
       </template>
+
 
       <h4>4. Selected image. dbkey=<span>[[viewkey]]</span></h4>
 

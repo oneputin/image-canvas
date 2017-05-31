@@ -56,10 +56,20 @@
 
       <h4>2. Query catalog-data from cloud-db, process-1(resize) the referenced image</span>] </h4>
       
-      <fire-query app="wolke7" path="cplocal" item="[[itemname]]" itemvalue="[[itemvalue]]" data="{{dbdata}}"></fire-query>
+      <fire-query 
+        app="wolke7" 
+        path="cplocal" 
+        item="[[itemname]]" 
+        itemvalue="[[itemvalue]]" 
+        data="{{dbdata}}">
+      </fire-query>
      
-      <manage-catalog incoll="[[dbdata]]" propname="[[propname]]" outcoll="{{resized}}"></manage-catalog>
-      <!-- <resize-catalog incoll="[[dbdata]]" propname="[[propname]]" outcoll="{{resized}}"></resize-catalog> -->
+      <!--<manage-catalog incoll="[[dbdata]]" propname="[[propname]]" outcoll="{{resized}}"></manage-catalog>-->
+      <resize-catalog 
+        incoll="[[dbdata]]" 
+        propname="[[propname]]" 
+        outcoll="{{resized}}">
+      </resize-catalog> 
 
 
       <h4>3. Process-2 catalog (save do catalog-db) and View  </h4>

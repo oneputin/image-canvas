@@ -18,6 +18,9 @@
 <body>
 
   <h3>Demo <span style="font-family: courier;">resize-image-batch-check</span></h3>
+  <p>
+    
+  </p>
 
   <dom-module id="resize-batch"> 
 
@@ -32,7 +35,7 @@
           height: 0;
         }
       </style>
-      
+
       <h4>1. Query ALL album-entries from cloud-db and create placeholder for "available" images.</h4>
       
 
@@ -45,14 +48,15 @@
         data="{{dbdata}}">
       </fire-query>
       <!-- <fire-query app="wolke7" path="cplocal" item="placeholder" data="{{dbdata}}"></fire-query> -->
-     
-      <!-- B/C RESIZE all queried imgMetas and save dataUrl of reduced img 
-           as preoperty 'placeholder' into imgMeta -->  
+
+      <!-- B. RESIZE all queried imgMetas (clientitems autocreated from every new {{dbdata}} )
+           and (C.) SAVE dataUrl of reduced img as property 'placeholder' into imgMeta -->  
 
       <template id="repeat1" is="dom-repeat" items="[[clientitems]]">
         
         <!-- <resize-image src="[[item.url]]" out="{{item.placeholder}}" height="10" quality="0.5" format="jpeg"></resize-image> -->
         <!-- <resize-percent src="[[item.url]]" out="{{item.placeholder}}" percent="2" quality="0.9" format="jpeg"></resize-percent> -->
+        
         <resize-percent class="narrow" 
           src   = "[[item.url]]" 
           out   = "{{item.placeholder}}" 
@@ -61,7 +65,6 @@
         </resize-percent>
 
         <div>[[item.fbkey]]: <img src="[[item.placeholder]]">[[item.url]]</div>
-        
       
         <!-- C. SAVE BACK the "item", if placeholder-property was created -->
       

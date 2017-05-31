@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>demo-drop-resize</title>
+    <title>demo-resize</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
@@ -29,7 +29,7 @@
 
   <h3>Playground: Image resizing - interactive</h3>
 
-  <dom-module id="image-drop-demo"> 
+  <dom-module id="image-resize-drop"> 
     <template>
       <style>
         .horizontal {
@@ -129,7 +129,7 @@
     <script>
       window.addEventListener('WebComponentsReady', function() {
         Polymer({
-          is: 'image-drop-demo',
+          is: 'image-resize-drop',
           properties: {
             rawsrc: {
               type: String,
@@ -232,7 +232,7 @@
     </script>      
   </dom-module>
 
-  <image-drop-demo></image-drop-demo>
+  <image-resize-drop></image-resize-drop>
 
 </body>
 </html>

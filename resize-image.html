@@ -1,11 +1,12 @@
 <link rel="import" href="../polymer/polymer.html">
 
 <!--
-`resize-image`
-resizes an img-src (url, dataUrl) to another dataUrl. Based on `canvas`-resizing 
-see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas] 
+`resize-image`   
+resizes an img-src (url or **dataUrl**) to another **dataUrl**.  
+`canvas`-based resizi
+ng: see [Tom Trenka on August 6, 2013](https://davidwalsh.name/resize-image-canvas) 
 
-@demo demo/demo-db.html 
+@demo demo/demo-resize.html 
 -->
 <dom-module id="resize-image">
 
@@ -124,7 +125,7 @@ see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas]
 	        };
 
 	        img.src = src;
-	    }
+	    },
 
     });
 

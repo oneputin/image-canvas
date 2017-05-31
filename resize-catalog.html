@@ -22,25 +22,8 @@ resize images xxxed in catalog and add resized image-dataUrl as property to cata
 		    }
 	  	</style>  
 
-    	<canvas id="canvas" hiddenfunction Customer() {
-
-    var proxy = new Proxy({}, {
-      get: function(target, name, receiver) {
-        console.log('get called for field: ', name);
-        return Reflect.get(target, name, receiver);
-      },
-      set: function(target, name, value, receiver) {
-        console.log('set called for field: %s, and value: %s', name, value);
-        return Reflect.set(target, name, value, receiver);
-      }
-    });
-
-    return proxy;
-}
-
-var customer = new Customer();
-customer.name = 'hendrik';
-customer.surname = 'swanepoel';></canvas>
+    	<canvas id="canvas" hidden>
+		</canvas>
 
 	</template>    
 
@@ -53,7 +36,7 @@ customer.surname = 'swanepoel';></canvas>
 	    properties: {
 
 	    	/**
-	    	 * IN: collection of catalogitems 
+	    	 * IN: collection of catalog-items 
 	    	 * @type {Array}
 	    	 */
 	    	incoll: {

@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+    <title>demo-rotate</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <!--  -->
+    <link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
+    <link rel="import" href="../../iron-flex-layout/iron-flex-layout-classes.html">
+    <link rel="import" href="../../iron-image/iron-image.html">
+    <!-- <link rel="import" href="../../paper-input/paper-input.html"> -->
+    <link rel="import" href="../../paper-button/paper-button.html">
+    <link rel="import" href="../../paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="../../paper-slider/paper-slider.html">
+
+    <!--  -->
+    <link rel="import" href="../../drop-box/files-box.html">
+    
+    <!--  -->
+    <link rel="import" href="../rotate-image.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+</head>
+
+<body>
+
+  <h3>Playground: Image resizing - interactive</h3>
+
+  <dom-module id="image-rotate-drop"> 
+    <template>
+      <style>
+        .horizontal {
+            @apply(--layout-horizontal);
+            @apply(--layout-center);
+        }
+        .flex {
+            @apply(--layout-flex);
+        }   
+
+        #previewrow {
+          position: relative;
+          width: auto;
+          padding: 12px;
+          border: 1px solid #ccc;
+        }
+
+        #dropzone {
+          vertical-align: top;
+        }
+        
+        #preview {
+          vertical-align: top;
+          height: 100px;
+          width: auto;
+          /*border: 1px solid #ccc;*/
+          /*background-color: #eee;*/
+          /*padding: 12px;*/
+          /*margin-left: 148px;*/
+        }
+        div.xs {
+          font-color: grey;
+          font-size: 12px;          
+        }  
+      </style>
+    
+      <p>Drag an image into the box below to rotatee it with canvas and JavaScript.</p>
+      
+      <div class="container horizontal">
+        <!-- processing element -->
+        <rotate-image id="preview" 
+          src    = "[[rawsrc]]" 
+          out    = "{{outimg}}" 
+          degrees = "[[degrees]]" 
+          quality="[[quality]]">
+        </rotate-image>
+
+        <files-box id="dropzone" 
+            filetype  ="image" 
+            boxsize   ="100" 
+            boxmsg    ="Drop an image here!" 
+            clientfile="{{rawsrc}}" 
+            clientfilename="{{imgname}}"> 
+        </files-box>
+
+        <!-- <span class="flex"></span> -->
+        <div>
+          <div class="xs">rotateAngle [°]</div>
+          <paper-slider value="{{degrees}}" min="0" max="360" editable></paper-slider>
+
+          <div class="xs">outputQuality</div>
+          <paper-slider value="{{quality100}}" min="0" max="100" editable ></paper-slider>
+        </div>
+
+      </div>        
+
+      <div id="previewrow" class="container horizontal">
+        <!-- 'placeholder' (= rotated image) is available immediately 
+             'src' after some delay only -->
+        <iron-image 
+          src    = {{imgsrc}}
+          sizing = "contain" preload fade
+          style  = "width:500px; height:500px;"
+          placeholder ="{{outimg}}">
+        </iron-image>  <!-- style = "width:800px; height:400px;" -->
+
+        <span class="flex"></span>
+
+        <div style="margin-left:10px">  
+          <!-- <div>Preview period [s]</div> -->
+          <!-- <paper-slider value="{{delay}}" min="0" max="5" pin ></paper-slider> -->
+          <p>rightClick to save the</p> 
+
+          <h5>ROTATED IMAGE : </h5> <!--<img src="[[outimg]]">-->
+          <p>[[imgname]]</p>
+          
+          <p>rotated by [[degrees]] [°]</p>
+
+          <paper-checkbox id="checkori" on-change="_checkOriginal">Compare original</paper-checkbox>
+
+        </div>
+      </div>   
+
+      <h4>LOG of imgData-String</h4> 
+      <p>[[outimg]]</p>
+    
+    </template>
+    
+    <script>
+
+      window.addEventListener('WebComponentsReady', function() {
+
+        Polymer({
+          is: 'image-rotate-drop',
+          properties: {
+            rawsrc: {
+              type: String,
+              value: "",
+              observer: '_getsrc'
+            },
+
+
+            rawsize:{
+              type: Number,
+              value: 0
+            },            
+            imgname: {
+              type: String,
+            },
+            imgsrc:{
+              type: String,
+              value: ""
+            },
+
+            outimg:{
+              type: String,
+              value: "",
+              observer: '_getsize'
+            },
+            outsize:{
+              type: Number,
+              value: 0
+            },            
+            degrees:{
+              type: Number,
+              value: 90
+            },
+            quality:{
+              type: Number,
+              computed: '_getQuality(quality100)'
+            },
+            quality100:{
+              type: Number,
+              value: 90
+            },
+            delay:{
+              type: Number,
+              value: 0
+            }
+          },
+
+          ready: function() {
+
+          },
+
+          _getQuality: function(qu) { // console.log("quality", qu);
+            return qu/100;
+          },
+
+          _getsize: function(n,o) {
+            this.outsize = n.length;
+          },
+
+          _checkOriginal: function(e) { 
+            var flag = e.target.checked; // console.log("checkflag", flag, e)
+            if (flag) this.imgsrc = this.rawsrc;
+            else      this.imgsrc = "";
+          },
+
+          _getsrc: function(n) { // console.log("_getsrc", n)
+            this.rawsize = n.length;
+            this.imgsrc  = "";
+            this.$.checkori.checked = false; 
+            return; 
+
+            // 
+            if (!this.delay) {
+              this.imgsrc = n;
+              return;
+            }   
+
+            var t1=this.delay*1000, 
+                t2=t1*3;
+            setTimeout(function(self){ 
+
+              self.imgsrc = n; 
+  
+              setTimeout(function(self){ 
+                // self.outimg = ""; 
+                self.imgsrc = ""; 
+              }, t2, self);
+
+            }, t1, this);
+          }
+        });  
+
+      });      
+    </script>      
+  </dom-module>
+
+  <image-rotate-drop></image-rotate-drop>
+
+</body>
+</html>
