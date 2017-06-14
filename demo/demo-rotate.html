@@ -21,8 +21,8 @@
     <!--  -->
     <link rel="import" href="../rotate-image.html">
 
-    <style is="custom-style" include="demo-pages-shared-styles">
-    </style>
+    <!--<style is="custom-style" include="demo-pages-shared-styles">
+    </style>-->
 </head>
 
 <body>
@@ -99,12 +99,18 @@
       <div id="previewrow" class="container horizontal">
         <!-- 'placeholder' (= rotated image) is available immediately 
              'src' after some delay only -->
-        <iron-image 
+        
+        <canvas-operational
+          id = "canvas1"
+          src = {{worksrc}} >
+        </canvas-operational> 
+
+        <!--<iron-image 
           src    = {{imgsrc}}
           sizing = "contain" preload fade
           style  = "width:500px; height:500px;"
           placeholder ="{{outimg}}">
-        </iron-image>  <!-- style = "width:800px; height:400px;" -->
+        </iron-image> -->
 
         <span class="flex"></span>
 

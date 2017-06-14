@@ -18,7 +18,7 @@
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.3.5",
     "paper-slider": "PolymerElements/paper-slider#^1.0.11",
     "paper-checkbox": "PolymerElements/paper-checkbox#^1.4.0",
-    "drop-box": "https://github.com/oneputin/drop-box.git",
+    "drop-box": "https://github.com/oneputin/files-input.git",
     "fire-base": "https://github.com/oneputin/fire-base.git"
   }
 }

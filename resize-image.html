@@ -3,8 +3,7 @@
 <!--
 `resize-image`   
 resizes an img-src (url or **dataUrl**) to another **dataUrl**.  
-`canvas`-based resizi
-ng: see [Tom Trenka on August 6, 2013](https://davidwalsh.name/resize-image-canvas) 
+`canvas`-based resizing: see [Tom Trenka on August 6, 2013](https://davidwalsh.name/resize-image-canvas) 
 
 @demo demo/demo-resize.html 
 -->
@@ -76,7 +75,7 @@ ng: see [Tom Trenka on August 6, 2013](https://davidwalsh.name/resize-image-canv
 				'_render(src, height, quality, format)'	
 			],
 
-		// debounce-shell to avoid calls 
+			// debounce-shell to avoid calls 
 	    _render: function(src, height, quality, format) { 
 	        this.debounce('render', function () { // console.log("DebouncedStart fbQuery:", path, item, value);
 	          this.render(src, height, quality, format); 

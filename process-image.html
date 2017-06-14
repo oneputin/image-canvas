@@ -81,7 +81,7 @@ rotates an img-src (url or **dataUrl**) to another **dataUrl**.
 	    _rotate: function(src, degrees, quality, format) { 
             if (!src) return;
 	        this.debounce('rotate', function () { console.log("DebouncedStart of rotate:", degrees);
-	           this.rotate(src, degrees, quality, format); 
+	          this.rotate(src, degrees, quality, format); 
 	        }, 100);
 	    },
 
@@ -135,37 +135,38 @@ rotates an img-src (url or **dataUrl**) to another **dataUrl**.
 
 	            ctx.clearRect(0, 0, canvas.width, canvas.height);
 				
-                if (degrees == 90 || degrees == 270) {
+                if(degrees == 90 || degrees == 270) {
                     canvas.width = imgx;
                     canvas.height = imgy;
                 } else {
                     canvas.width = imgx;
                     canvas.height = imgy;
                 }
-				console.log("canvas sizes for degrees="+degrees,canvas.width,canvas.height);
+
                 ctx.clearRect(0,0,canvas.width,canvas.height);
 				
 				// a. Translate to rotation-center
-                if (degrees == 90 || degrees == 270) { 
-                    ctx.translate(imgy/2, imgx/2);
+                if(degrees == 90 || degrees == 270) { 
+                    ctx.translate(imgy/2,imgx/2);
                 } else {
-                    ctx.translate(imgx/2, imgy/2);
+                    ctx.translate(imgx/2,imgy/2);
                 }
-
 				// b. rotate
                 ctx.rotate(degrees*Math.PI/180); // use bogenmass
-                
-				// c. insert image
+                // c. insert image
 				ctx.drawImage(img, -imgx/2, -imgy/2); 
 
 				console.log("add netz over image rotated by "+degrees, canvas.width, canvas.height, imgx, imgy);
-				// addnetz(ctx, canvas.width, canvas.height);
+				addnetz(ctx, canvas.width, canvas.height);
 
     	        self.out = canvas.toDataURL(format, quality);                
 
             }
+
             img.src = src;    
+
         }
+
     });
 
   </script>

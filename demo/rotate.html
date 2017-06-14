@@ -1,0 +1,46 @@
+<head>
+    <script src="js/load-image.js"></script>
+    <script src="js/load-image-orientation.js"></script>
+    <script src="js/load-image-meta.js"></script>
+    <script src="js/load-image-exif.js"></script>
+</head>
+
+<body>
+    <script>
+        // Processing the response from file-loader or file-drop
+        // to immediately auto-rotate images  
+        function loadAnImage(response) {
+            var imgSource = response[0].url + "/" + response[0].name;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', imgSource, true);
+            xhr.responseType = 'blob';
+
+            xhr.onload = function (e) {
+                var ori = 0; // default
+                if (this.status == 200) {
+                    var blob = this.response;
+                    // Library-function aus 
+                    loadImage.parseMetaData(blob, function (data) {
+                        if (data.exif) {
+                            ori = data.exif.get('Orientation');
+                        }
+                        // executed 
+                        var loadingImage = loadImage(
+                            blob,
+                            function (img) {
+                                document.body.appendChild(img);
+                                //----------------------------  
+                            }, {
+                                maxWidth: 600,
+                                canvas: true,
+                                orientation: ori
+                            }
+                        );
+                    });
+
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
