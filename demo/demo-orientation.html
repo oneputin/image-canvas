@@ -22,10 +22,10 @@
     <link rel="import" href="../../drop-box/files-box.html">
     
     <!--  -->
-    <link rel="import" href="../image-rotate.html">
+    <link rel="import" href="../image-orientation.html">
+
     <link rel="import" href="../custom-icons.html">
 
-    <style is="custom-style" include="demo-pages-shared-styles">
     </style>
 </head>
 
@@ -33,7 +33,7 @@
 
   <h3>Interactive Playground: Rotate Image</h3>
 
-  <dom-module id="image-rotate-drop"> 
+  <dom-module id="image-orientation-drop"> 
     <template>
       <style>
         .container {
@@ -86,34 +86,23 @@
       
       <div class="container horizontal">
         <!-- processing element -->
-        <image-rotate id="preview" 
+        <image-orientation 
+          id     = "preview" 
           src    = "[[rawsrc]]" 
           out    = "{{outimg}}" 
-          degrees = "[[degrees]]" 
           quality="[[quality]]">
-        </image-rotate>
+        </image-orientation>
 
         <files-box id="dropzone" 
             filetype  ="image" 
             boxsize   ="100" 
-            boxmsg    ="Drop an image here!" 
+            boxmsg    ="Drop image(s) here!" 
             clientfile="{{rawsrc}}" 
             clientfilename="{{imgname}}"> 
         </files-box>
         
-        <div>
-          <!-- FORCE vertical layout by "empty" div's -->
-          <div></div>
-          <paper-button raised id="cw" on-tap="orientationChange"><iron-icon icon="custom-icons:rotate-cw"></iron-icon></paper-button>
-          <div></div>
-          <paper-button raised id="ccw"  on-tap="orientationChange"><iron-icon icon="custom-icons:rotate-ccw"></iron-icon></paper-button>
-        </div>
-
         <!-- <span class="flex"></span> -->
         <div >
-          <div class="xs">rotateAngle [°]</div>
-          <paper-slider value="{{degrees}}" min="0" max="360" editable></paper-slider>
-
           <div class="xs">outputQuality</div>
           <paper-slider value="{{quality100}}" min="0" max="100" editable ></paper-slider>
         </div>
@@ -124,7 +113,7 @@
         <!-- 'placeholder' (= rotated image) is available immediately 
              'src' after some delay only -->
         <iron-image 
-          src    = {{imgsrc}}
+          src    = "{{imgsrc}}"
           sizing = "contain" preload fade
           style  = "width:500px; height:500px;"
           placeholder ="{{outimg}}">
@@ -140,7 +129,8 @@
 
           <p>the IMAGE rotated by [[degrees]] [°] </p>
 
-          <img src="[[outimg]]">
+          <!--<img id="out" src="[[outimg]]">-->
+          <img id="out" src="">
 
           <p>[[imgname]]</p>
           
@@ -161,7 +151,7 @@
       window.addEventListener('WebComponentsReady', function() {
 
         Polymer({
-          is: 'image-rotate-drop',
+          is: 'image-orientation-drop',
           properties: {
             
             delta : {
@@ -192,7 +182,7 @@
             outimg:{
               type: String,
               value: "",
-              observer: '_getsize'
+              observer: '_checkOutImg'
             },
 
             outsize:{
@@ -250,8 +240,9 @@
             return qu/100;
           },
 
-          _getsize: function(n,o) {
-            this.outsize = n.length;
+          _checkOutImg: function(dataUrl,o) {
+            this.outsize = dataUrl.length; console.log("outSize", this.outsize);
+            this.$.out.setAttribute('src', dataUrl);
           },
 
           _checkOriginal: function(e) { 
@@ -260,9 +251,8 @@
             else      this.imgsrc = "";
           },
 
-          _checkinSrc: function(n) { // console.log("_checkinSrc", n)
+          _checkinSrc: function(n) {  console.log("_checkinSrc", n.length)
             
-            this.degrees = 0;
             this.rawsize = n.length;
             this.imgsrc  = "";
             this.$.checkori.checked = false; 
@@ -294,7 +284,7 @@
     </script>      
   </dom-module>
 
-  <image-rotate-drop></image-rotate-drop>
+  <image-orientation-drop></image-orientation-drop>
 
 </body>
 </html>

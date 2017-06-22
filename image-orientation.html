@@ -1,0 +1,206 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="../image-meta/exif-behavior.html">
+
+<!--
+`image-orientation`   
+rotates an img-src (url or **dataUrl**) to another **dataUrl**.  
+`canvas`-based resizing: see [Steve Farthing on April 1, 2015](https://stackoverflow.com/questions/17411991/html5-canvas-image-orientation) 
+
+@demo demo/demo-orientation.html 
+-->
+
+<dom-module id="image-orientation">
+
+	<template>
+
+	    <style>
+		    :host {
+		        display: inline-block;
+		        overflow: hidden;
+		        position: relative;
+		        left: -1000px;
+		    }
+		    #canvas {
+		    	height: 10px;
+		    }
+	  	</style>  
+
+    	<canvas id="canvas"></canvas>
+
+	</template>    
+
+	<script>
+
+    Polymer({
+
+	    is: 'image-orientation',
+
+	    properties: {
+	        /**
+	         * The primary SRC of an image (url or dataUrl)
+	         */
+	        src: {
+	          type: String
+	        },
+
+	        // the "reoriented" img (as dataUrl)
+	        out: {
+	          type: String,
+	          notify: true
+	        },
+
+	        /**
+	         * quality of target image (0..1)
+	         * @type {Object}
+	         */
+	        quality: {
+	          type: Number,
+	          value: 0.9
+	      	},
+	      	/**
+	      	 * format target img 
+	      	 * @type {Object}
+	      	 */
+	        format: {
+	          type: String,
+	          value: 'jpeg'
+		      }
+		},
+
+        behaviors:[
+            Mbb.ExifBehavior
+        ],
+
+		observers: [
+			'_rotate(src, quality, format)'	
+		],
+
+		// debounce-shell to avoid calls 
+	    _rotate: function(src, quality, format) { 
+            if (!src) return;
+	        this.debounce('rotate', function () { console.log("DebouncedStart of AutoOrientation");
+	          this.rotate(src, quality, format); 
+	        }, 100);
+	    },
+
+        /* 
+         * 
+         */        
+        canvasOrientation: function(image, canvas, exif) {
+
+            canvas.width = image.width;
+            canvas.height = image.height;
+
+            var ctx = canvas.getContext("2d");
+            ctx.save(); // ??? 
+            var x = 0, y = 0;
+
+            var orientationIndex = piexif.ImageIFD.Orientation,
+                orientation = exif["0th"][orientationIndex];  console.log("original orientation =", orientation); 
+
+            if (typeof orientation !== "undefined") {
+
+                var rotated = true;
+
+                if (orientation == 2) {
+                    x = -canvas.width;
+                    ctx.scale(-1, 1);
+
+                } else if (orientation == 3) {
+                    x = -canvas.width;
+                    y = -canvas.height;
+                    ctx.scale(-1, -1);
+
+                } else if (orientation == 4) {
+                    y = -canvas.height;
+                    ctx.scale(1, -1);
+
+                } else if (orientation == 5) {
+                    canvas.width = image.height;
+                    canvas.height = image.width;
+                    ctx.translate(canvas.width, canvas.height / canvas.width);
+                    ctx.rotate(Math.PI / 2);
+                    y = -canvas.width;
+                    ctx.scale(1, -1);
+
+                } else if (orientation == 6) {
+                    canvas.width = image.height;
+                    canvas.height = image.width;
+                    ctx.translate(canvas.width, canvas.height / canvas.width);
+                    ctx.rotate(Math.PI / 2);
+                
+                } else if (orientation == 7) {
+                    canvas.width = image.height;
+                    canvas.height = image.width;
+                    ctx.translate(canvas.width, canvas.height / canvas.width);
+                    ctx.rotate(Math.PI / 2);
+                    x = -canvas.height;
+                    ctx.scale(-1, 1);
+                
+                } else if (orientation == 8) {
+                    canvas.width = image.height;
+                    canvas.height = image.width;
+                    ctx.translate(canvas.width, canvas.height / canvas.width);
+                    ctx.rotate(Math.PI / 2);
+                    x = -canvas.height;
+                    y = -canvas.width;
+                    ctx.scale(-1, -1);
+                } else {
+                    rotated = false; 
+                }
+
+                // restore exif (remove orientation value)
+                if (rotated) {
+                    // delete exif["0th"]["Orientation"]; // NOPE as in ORIGINAL 
+                    delete exif["0th"][orientationIndex]; 
+                    // console.log("orientation="+orientation, orientationIndex, exif["0th"][orientationIndex], exif["0th"] ) 
+                }
+            }
+
+            ctx.drawImage(image, x, y);
+            ctx.restore();  // ????
+
+            return canvas; 
+        },
+
+        /**
+         *
+         */
+        rotate: function (src, quality, format){
+
+			var exif = piexif.load(src); console.log("exif",exif); 
+			// var exifData = exifStatus(exif);
+
+	        if (!format)  format='jpeg'; 
+	        format  = "image/" + format;
+
+	        var	image = new Image();   // console.log("canvas, height, format, quality", canvas, height, format, typeof quality, quality);
+
+	        // "triggered" = onload-event   
+	        image.onload = function() {
+
+                var canvas = document.createElement("canvas");
+
+                canvas =  this.canvasOrientation(image, canvas, exif);
+
+				// exif = this.setExifSize(exif);
+
+	            var dataURL = canvas.toDataURL("image/jpeg", quality);
+
+    	        this.out = this.updateDataUrl(dataURL, exif); // from ExifBehavior 
+
+				// for debug only 			
+				var exifOut = piexif.load(this.out);  console.log("exifOut",exifOut); 
+
+            }.bind(this);
+
+            // "trigger" :  load src
+            image.src = src;    
+
+        }
+
+    });
+
+  </script>
+</dom-module>

@@ -20,9 +20,7 @@
     
     <!--  -->
     <link rel="import" href="../image-percent.html">
-
-    <style is="custom-style" include="demo-pages-shared-styles">
-    </style>
+    <link rel="import" href="../image-orientation.html">
 
 </head>
 
@@ -83,11 +81,18 @@
       <div class="container horizontal">
         <!-- processing element -->
         <image-percent id="preview" 
-          src       ="[[rawsrc]]" 
+          src       ="[[upsrc]]" 
           out       ="{{outimg}}" 
           percent   ="[[percent]]" 
           guidesize ="[[guidesize]]">
         </image-percent>
+
+        <image-orientation 
+          id     = "preview" 
+          src    = "[[rawsrc]]" 
+          out    = "{{upsrc}}" 
+          quality="[[quality]]">
+        </image-orientation>
 
         <files-box id="dropzone" 
             filetype  ="image" 
@@ -96,6 +101,7 @@
             clientfile="{{rawsrc}}" 
             clientfilename="{{imgname}}"> 
         </files-box>
+
         <!-- <span class="flex"></span> -->
         <div>
 
@@ -123,7 +129,8 @@
           <!-- <paper-slider value="{{delay}}" min="0" max="5" pin ></paper-slider> -->
           <p><b>RightClick</b> to save the</p> 
 
-          <h5>RESIZED IMAGE : <img id="resized" src="[[outimg]]"  contentEditable="true"></h5>
+          <!--<h5>RESIZED IMAGE : <img id="resized" src="[[outimg]]" contentEditable="true"></h5>-->
+          <h5>RESIZED IMAGE : <img id="resized" src=""></h5>
 
           <p> <textarea class="imgname" contentEditable="true">[[imgname]]</textarea> </p>
           
@@ -150,6 +157,7 @@
               type: Number,
               value: 3
             },
+
             guidesize:{
               type: Number,
               value: 2
@@ -160,22 +168,34 @@
               value: "",
               observer: '_getsrc'
             },
-            rawsize:{
-              type: Number,
-              value: 1
-            },            
+
+            upsrc: {
+              type: String,
+              value: "",
+              observer: '_getsrc'
+            },
+
             imgname: {
               type: String,
             },
+
             imgsrc:{
               type: String,
               value: ""
             },
+
             outimg:{
               type: String,
               value: "",
-              observer: '_getsize'
+              observer: '_checkOutImg'
             },
+
+
+            rawsize:{
+              type: Number,
+              value: 1
+            },            
+            
             outsize:{
               type: Number,
               value: 0
@@ -192,6 +212,8 @@
           },
 
           ready: function() {
+            /*
+            // Spezial funktion 
             this.$.resized.addEventListener('contextmenu', function(e){
               e.preventDefault();
               if ("which" in e) {  // console.log("contextmenu-event",e.which, e)
@@ -200,7 +222,12 @@
                 }
               } 
             }.bind(this)); 
+            */
+          },
 
+          _checkOutImg: function(dataUrl,o) {
+            this.outsize = dataUrl.length; console.log("_checkOutImg Size=", this.outsize);
+            this.$.resized.setAttribute('src', dataUrl);
           },
 
           copyElemText: function(q) {    
@@ -275,7 +302,7 @@
             else      this.$.dataurl.style.display = "none";
           },
 
-          _getsrc: function(n) { // console.log("_getsrc", n)
+          _getsrc: function(n) { console.log("_getsrc", n.length)
             this.rawsize = n.length;
             this.imgsrc  = "";
             this.$.checkori.checked=false; 
