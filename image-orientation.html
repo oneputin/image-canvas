@@ -76,7 +76,7 @@ rotates an img-src (url or **dataUrl**) to another **dataUrl**.
 			'_rotate(src, quality, format)'	
 		],
 
-		// debounce-shell to avoid calls 
+		// debounce-shell to avoid "multiple" calls on same img 
 	    _rotate: function(src, quality, format) { 
             if (!src) return;
 	        this.debounce('rotate', function () { console.log("DebouncedStart of AutoOrientation");
@@ -97,7 +97,7 @@ rotates an img-src (url or **dataUrl**) to another **dataUrl**.
             var x = 0, y = 0;
 
             var orientationIndex = piexif.ImageIFD.Orientation,
-                orientation = exif["0th"][orientationIndex];  console.log("original orientation =", orientation); 
+                orientation = exif["0th"][orientationIndex];  console.log("original orientationIndex, orientation =", orientationIndex, orientation); 
 
             if (typeof orientation !== "undefined") {
 
@@ -152,7 +152,7 @@ rotates an img-src (url or **dataUrl**) to another **dataUrl**.
 
                 // restore exif (remove orientation value)
                 if (rotated) {
-                    // delete exif["0th"]["Orientation"]; // NOPE as in ORIGINAL 
+                    // delete exif["0th"]["Orientation"]; // NOPE !!! (as in ORIGINAL) 
                     delete exif["0th"][orientationIndex]; 
                     // console.log("orientation="+orientation, orientationIndex, exif["0th"][orientationIndex], exif["0th"] ) 
                 }
@@ -169,9 +169,10 @@ rotates an img-src (url or **dataUrl**) to another **dataUrl**.
          */
         rotate: function (src, quality, format){
 
-			var exif = piexif.load(src); console.log("exif",exif); 
+			var exif = piexif.load(src); console.log("rotate, exif=",exif); 
 			// var exifData = exifStatus(exif);
 
+	        if (!quality) quality = 100; 
 	        if (!format)  format='jpeg'; 
 	        format  = "image/" + format;
 
@@ -188,7 +189,7 @@ rotates an img-src (url or **dataUrl**) to another **dataUrl**.
 
 	            var dataURL = canvas.toDataURL("image/jpeg", quality);
 
-    	        this.out = this.updateDataUrl(dataURL, exif); // from ExifBehavior 
+    	        this.out = this.exifToImg(dataURL, exif); // from ExifBehavior 
 
 				// for debug only 			
 				var exifOut = piexif.load(this.out);  console.log("exifOut",exifOut); 

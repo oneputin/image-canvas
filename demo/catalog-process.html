@@ -18,7 +18,7 @@
     <link rel="import" href="../../fire-base/fire-query.html">
 
     <!-- <link rel="import" href="../catalog-resize.html"> -->
-    <link rel="import" href="../process-catalog.html">
+    <link rel="import" href="../catalog-process.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
@@ -64,11 +64,11 @@
         data="{{dbdata}}">
       </fire-query>
      
-      <process-catalog 
+      <catalog-process 
         incoll="[[dbdata]]" 
         propname="[[propname]]" 
         outcoll="{{resized}}">
-      </process-catalog>
+      </catalog-process>
       
       <!-- <catalog-resize incoll="[[dbdata]]" propname="[[propname]]" outcoll="{{resized}}"></catalog-resize> -->
 

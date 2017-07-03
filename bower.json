@@ -21,5 +21,9 @@
     "paper-checkbox": "PolymerElements/paper-checkbox#^1.4.0",
     "drop-box": "https://github.com/oneputin/files-input.git",
     "fire-base": "https://github.com/oneputin/fire-base.git"
+  },
+  "resolutions": {
+    "paper-input": "^1.1.17",
+    "iron-input": "^1.0.0"
   }
 }

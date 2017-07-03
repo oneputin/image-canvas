@@ -148,33 +148,33 @@ Alternative demos: demo-percent, demo-percent-batch,
 			},
 
 			// 
-			updateDataUrl: function(dataURL, exif) {
-				if (!exif) {
-					exif = {};
-				}
-				// update the last modification time  
-				exif = this.setExifTime(exif);
+			// exifToImg: function(dataURL, exif) {
+			// 	if (!exif) {
+			// 		exif = {};
+			// 	}
+			// 	// update the last modification time  
+			// 	exif = this.setExifTime(exif);
 
-				// remove old thumbnails
-				delete exif["thumbnail"]  
+			// 	// remove old thumbnails
+			// 	delete exif["thumbnail"]  
 
-				var exifbytes = piexif.dump(exif); 
+			// 	var exifbytes = piexif.dump(exif); 
 
-				var data = dataURL.split(","), // split into prefix [0] and b64-string[1]
-					b64Prefix = data[0], 
-					b64String = data[1];  // console.log("dataURL-prefix", prefix);
+			// 	var data = dataURL.split(","), // split into prefix [0] and b64-string[1]
+			// 		b64Prefix = data[0], 
+			// 		b64String = data[1];  // console.log("dataURL-prefix", prefix);
 
-				// encode the image-part of dataURL to b64
-				var jpegBinary = atob(b64String);
+			// 	// encode the image-part of dataURL to b64
+			// 	var jpegBinary = atob(b64String);
 
-				// INSERT the modified EXIF into image-binary   
-				jpegBinary = piexif.insert(exifbytes, jpegBinary);
+			// 	// INSERT the modified EXIF into image-binary   
+			// 	jpegBinary = piexif.insert(exifbytes, jpegBinary);
 			
-				// 
-				dataURL = b64Prefix +","+ btoa(jpegBinary); // console.log("new dataURL", dataURL); 
+			// 	// 
+			// 	dataURL = b64Prefix +","+ btoa(jpegBinary); // console.log("new dataURL", dataURL); 
 				
-				return dataURL;
-			},
+			// 	return dataURL;
+			// },
 
 	        /**
 	         * check if `src`-image rendered into `preview` fits size requirements
@@ -185,7 +185,7 @@ Alternative demos: demo-percent, demo-percent-batch,
 				var self = this;
 
 				function checkout(dataUrl){ console.log("checkout at counter=", self._counter);
-	    	        self.out = self.updateDataUrl(dataUrl, self.srcExif); 
+	    	        self.out = self.exifToImg(dataUrl, self.srcExif); 
 					self._counter = 0;
 					// self.srcExif = null; // not allowed if further 
 				}
