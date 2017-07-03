@@ -21,9 +21,9 @@ To run "interactive" modifications the original img must be copied into another 
 
 
 
-## resize-image
+## image-resize
 resizes an img-src (url, dataUrl) to another dataUrl. 
-Based on `canvas`-resizing see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/resize-image-canvas] 
+Based on `canvas`-resizing see (Tom Trenka on August 6, 2013)[https://davidwalsh.name/image-resize-canvas] 
 
 resize-parameters:
 + height [px]
@@ -44,7 +44,7 @@ rotate parameters:
 
 
 
-## resize-percent
+## image-percent
 resizes an img-src (url, dataUrl) to another dataUrl. 
 
 resize-parameters:

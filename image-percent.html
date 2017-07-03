@@ -1,19 +1,22 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="resize-image.html">
+
+<link rel="import" href="../image-meta/exif-behavior.html">
+
+<link rel="import" href="image-resize.html">
 
 <!--
-`resize-percent`
+`image-percent`
 iterates a new _height for an img-src (url, **dataUrl**) to another **dataUrl**  
 with size best fitting 'percent' and/or 'guidesize'. 
-Based on `canvas`-resizing, see [Tom Trenka on August 6, 2013](https://davidwalsh.name/resize-percent-canvas) 
-!!! NOT working for 'CORS' srces !!!  
-Alternative demos: demo-resize-percent, demo-db-batch, 
+Based on `canvas`-resizing, see [Tom Trenka on August 6, 2013](https://davidwalsh.name/image-percent-canvas) 
+Alternative demos: demo-percent, demo-percent-batch, 
+**NOT working for 'NOT-CORS' srces**  
 
 
-@demo demo/demo-resize-percent.html 
+@demo demo/demo-percent.html 
 -->
 
-<dom-module id="resize-percent">
+<dom-module id="image-percent">
 
 	<template>
 
@@ -26,13 +29,13 @@ Alternative demos: demo-resize-percent, demo-db-batch,
 		    }
 	  	</style>  
 
-        <resize-image 
+        <image-resize 
         	src 	="[[src]]" 
         	out 	="{{prev}}" 
         	height 	="[[_height]]" 
         	quality ="[[_quality]]"
         	format 	="[[format]]">
-        </resize-image>
+        </image-resize>
 
 	</template>    
 
@@ -40,7 +43,7 @@ Alternative demos: demo-resize-percent, demo-db-batch,
 
 	    Polymer({
 
-		    is: 'resize-percent',
+		    is: 'image-percent',
 
 		    properties: {
 		        /**
@@ -67,11 +70,15 @@ Alternative demos: demo-resize-percent, demo-db-batch,
 		         * The primary SRC of an image (url or dataUrl)
 		         */
 		        src: {
-		          type: String
+		          type: String,
+				  observer: 'getExif'
 		        },
 
+				srcExif: {
+					type : Object
+				}, 
 		        /**
-		         * The preview generated from resize-percent
+		         * The preview generated from image-percent
 		         */
 		        prev: {
 		          type: String
@@ -123,12 +130,66 @@ Alternative demos: demo-resize-percent, demo-db-batch,
 				'iterateHeight(prev, percent, guidesize)'
 			],
 
+			getExif : function(src){
+				if (!src) return;
+				this.srcExif = piexif.load(src);
+			},
+
+			// 
+			setExifTime: function(exif) {
+				if (!exif) exif = {};
+				if (!exif["0th"]) exif["0th"] = {};
+
+				var timeIndex = piexif.ImageIFD.DateTime;
+					newTime = new Date().toLocaleString(); console.log("dateTime new", newTime);
+				
+				exif["0th"][timeIndex] = newTime;
+				return exif; 
+			},
+
+			// 
+			// exifToImg: function(dataURL, exif) {
+			// 	if (!exif) {
+			// 		exif = {};
+			// 	}
+			// 	// update the last modification time  
+			// 	exif = this.setExifTime(exif);
+
+			// 	// remove old thumbnails
+			// 	delete exif["thumbnail"]  
+
+			// 	var exifbytes = piexif.dump(exif); 
+
+			// 	var data = dataURL.split(","), // split into prefix [0] and b64-string[1]
+			// 		b64Prefix = data[0], 
+			// 		b64String = data[1];  // console.log("dataURL-prefix", prefix);
+
+			// 	// encode the image-part of dataURL to b64
+			// 	var jpegBinary = atob(b64String);
+
+			// 	// INSERT the modified EXIF into image-binary   
+			// 	jpegBinary = piexif.insert(exifbytes, jpegBinary);
+			
+			// 	// 
+			// 	dataURL = b64Prefix +","+ btoa(jpegBinary); // console.log("new dataURL", dataURL); 
+				
+			// 	return dataURL;
+			// },
+
 	        /**
 	         * check if `src`-image rendered into `preview` fits size requirements
 	         * @return   resized image (as this elements host-property `out`)
 	         */
 	        iterateHeight : function(prev, percent, guidesize) { // _quality, format) {	
 	        	if (!prev || !prev.length) return; 
+				var self = this;
+
+				function checkout(dataUrl){ console.log("checkout at counter=", self._counter);
+	    	        self.out = self.exifToImg(dataUrl, self.srcExif); 
+					self._counter = 0;
+					// self.srcExif = null; // not allowed if further 
+				}
+
 	        	let countmax = 10,
 	        		guidemin = 0.75,
 	        		guidemax = 1.5;
@@ -144,19 +205,20 @@ Alternative demos: demo-resize-percent, demo-db-batch,
 	        		// console.log("height,size,pcent,frac,guideState " + this._counter+":",  this._height, psize, pcent.toFixed(2), percentState.toFixed(2), guideState.toFixed(2));
 
 	        	if (this._counter > countmax) { // console.log("counter=", this._counter);
-		        	this._counter = 0;
-		        	this.out = prev;
-		        	//**************
+		        	checkout(prev);
 		        	return;
 	        	}
 	        	
+
 	        	// debugger; 
+				var flag = false;
+
         		if ((guideState > guidemax)||(guideState < guidemin)) {	// "Forced Termination" of iteration
         			// this._height = Math.round( this._height / maxfrac);
         			newHeight = Math.ceil( this._height / guideState);
         			this._counter = countmax + 1; // BREAK after next iteration
 
-        		} else if (false) {			// 
+        		} else if (flag) {			// 
 
 	    			newHeight = Math.ceil( this._height / percentState);
 	    			this._counter = this._counter + 1; 
@@ -169,9 +231,9 @@ Alternative demos: demo-resize-percent, demo-db-batch,
 
         		// No change during last iteration 
     			if (newHeight == this._height){ 
-		        	this._counter = 0; // 
-		        	this.out = prev;
-		        	//*************
+					checkout(prev); 
+		        	// this._counter = 0; // 
+		        	// this.out = prev;
 		        	return;
     			}  
 

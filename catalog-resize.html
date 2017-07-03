@@ -1,12 +1,12 @@
 <link rel="import" href="../polymer/polymer.html">
 
 <!--
-`process-catalog`
+`catalog-resize`
 resize images xxxed in catalog and add resized image-dataUrl as property to catalog-items
 
-@demo demo/catalog-process.html 
+@demo demo/demo-catalog.html 
 -->
-<dom-module id="process-catalog">
+<dom-module id="catalog-resize">
 
 	<template>
 
@@ -17,7 +17,13 @@ resize images xxxed in catalog and add resized image-dataUrl as property to cata
 		        position: relative;
 		        left: -1000px;
 		    }
+		    #canvas {
+		    	height: 10px;
+		    }
 	  	</style>  
+
+    	<canvas id="canvas" hidden>
+		</canvas>
 
 	</template>    
 
@@ -25,11 +31,12 @@ resize images xxxed in catalog and add resized image-dataUrl as property to cata
 
     Polymer({
 
-	    is: 'process-catalog',
+	    is: 'catalog-resize',
 
 	    properties: {
+
 	    	/**
-	    	 * IN: collection of catalogitems 
+	    	 * IN: collection of catalog-items 
 	    	 * @type {Array}
 	    	 */
 	    	incoll: {
@@ -78,7 +85,7 @@ resize images xxxed in catalog and add resized image-dataUrl as property to cata
 		 * @param  {[Array]} items collection of catalogitems
 		 * @return {[Array]}       collection of processed catalogitems
 		 */
-		processing: function(iterable) { // console.log("group-items:", items);
+		processing: function(catalog) { // console.log("group-items:", items);
 			
 			var self = this; 
 
@@ -86,74 +93,58 @@ resize images xxxed in catalog and add resized image-dataUrl as property to cata
 			// resizing the src-image as dataUrl
 			var process = function(key) { 
 				// process-objects 
-				var data_in  = iterable[key], // 
-        			data_out = {};
-
+				var item     = catalog[key],
+					imgsrc   = item.url, 		 // console.log(height,format,quality,imgsrc);
+        			canvas   = self.$.canvas,
+        			out      = {};
         		// process-controls	
-				var	propname = self.propname,  // console.log(height,format,quality,datasrc);
-					datasrc  = data_in.url;		 
-
-				function Processor(processkey) {
-					// Generic processor-shell as proxy 
-					if (!processkey) processkey = "processing";
-
-				    var proxy = new Proxy(
-					    {
-					    	id: processkey
-					    }, 
-					    {
-					        get: function(target, name, receiver) {
-					          // console.log('GET: called for field: ', name);
-					          return Reflect.get(target, name, receiver);
-					        },
-
-					        set: function(target, name, value, receiver) {
-
-					        	var flag =  Reflect.set(target, name, value, receiver); // returns bool status 
-
-								if (name == "data") { // console.log(`Starting with ${value}`);
-									// START process-action 
-									target.action();  
-								} else {
-									// console.log("SETUP of "+ target.id+":", name, value);
-								}
-					        	
-					        	return flag;
-					        }
-					    }
-					);
-
-				    return proxy;
-				}	
+				var height   = self.height,
+					format   = self.format,
+					quality  = self.quality,
+					propname = self.propname;
 				
 				return new Promise(function(resolve, reject){
 
-			        var	process = new Processor();   
+			        var	img = new Image();   
 
 			        // Run process after "onload"-event 
-			        process.action = function() {
-			            // var dataUrl = "http://" + this.src; 
-			            var dataUrl = "http://" + data_in.src; 
+			        img.onload = function() {
+
+			        	// Sizing-algorythm
+			            if (img.height > height) {
+			                img.width *= height / img.height;
+			                img.height = height;
+			            }
+
+			            canvas.width  = img.width;
+			            canvas.height = img.height;
+
+			            if (!canvas.hidden) {    // console.log("Canvas NOT HIDDEN"); 
+				            var ctx = canvas.getContext("2d");
+				            ctx.clearRect(0, 0, canvas.width, canvas.height);
+			            	ctx.drawImage(img, 0, 0, img.width, img.height);
+			            }	
+
+			            var dataUrl = canvas.toDataURL(format, quality);
 
 			            if (dataUrl)  {
 
-			            	data_out[key] = formatter(data_in, dataUrl, propname);
+			            	out[key] = formatter(item, dataUrl, propname);
 
-			            	resolve(data_out);   // resized image as dataUrl
-			            	//***************	
+			            	resolve(out);   // resized image as dataUrl
+			            	//**********	
 			            } else {
-
-			            	reject(Error("img.onload.error for:" + datasrc)); 
+			            	reject(Error("img.onload.error for:" + imgsrc)); 
 			            	//**********		
 			          	}
 					};
 
-					process.onerror = function() {
-						reject(Error("process.onerror:" + datasrc));  
+					img.onerror = function() {
+						reject(Error("img.onerror:" + imgsrc));  
 		            	//**********		
 					};
-					// start processor
-					process.data = data_in;
+					// Load image 
+					img.src = imgsrc;
 				}); 
 			};
 
@@ -164,7 +155,7 @@ resize images xxxed in catalog and add resized image-dataUrl as property to cata
             	item[propname+"_size"]  = prop.length;
 
 	          	var d = new Date();
-            	item["last_logtime"]	= d.toString();
+            	item["logtime"]	= d.toString();
 
             	return item;
 			};
@@ -178,19 +169,15 @@ resize images xxxed in catalog and add resized image-dataUrl as property to cata
 			// var sequence = items.map(process).reduce(sequencer, Promise.resolve());
 			// Promise.resolve(sequence)
 
-			// var processes = Object.keys(catalog).map(process); 
-			var processes = Object.keys(iterable).map(process); 
-
+			var processes = Object.keys(catalog).map(process); 
 			Promise.all(processes)
 			.then (function(all_done){ // console.log("done resizing:", all_done)
-				// 
-				function join(out_coll, itemcoll) {
-					Object.keys(itemcoll).forEach((key) => out_coll[key] = itemcoll[key]);
-					return out_coll;
+				function join(coll, itemcoll) {
+					Object.keys(itemcoll).forEach((key) => coll[key] = itemcoll[key]);
+					return coll;
 				};
-				var outcoll = all_done.reduce(join, {}); // console.log(all_coll, all_done); 
-
-				self.outcoll = outcoll; 
+				var all_coll = all_done.reduce(join, {}); // console.log(all_coll, all_done); 
+				self.outcoll = all_coll; 
 			})
 			.catch(function (error){
 				console.log("error:", error)
