@@ -241,6 +241,7 @@
           },
 
           _checkOutImg: function(dataUrl,o) {
+            if (!dataUrl.length) return; 
             this.outsize = dataUrl.length; console.log("outSize", this.outsize);
             this.$.out.setAttribute('src', dataUrl);
           },
@@ -251,13 +252,13 @@
             else      this.imgsrc = "";
           },
 
-          _checkinSrc: function(n) {  console.log("_checkinSrc", n.length)
-            
-            this.rawsize = n.length;
+          _checkinSrc: function(insrc) {  
+            if (!insrc.length) return;  console.log("_checkinSrc", insrc.length)
+
+            this.rawsize = insrc.length;
             this.imgsrc  = "";
             this.$.checkori.checked = false; 
             return; 
-
             // 
             if (!this.delay) {
               this.imgsrc = n;

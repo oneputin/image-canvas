@@ -24,6 +24,7 @@
   },
   "resolutions": {
     "paper-input": "^1.1.17",
-    "iron-input": "^1.0.0"
+    "iron-input": "^1.0.0",
+    "paper-item": "^1.2.1"
   }
 }
